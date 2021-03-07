@@ -94,6 +94,8 @@ function is_they_pay_scripts() {
 	wp_enqueue_script('jquery'); 
 	wp_enqueue_script( 'is-they-pay-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'pay-custom-js', get_template_directory_uri() . '/inc/js/custom.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'select2-js', '//cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js', array( 'jquery' ), '4.1.0', true );
+    wp_enqueue_style( 'select2-css', '//cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css', null, '4.1.0', 'all' );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -161,3 +163,17 @@ if( function_exists('acf_add_options_page') ) {
 	));
 	
 }
+
+// custom search for custom post type
+function searchfilter($query) {
+    if ($query->is_search && !is_admin() ) {
+        if(isset($_GET['post_type'])) {
+            $type = $_GET['post_type'];
+                if($type == 'networks') {
+                    $query->set('post_type',array('networks'));
+                }
+        }       
+    }
+return $query;
+}
+add_filter('pre_get_posts','searchfilter');

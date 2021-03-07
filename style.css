@@ -182,15 +182,52 @@ html{box-sizing:border-box;-ms-overflow-style:scrollbar}
 	.col-xl-11{-ms-flex:0 0 91.666667%;flex:0 0 91.666667%;max-width:91.666667%}
 	.col-xl-12{-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}
 }
+.align-center {
+    align-items: center;
+}
+.align-end {
+    align-items: flex-end;
+}
+.pay-main-content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.pay-left {
+    width: calc(100% - 350px);
+    padding-right: 30px;
+}
+.pay-right {
+    width: 350px;
+}
 h1,h2,h3,h4,h5,h6 {
-	color: #253069;
+	color: #000;
 	margin: 0;
 }
 p {
-	color: #191919;
+	color: #000;
 	line-height: 1.5;
 	margin: 0;
 }
+
+/* Boxed Layout */
+.boxed-layout {
+    max-width: 1410px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 30%);
+    margin: auto;
+    background-color: #fff;
+}
+#page-container.boxed-layout {
+    background-attachment: fixed;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    max-width: 100%;
+}
+/* Boxed Layout */
 
 /* Color Plate 
 
@@ -223,59 +260,60 @@ header#main-header {
 .pay-top-header span#add-network-program-btn:hover {
     letter-spacing: 0.5px;
 }
-/* .pay-main-header {
-    padding: 10px 0;
-} */
-.pay-main-header .logo {
-    padding: 10px 0 20px;
+.pay-main-header {
+    padding-top: 25px;
 }
 .pay-main-header .logo img {
     width: 100% !important;
     height: 100%;
 }
 .pay-main-menu {
-    background-color: rgba(247,51,69);
+    background-color: #000;
+    margin-top: 25px;
+}
+.pay-main-menu .col-md-12 {
+    padding: 0;
 }
 .pay-main-header nav#main-navigation ul#primary-menu {
     display: flex;
     flex-wrap: wrap;
 }
 .pay-main-header nav#main-navigation ul#primary-menu > li {
-    padding: 0 5px;
-	border-left: 1px solid #fff;
-	position: relative;
+    border-left: 1px solid rgba(255,255,255,0.3);
+    position: relative;
+    cursor: pointer;
 }
 .pay-main-header nav#main-navigation ul#primary-menu > li:last-child {
-    border-right: 1px solid #fff;
+    border-right: none;
 }
-.pay-main-header nav#main-navigation ul#primary-menu > li::before {
-    position: absolute;
-    content: "";
-    width: 0;
-    height: 3px;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(29,171,71);
-    transition: all 0.3s ease-in-out;
-    opacity: 0;
-    overflow: hidden;
+.pay-main-header nav#main-navigation ul#primary-menu > li:first-child {
+    border-left: none;
 }
 .pay-main-header nav#main-navigation ul#primary-menu > li:hover::before {
     opacity: 1;
     width: 100%;
 }
-.pay-main-header nav#main-navigation ul#primary-menu > li > a {
-    padding: 10px 25px;
+.pay-main-header nav#main-navigation ul#primary-menu li a {
+    padding: 11px 25px;
     display: inline-block;
     color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+.pay-main-header nav#main-navigation ul#primary-menu > li:hover > a,
+.pay-main-header nav#main-navigation ul#primary-menu > li > ul.sub-menu > li:hover > a,
+.pay-main-header nav#main-navigation ul#primary-menu > li > ul.sub-menu > li > ul.sub-menu > li:hover > a {
+    background-color: rgba(247,51,69);
 }
 .pay-main-header nav#main-navigation ul#primary-menu > li > ul.sub-menu {
 	position: absolute;
     top: 70px;
     left: 0;
-    background-color: rgba(247,51,69);
+    background-color: #000;
     width: 250px;
-    padding: 15px 30px;
+    padding: 0;
     z-index: 99;
     transition: all 0.3s ease-in-out;
     opacity: 0;
@@ -284,7 +322,16 @@ header#main-header {
 .pay-main-header nav#main-navigation ul#primary-menu > li.menu-item-has-children:hover > ul.sub-menu {
     opacity: 1;
     visibility: visible;
-	top: 38px;
+	top: 40px;
+}
+.pay-main-header nav#main-navigation ul#primary-menu > li > ul.sub-menu > li > a {
+    display: block;
+}
+.pay-main-header nav#main-navigation ul#primary-menu > li > ul.sub-menu > li > ul.sub-menu {
+    margin-left: 10px;
+}
+.pay-main-header nav#main-navigation ul#primary-menu > li > ul.sub-menu > li > ul.sub-menu > li > a {
+    display: block;
 }
 /* ===============================================
 		Header Style Sheet
@@ -452,9 +499,369 @@ form#add-network-program .add-network-program-btn button:hover {
     background-color: transparent;
     color: rgba(247,51,69);
 }
-form#add-network-program .add-network-program-item textarea {
+form#add-network-program .add-network-program-item > textarea {
     height: 140px;
+    padding: 5px 10px;
 }
+/* select2 css */
+form#add-network-program .add-network-program-item textarea.select2-search__field {
+    margin: 0;
+    border: 0;
+    width: 100% !important;
+    padding: 0;
+    height: 100%;
+    margin-left: 5px;
+    padding-top: 8px;
+}
+form#add-network-program .add-network-program-item span.select2-selection {
+    padding: 0;
+    min-height: 40px;
+}
+form#add-network-program .add-network-program-item span.select2-search {
+    position: absolute;
+}
+form#add-network-program .add-network-program-item li.select2-selection__choice {
+    background-color: #fff;
+    height: 25px;
+}
+form#add-network-program .add-network-program-item li.select2-selection__choice button {
+    color: rgba(247,51,69);
+    height: 25px;
+}
+form#add-network-program .add-network-program-item li.select2-selection__choice button span {
+    position: relative;
+    top: -2px;
+}
+form#add-network-program .add-network-program-item li.select2-selection__choice span {
+    position: relative;
+    top: 2px;
+    font-size: 14px;
+}
+form#add-network-program .add-network-program-item .select2-selection--single .select2-selection__rendered {
+    line-height: 38px;
+}
+form#add-network-program .add-network-program-item .select2-selection--single span.select2-selection__arrow {
+    height: 38px;
+}
+/* select2 css */
 /* ===============================================
 		Modal Style Sheet
+=============================================== */
+
+/* ===============================================
+		Sidebar Style Sheet
+=============================================== */
+.pay-sidebar-wrap h2.title {
+    font-size: 18px;
+    color: #000;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 1;
+    position: relative;
+    margin-bottom: 12px;
+    padding-left: 10px;
+}
+.pay-sidebar-wrap h2.title::before {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 5px;
+    background-color: rgba(247,51,69);
+    left: 0;
+    top: 0;
+}
+.pay-sidebar-wrap {
+    position: relative;
+}
+.pay-sidebar-wrap .pay-sidebar-item {
+    padding: 20px 10px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+    border-radius: 4px;
+}
+.pay-sidebar-wrap .pay-sidebar-item:not(:last-child) {
+    margin-bottom: 30px;
+}
+p.rating {
+    display: flex;
+}
+p.rating span {
+    margin-right: 2px;
+}
+p.rating span svg {
+    width: 12px;
+    height: 12px;
+}
+.pay-sidebar-big-ads.pay-sidebar-item {
+    padding: 0;
+}
+.pay-sidebar-big-ads.pay-sidebar-item img {
+    width: 100%;
+}
+/* ===============================================
+		Sidebar Style Sheet
+=============================================== */
+
+/* ===============================================
+		Search Form Style Sheet
+=============================================== */
+form.search-form {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+form.search-form .search-btn {
+    width: 45px;
+    position: absolute;
+    right: 2px;
+}
+form.search-form .search-btn button {
+    height: 34px;
+    width: 100%;
+    border: none;
+    line-height: 38px;
+    border-radius: 0 2px 2px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(247,51,69);
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+/* form.search-form .search-btn button:hover {
+    background-color: #000;
+} */
+form.search-form .search-input {
+    width: 100%;
+    height: 38px;
+}
+form.search-form .search-input input.search-field {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    border: 2px solid rgba(247,51,69);
+    color: #000;
+    padding: 0 10px;
+    outline: none;
+    font-size: 14px;
+}
+form.search-form .search-input input.search-field::placeholder {
+    color: #000;
+}
+form.search-form .search-btn button svg {
+    width: 23px;
+}
+/* form.search-form .search-btn button svg path {
+    fill: #fff;
+} */
+/* ===============================================
+		Search Form Style Sheet
+=============================================== */
+
+/* ===============================================
+		Newsletter Style Sheet
+=============================================== */
+.newsletter-form {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.newsletter-form .field {
+    width: 100%;
+}
+.newsletter-form .field input[type="email"] {
+    width: 100%;
+    height: 38px;
+    border-radius: 5px;
+    border: 2px solid rgba(247,51,69);
+    color: #000;
+    padding: 0 10px;
+    outline: none;
+    font-size: 14px;
+}
+.newsletter-form .button {
+    position: absolute;
+    right: 2px;
+}
+.newsletter-form .button input[type="submit"] {
+    outline: none;
+    border: none;
+    height: 34px;
+    padding: 0 15px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #000;
+    border-radius: 0px 3px 3px 0;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.newsletter-form .field input[type="email"]::placeholder {
+    color: #000;
+}
+.newsletter-form .button input[type="submit"]:hover {
+    background-color: rgba(247,51,69);
+}
+/* ===============================================
+		Newsletter Style Sheet
+=============================================== */
+
+/* ===============================================
+		Networks Month Style Sheet
+=============================================== */
+.pay-network-month-content {
+    position: relative;
+}
+.pay-network-month-content .thumbnail img {
+    width: 100%;
+}
+.pay-network-month-content .nm-review-slide-wrap {
+    margin-top: 10px;
+}
+.pay-network-month-content .nm-review-slide-wrap .nm-review-slide-item {
+    position: relative;
+}
+.pay-network-month-content .nm-review-slide-wrap .nm-review-slide-item .top-info {
+    display: flex;
+    margin-bottom: 3px;
+}
+.pay-network-month-content .nm-review-slide-wrap .nm-review-slide-item .top-info p.rating span {
+    display: inline-block;
+    margin-right: 3px;
+}
+.pay-network-month-content .nm-review-slide-wrap .nm-review-slide-item .top-info p.rating span svg {
+    width: 12px;
+    height: 12px;
+}
+.pay-network-month-content .nm-review-slide-wrap .nm-review-slide-item a {
+    text-decoration: none;
+}
+.pay-network-month-content .nm-review-slide-wrap .nm-review-slide-item .top-info p.rating {
+    display: flex;
+    font-size: 14px;
+    align-items: center;
+    margin-right: 5px;
+}
+.pay-network-month-content .nm-review-slide-wrap .nm-review-slide-item .review-coment p {
+    font-size: 14px;
+    color: rgba(0,0,0,0.5);
+}
+/* ===============================================
+		Networks Month Style Sheet
+=============================================== */
+
+
+/* ===============================================
+		Recents Reviews Style Sheet
+=============================================== */
+.pay-sidebar-big-ads.pay-sidebar-item {
+    padding: 0;
+}
+.pay-sidebar-big-ads.pay-sidebar-item img {
+    width: 100%;
+}
+.pay-recent-reviews-wrap {
+    position: relative;
+}
+.pay-recent-reviews-wrap .pay-recent-review-item {
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.pay-recent-reviews-wrap .pay-recent-review-item:first-child {
+    padding-top: 10px;
+    border-top: 1px solid rgba(0,0,0,0.05);
+}
+.pay-recent-reviews-wrap .pay-recent-review-item .left {
+    width: 32px;
+}
+.pay-recent-reviews-wrap .pay-recent-review-item .right {
+    width: calc(100% - 32px);
+    padding-left: 10px;
+}
+.pay-recent-reviews-wrap .pay-recent-review-item .right .titles {
+    font-size: 14px;
+}
+.pay-recent-reviews-wrap .pay-recent-review-item .right .titles span {
+    color: #2779bd;
+}
+.pay-recent-reviews-wrap .pay-recent-review-item .right .rat-time {
+    display: flex;
+    align-items: center;
+    color: rgba(0,0,0,0.5);
+    margin: 5px 0;
+}
+.pay-recent-reviews-wrap .pay-recent-review-item .right .rat-time > span {
+    padding-left: 10px;
+    font-size: 14px;
+}
+.pay-recent-reviews-wrap .pay-recent-review-item .right .content {
+    font-size: 14px;
+    color: rgba(0,0,0,0.5);
+    height: 45px;
+    overflow: hidden;
+    line-height: 1.5;
+}
+.pay-sidebar-recent-reviews-wrap a.pay-sidebar-reviews-page-btn {
+    text-align: center;
+    display: inherit;
+    color: #2779bd;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+}
+/* ===============================================
+		Recents Reviews Style Sheet
+=============================================== */
+
+/* ===============================================
+		Top Rated Networks Style Sheet
+=============================================== */
+.pay-top-rated-networks-wrap {
+    position: relative;
+}
+.pay-top-rated-networks-wrap a.pay-top-rated-network-item {
+    display: flex;
+    text-decoration: none;
+    border-top: 1px solid rgba(0,0,0,0.03);
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-top: 5px;
+    font-size: 14px;
+    align-items: center;
+    position: relative;
+    font-weight: 500;
+    justify-content: space-between;
+}
+.pay-top-rated-networks-wrap a.pay-top-rated-network-item .left {
+    display: flex;
+}
+.pay-top-rated-networks-wrap a.pay-top-rated-network-item p.count-rank {
+    height: 22px;
+    width: 22px;
+    text-align: center;
+    line-height: 22px;
+    background-color: rgba(0,0,0,0.4);
+    border-radius: 2px;
+    color: #fff;
+    margin-right: 15px;
+}
+.pay-top-rated-networks-wrap a.pay-top-rated-network-item p.title .reviews-count {
+    color: rgba(0,0,0,0.5);
+    margin-left: 10px;
+}
+.pay-top-rated-networks-wrap a.pay-top-rated-network-item:first-child p.count-rank, 
+.pay-top-rated-networks-wrap a.pay-top-rated-network-item:nth-child(2) p.count-rank, 
+.pay-top-rated-networks-wrap a.pay-top-rated-network-item:nth-child(3) p.count-rank {
+    background-color: #3490dc;
+}
+.pay-top-rated-networks-wrap a.pay-top-rated-network-item p.calculated-rating {
+    color: rgba(247,51,69);
+}
+.pay-top-rated-networks-wrap a.pay-top-rated-network-item:hover p.title {
+    color: rgba(247,51,69);
+}
+/* ===============================================
+		Top Rated Networks Style Sheet
 =============================================== */

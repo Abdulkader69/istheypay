@@ -24,7 +24,7 @@
                    </div> 
                    <div class="add-network-program-item">
                        <label for="choose-network">Choose your network/program type*</label>
-                       <select name="choose-network" id="choose-network">
+                       <select name="choose-network" id="choose-network" class="multiselect-select2">
                            <option value="affiliate-network">Affiliate Network</option>
                            <option value="affiliate-program">Affiliate Program</option>
                            <option value="affiliate-network">Advertising Network</option>
@@ -52,11 +52,24 @@
                    </div> 
                    <div class="add-network-program-item">
                        <label for="top-verticals">Top verticals (Dating, Health/Nutra, Sweepstakes, Gambling, etc)*</label>
-                       <input type="text" name="top-verticals" id="top-verticals">
+                       <select name="top-verticals" id="top-verticals" class="multiselect-select2" multiple="multiple">
+                            <option value="">Dating</option>
+                            <option value="">Health/Nutra</option>
+                            <option value="">Sweepstakes</option>
+                            <option value="">Gambling</option>
+                            <option value="">Sweepstakes</option>
+                            <option value="">Sweepstakes</option>
+                       </select>
                    </div> 
                    <div class="add-network-program-item">
-                       <label for="commission-type">Commission Type (CPA, CPL, CPI, CPS, RevShare, etc)*</label>
-                       <input type="text" name="commission-type" id="commission-type">
+                       <label for="commission-type">Commission Type (CPA, CPL, CPL, CPL, RevShare, etc)*</label>
+                       <select name="commission-type" id="commission-type" class="multiselect-select2" multiple="multiple">
+                            <option value="">CPA</option>
+                            <option value="">CPL</option>
+                            <option value="">CPL</option>
+                            <option value="">CPL</option>
+                            <option value="">RevShare</option>
+                       </select>
                    </div> 
                    <div class="add-network-program-item">
                        <label for="minimum-payment">Minimum Payment ($50, $100, etc)*</label>
@@ -64,11 +77,19 @@
                    </div> 
                    <div class="add-network-program-item">
                        <label for="payment-frequency">Payment Frequency (Net-30, Net-15, Weekly, Upon Request, etc)*</label>
-                       <input type="text" name="payment-frequency" id="payment-frequency">
+                       <select name="payment-frequency" id="payment-frequency" class="multiselect-select2" multiple="multiple">
+                            <option value="">Net-30</option>
+                            <option value="">Net-15</option>
+                            <option value="">Upon Request</option>
+                       </select>
                    </div> 
                    <div class="add-network-program-item">
                        <label for="payment-method">Payment Method (Check, PayPal, Wire, etc)*</label>
-                       <input type="text" name="payment-method" id="payment-method">
+                       <select name="payment-method" id="payment-method" class="multiselect-select2" multiple="multiple">
+                            <option value="">Check</option>
+                            <option value="">PayPal</option>
+                            <option value="">Wire</option>
+                       </select>
                    </div> 
                    <div class="add-network-program-item">
                        <label for="referral-commission">Referral Commission (2%, 5%, etc)*</label>
@@ -76,7 +97,12 @@
                    </div> 
                    <div class="add-network-program-item">
                        <label for="tracking-software">Affiliate Tracking Software (HasOffers, Affise, CAKE, In-house, etc)*</label>
-                       <input type="text" name="tracking-software" id="tracking-software">
+                       <select name="tracking-software" id="tracking-software" class="multiselect-select2" multiple="multiple">
+                            <option value="">HasOffers</option>
+                            <option value="">Affise</option>
+                            <option value="">CAKE</option>
+                            <option value="">In-house</option>
+                       </select>
                    </div> 
                    <div class="add-network-program-item aff-contact-info">
                        <label for="aff-contacts">Affiliate/Advertiser Contacts</label>
