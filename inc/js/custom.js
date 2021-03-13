@@ -41,5 +41,37 @@
             );
         });
 
+        // Show Add Network / Program on Click Function
+        $('#main-navigation .hamburger').on('click', function() {
+            $(this).toggleClass('is-active');
+            $('.menu-main-menu-container').slideToggle();
+        });
+		
+		// Show Add Network / Program on Click Function
+        $('.pay-main-header nav#main-navigation ul#primary-menu > li.menu-item-has-children > a').on('click', function() {
+            $(this).next('ul.sub-menu').slideToggle();
+        });
+
+        // Add dynamacally add fields
+        $("#add-more").click(function(e) {
+            $("#aff-contact").append(
+                '<div class="add-network-program-item-sub"><input type="text" name="aff-contact-name" id="aff-contact-name" placeholder="Name"><input type="text" name="aff-contacts-info" id="aff-contacts-info" placeholder="ex: Email:abc@abc.com, skype:abcde"><span id="close">-</span></div>'
+            );
+        });
+        $("body").on("click", ".add-network-program-item-sub span#close", function(e) {
+            $(this).parent().remove();
+        });
+
+        $('.pay-blog-slider-wrapper').owlCarousel({
+            items: 1,
+            loop: true,
+            autoplay: false,
+            dots: true,
+            nav: false,
+            smartSpeed: 1000,
+            animateOut: 'fadeOut',
+            animateIn: 'fadeIn',
+        });
+
     }); //Document Ready
 })( jQuery );

@@ -27,14 +27,30 @@
                        <select name="choose-network" id="choose-network" class="multiselect-select2">
                            <option value="affiliate-network">Affiliate Network</option>
                            <option value="affiliate-program">Affiliate Program</option>
-                           <option value="affiliate-network">Advertising Network</option>
+                           <option value="advertising-network">Advertising Network</option>
                        </select>
                    </div> 
-                   <div class="add-network-program-item">
+                   <div class="add-network-program-item affiliate-network">
                        <label for="network-name">Affiliate Network Name*</label>
                        <input type="text" name="network-name" id="network-name">
                    </div> 
-                   <div class="add-network-program-item">
+                   <div class="add-network-program-item affiliate-network">
+                       <label for="network-url">Network URL*</label>
+                       <input type="text" name="network-url" id="network-url">
+                   </div> 
+                   <div class="add-network-program-item affiliate-program">
+                       <label for="network-name">Affiliate Network Name*</label>
+                       <input type="text" name="network-name" id="network-name">
+                   </div> 
+                   <div class="add-network-program-item affiliate-program">
+                       <label for="network-url">Network URL*</label>
+                       <input type="text" name="network-url" id="network-url">
+                   </div> 
+                   <div class="add-network-program-item advertising-network">
+                       <label for="network-name">Affiliate Network Name*</label>
+                       <input type="text" name="network-name" id="network-name">
+                   </div> 
+                   <div class="add-network-program-item advertising-network">
                        <label for="network-url">Network URL*</label>
                        <input type="text" name="network-url" id="network-url">
                    </div> 
@@ -78,17 +94,28 @@
                    <div class="add-network-program-item">
                        <label for="payment-frequency">Payment Frequency (Net-30, Net-15, Weekly, Upon Request, etc)*</label>
                        <select name="payment-frequency" id="payment-frequency" class="multiselect-select2" multiple="multiple">
-                            <option value="">Net-30</option>
                             <option value="">Net-15</option>
-                            <option value="">Upon Request</option>
+                            <option value="">Net-30</option>
+                            <option value="">Net-60</option>
+                            <option value="">Daily</option>
+                            <option value="">Weekly</option>
+                            <option value="">Bi-Weekly</option>
+                            <option value="">Others</option>
                        </select>
                    </div> 
                    <div class="add-network-program-item">
                        <label for="payment-method">Payment Method (Check, PayPal, Wire, etc)*</label>
                        <select name="payment-method" id="payment-method" class="multiselect-select2" multiple="multiple">
                             <option value="">Check</option>
-                            <option value="">PayPal</option>
                             <option value="">Wire</option>
+                            <option value="">Direct Deposit</option>
+                            <option value="">PayPal</option>
+                            <option value="">Payoneer</option>
+                            <option value="">Paxum</option>
+                            <option value="">ePayments</option>
+                            <option value="">WebMoney</option>
+                            <option value="">Skrill</option>
+                            <option value="">Others</option>
                        </select>
                    </div> 
                    <div class="add-network-program-item">
@@ -98,25 +125,26 @@
                    <div class="add-network-program-item">
                        <label for="tracking-software">Affiliate Tracking Software (HasOffers, Affise, CAKE, In-house, etc)*</label>
                        <select name="tracking-software" id="tracking-software" class="multiselect-select2" multiple="multiple">
+                            <option value="">CAKE</option>
                             <option value="">HasOffers</option>
                             <option value="">Affise</option>
-                            <option value="">CAKE</option>
+                            <option value="">Afftrack</option>
+                            <option value="">Orangear</option>
+                            <option value="">HitPath</option>
+                            <option value="">Offerslook</option>
+                            <option value="">LinkTrust</option>
                             <option value="">In-house</option>
+                            <option value="">Others</option>
                        </select>
                    </div> 
                    <div class="add-network-program-item aff-contact-info">
-                       <label for="aff-contacts">Affiliate/Advertiser Contacts</label>
-                       <div class="add-network-program-item-sub">
-                            <input type="text" name="aff-contact-name" id="aff-contact-name" placeholder="Name">
-                            <input type="text" name="aff-contacts-info" id="aff-contacts-info" placeholder="ex: Email:abc@abc.com, skype:abcde">
-                       </div>
-                       <div class="add-network-program-item-sub">
-                            <input type="text" name="aff-contact-name" id="aff-contact-name" placeholder="Name">
-                            <input type="text" name="aff-contacts-info" id="aff-contacts-info" placeholder="ex: Email:abc@abc.com, skype:abcde">
-                       </div>
-                       <div class="add-network-program-item-sub">
-                            <input type="text" name="aff-contact-name" id="aff-contact-name" placeholder="Name">
-                            <input type="text" name="aff-contacts-info" id="aff-contacts-info" placeholder="ex: Email:abc@abc.com, skype:abcde">
+                       <label for="aff-contacts">Affiliate/Advertiser Contacts <span id="add-more">+ Add</span></label>
+                       <div id="aff-contact">
+                            <div class="add-network-program-item-sub">
+                                <input type="text" name="aff-contact-name" id="aff-contact-name" placeholder="Name">
+                                <input type="text" name="aff-contacts-info" id="aff-contacts-info" placeholder="ex: Email:abc@abc.com, skype:abcde">
+                                <span id="close">-</span>
+                            </div>
                        </div>
                    </div> 
                    <div class="add-network-program-item">

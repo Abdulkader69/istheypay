@@ -57,7 +57,13 @@
 						<div class="row">
 							<div class="col-md-12">
 								<nav id="main-navigation">
-									<!-- <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php //esc_html_e( 'Primary Menu', 'is-they-pay' ); ?></button> -->
+									<div class="ham">
+										<button class="hamburger hamburger--collapse" type="button">
+											<span class="hamburger-box">
+												<span class="hamburger-inner"></span>
+											</span>
+										</button>
+									</div>
 									<?php
 									wp_nav_menu(
 										array(
