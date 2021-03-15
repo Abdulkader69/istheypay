@@ -47,7 +47,6 @@
 				</div>
 			<?php endif; ?>
 		</footer>
-		<?php get_template_part( 'template-parts/components/add-network', 'program' ); ?>
 	</div>
 </div>
 

@@ -29,7 +29,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-12">
-							<span id="add-network-program-btn">Add Network / Program</span>
+							<a href="<?php echo esc_url( get_site_url() . '/add-network/' ) ?>" id="add-network-program-btn">Add Network / Program</a>
 						</div>
 					</div>
 				</div>
@@ -42,7 +42,7 @@
 						</div>
 						<div class="col-md-8">
 							<?php if( have_rows('header_ads', 'option') ): ?>
-								<?php while( have_rows('header_ads', 'option') ): the_row(); 
+								<?php while( have_rows('header_ads', 'option') ): the_row();
 									if( get_sub_field('ad_images') ) : ?>
 										<div class="header-banner-ads"><a href="<?php the_sub_field('ad_url'); ?>"><img src="<?php the_sub_field('ad_images'); ?>" alt="header ads"></a></div>
 									<?php
