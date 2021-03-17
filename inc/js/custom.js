@@ -1,18 +1,69 @@
 (function ($) {
     $(document).ready(function () {
 
-        // Show Add Network / Program on Click Function
-        $('span#add-network-program-btn').on('click', function () {
-            $('#add-network-program').addClass('active');
+        // Form Handling Scripts
+        $('.afp-field, .adn-field').each(function (index, item) {
+            const $input = $(item).find('input'),
+                $textarea = $(item).find('textarea');
+
+            $(item).css('display', 'none');
+            $input.attr('disabled', true);
+            $textarea.attr('disabled', true);
         });
-        $('.modal-dialog .modal-header button.close').on('click', function () {
-            $('#add-network-program').removeClass('active');
+
+        $('body').on('change', '#network_program_type', function (e) {
+            const $selectVal = parseInt($(this).val()),
+                $afnField = $('.afn-field'),
+                $afpField = $('.afp-field'),
+                $adnField = $('.adn-field');
+
+            if ($selectVal === 1) {
+                $afnField.css('display', 'block');
+                $afnField.find('input').attr('disabled', false);
+                $afnField.find('textarea').attr('disabled', false);
+
+                $afpField.css('display', 'none');
+                $afpField.find('input').attr('disabled', true);
+                $afpField.find('textarea').attr('disabled', true);
+
+                $adnField.css('display', 'none');
+                $adnField.find('input').attr('disabled', true);
+                $adnField.find('textarea').attr('disabled', true);
+            } else if ($selectVal === 2) {
+                $afnField.css('display', 'none');
+                $afnField.find('input').attr('disabled', true);
+                $afnField.find('textarea').attr('disabled', true);
+
+                $afpField.css('display', 'block');
+                $afpField.find('input').attr('disabled', false);
+                $afpField.find('textarea').attr('disabled', false);
+
+                $adnField.css('display', 'none');
+                $adnField.find('input').attr('disabled', true);
+                $adnField.find('textarea').attr('disabled', true);
+            } else {
+                $afnField.css('display', 'none');
+                $afnField.find('input').attr('disabled', true);
+                $afnField.find('textarea').attr('disabled', true);
+
+                $afpField.css('display', 'none');
+                $afpField.find('input').attr('disabled', true);
+                $afpField.find('textarea').attr('disabled', true);
+
+                $adnField.css('display', 'block');
+                $adnField.find('input').attr('disabled', false);
+                $adnField.find('textarea').attr('disabled', false);
+            }
         });
+
+
+
+
+
 
         $('.multiselect-select2').select2({
             minimumResultsForSearch: -1
         });
-
 
         // ==============
         //              Image to SVG code support
