@@ -10,7 +10,7 @@ get_header();
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12 pay-main-content-wrapper">
-					<div class="pay-left">
+                    <div class="pay-featured-section">
                         <div class="pay-home-top-section">
                             <div class="pay-top-five-networks">
                                 <?php
@@ -44,7 +44,40 @@ get_header();
                                 <?php wp_reset_postdata();
                                 endif; ?>
                             </div>
+                            <?php
+                            $network_of_month = get_field('network_of_the_month', 'option');
+                            if( $network_of_month ): ?>
+                                <div class="pay-network-of-the-month-wrap pay-sidebar-item">
+                                    <h2 class="title">Network of The Month</h2>
+                                    <div class="pay-network-month-content">
+                                        <div class="thumbnail">
+                                            <img src="<?php echo get_the_post_thumbnail_url( $network_of_month->ID, 'full' ); ?>" alt="<?php $network_of_month->post_title; ?>">
+                                        </div>
+                                        <div class="nm-review-slide-wrap">
+                                            <div class="nm-review-slide-item">
+                                                <a href="<?php the_permalink( $network_of_month->ID ) ?>">
+                                                    <div class="top-info">
+                                                        <p class="rating">
+                                                            <span><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
+                                                            <span><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
+                                                            <span><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
+                                                            <span><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
+                                                            <span><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
+                                                        </p>
+                                                        <p>Omer</p>
+                                                    </div>
+                                                    <div class="review-coment">
+                                                        <p>Really nice crypto cpa network. Nice offers and nice support. I recommend Algo-Affiliates.</p>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php endif; ?>
                         </div>
+                    </div>
+					<div class="pay-left">
                         <div class="pay-premium-networks-section">
                             <div class="pay-premium-networks-wrap">
                                 <!-- <div class="pay-premium-networks-top">

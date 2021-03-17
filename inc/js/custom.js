@@ -65,7 +65,7 @@
         $('.pay-blog-slider-wrapper').owlCarousel({
             items: 1,
             loop: true,
-            autoplay: false,
+            autoplay: true,
             dots: true,
             nav: false,
             smartSpeed: 1000,
