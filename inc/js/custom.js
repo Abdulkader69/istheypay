@@ -94,13 +94,13 @@
             );
         });
 
-        // Show Add Network / Program on Click Function
+        // Show Mobile Menu on Click Function
         $('#main-navigation .hamburger').on('click', function () {
             $(this).toggleClass('is-active');
             $('.menu-main-menu-container').slideToggle();
         });
 
-        // Show Add Network / Program on Click Function
+        // Show Mobile Sub-Menu on Click Function
         $('.pay-main-header nav#main-navigation ul#primary-menu > li.menu-item-has-children > a').on('click', function () {
             $(this).next('ul.sub-menu').slideToggle();
         });
@@ -115,6 +115,7 @@
             $(this).parent().remove();
         });
 
+        // Pages Blogs Sliders
         $('.pay-blog-slider-wrapper').owlCarousel({
             items: 1,
             loop: true,
@@ -125,6 +126,46 @@
             animateOut: 'fadeOut',
             animateIn: 'fadeIn',
         });
+
+        $('.pay-top-five-title:first-child').addClass('current');
+        $('.pay-top-five-hover-state:first-child').addClass('current');
+        // Pages Top Five Networks Tabs
+        $('.pay-top-five-networks-inner .pay-top-five-left li').hover(function(){
+            var tab_id = $(this).attr('data-tab');
+    
+            $('.pay-top-five-networks-inner .pay-top-five-left li').removeClass('current');
+            $('.pay-top-five-hover-state').removeClass('current');
+    
+            $(this).addClass('current');
+            $("#"+tab_id).addClass('current');
+        })
+
+
+        var cont = 0
+        var initialTime = $('.chart').data('percent');
+        $(function() {
+            //create instance
+            $('.chart').easyPieChart({
+                size: 230,
+                barColor: "#EE4224",
+                scaleLength: 0,
+                lineWidth: 10,
+                trackColor: "",
+                lineCap: "circle",
+                animate: 1000,
+            });
+
+            var interval = setInterval(function() {
+                cont = cont + 0.3
+                $('.chart').data('easyPieChart').update(initialTime + cont);
+                console.log(initialTime + cont)
+                if(initialTime + cont >= 5){
+                    clearInterval(interval)
+                }
+            }, 1000);
+        
+        });
+
 
     }); //Document Ready
 })(jQuery);

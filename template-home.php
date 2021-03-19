@@ -10,20 +10,41 @@ get_header();
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12 pay-main-content-wrapper">
-                    <div class="pay-featured-section">
+					<div class="pay-left">
                         <div class="pay-home-top-section">
                             <div class="pay-top-five-networks">
                                 <?php
                                 $random5Networkss = get_field('5_random_networks', 'option');
                                 if( $random5Networkss ): ?>
-                                    <div class="pay-featured-networks-wrap">
-                                        <?php foreach( $random5Networkss as $random5Networks ): 
-                                        setup_postdata($random5Networks); ?>
-                                            <div class="pay-featured-network-item">
-                                                <img src="<?php echo get_the_post_thumbnail_url($random5Networks->ID, 'full'); ?>" alt="">
-                                                <?php //print_r($random5Networks); ?>
-                                            </div>
-                                        <?php endforeach; ?>
+                                    <div class="pay-top-five-networks-inner">
+                                        <ul class="pay-top-five-left">
+                                            <?php foreach( $random5Networkss as $random5Networks ):
+                                            setup_postdata($random5Networks); ?>
+                                                <li class="pay-top-five-title" data-tab="tab-<?php echo $random5Networks->ID; ?>">
+                                                    <span class="logo"><img src="<?php echo get_field( 'networks_favicon', $random5Networks->ID ); ?>" alt=""></span>
+                                                    <span><?php echo $random5Networks->post_title; ?></span>
+                                                </li>
+                                            <?php endforeach; ?>
+                                        </ul>
+                                        <ul class="pay-top-five-right">
+                                            <?php foreach( $random5Networkss as $random5Networks ): 
+                                            $permalink = get_permalink( $random5Networks->ID );
+                                            setup_postdata($random5Networks); ?>
+                                                <li id="tab-<?php echo $random5Networks->ID; ?>" class="pay-top-five-hover-state">
+                                                    <div class="main-logo"><img src="<?php echo get_field( 'networks_logo', $random5Networks->ID ); ?>" alt=""></div>
+                                                    <div class="rating-chart">
+                                                        <div class="chart" data-percent="4.5" data-scale-color="red">4.5</div>
+                                                    </div>
+                                                    <div class="reviews-calc-rat">
+                                                        <span>119 Reviews</span>
+                                                        <span>4.9</span>
+                                                    </div>
+                                                    <div class="btn">
+                                                        <a href="<?php echo $permalink; ?>">Details</a>
+                                                    </div>
+                                                </li>
+                                            <?php endforeach; ?>
+                                        </ul>
                                     </div>
                                 <?php wp_reset_postdata();
                                 endif; ?>
@@ -44,40 +65,7 @@ get_header();
                                 <?php wp_reset_postdata();
                                 endif; ?>
                             </div>
-                            <?php
-                            $network_of_month = get_field('network_of_the_month', 'option');
-                            if( $network_of_month ): ?>
-                                <div class="pay-network-of-the-month-wrap pay-sidebar-item">
-                                    <h2 class="title">Network of The Month</h2>
-                                    <div class="pay-network-month-content">
-                                        <div class="thumbnail">
-                                            <img src="<?php echo get_the_post_thumbnail_url( $network_of_month->ID, 'full' ); ?>" alt="<?php $network_of_month->post_title; ?>">
-                                        </div>
-                                        <div class="nm-review-slide-wrap">
-                                            <div class="nm-review-slide-item">
-                                                <a href="<?php the_permalink( $network_of_month->ID ) ?>">
-                                                    <div class="top-info">
-                                                        <p class="rating">
-                                                            <span><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                                                            <span><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                                                            <span><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                                                            <span><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                                                            <span><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                                                        </p>
-                                                        <p>Omer</p>
-                                                    </div>
-                                                    <div class="review-coment">
-                                                        <p>Really nice crypto cpa network. Nice offers and nice support. I recommend Algo-Affiliates.</p>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            <?php endif; ?>
                         </div>
-                    </div>
-					<div class="pay-left">
                         <div class="pay-premium-networks-section">
                             <div class="pay-premium-networks-wrap">
                                 <!-- <div class="pay-premium-networks-top">

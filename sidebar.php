@@ -14,14 +14,40 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 
 	<div class="pay-right">
 		<div class="pay-sidebar-wrap">
-			
+
 			<?php get_template_part( 'template-parts/components/search', 'form' ); ?>
 
-			
-			
-			<div class="newsletter-form-wrap pay-sidebar-item">
-				<?php echo do_shortcode( '[mc4wp_form id="127"]' ); ?>
-			</div>
+			<?php
+			$network_of_month = get_field('network_of_the_month', 'option');
+			if( $network_of_month ): ?>
+				<div class="pay-network-of-the-month-wrap pay-sidebar-item">
+					<h2 class="title">Network of The Month</h2>
+					<div class="pay-network-month-content">
+						<div class="thumbnail">
+							<img src="<?php echo get_the_post_thumbnail_url( $network_of_month->ID, 'full' ); ?>" alt="<?php $network_of_month->post_title; ?>">
+						</div>
+						<div class="nm-review-slide-wrap">
+							<div class="nm-review-slide-item">
+								<a href="<?php the_permalink( $network_of_month->ID ) ?>">
+									<div class="top-info">
+										<p class="rating">
+											<span><img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
+											<span><img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
+											<span><img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
+											<span><img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
+											<span><img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
+										</p>
+										<p>Omer</p>
+									</div>
+									<div class="review-coment">
+										<p>Really nice crypto cpa network. Nice offers and nice support. I recommend Algo-Affiliates.</p>
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			<?php endif; ?>
 
 			<?php
 			$sidebar_smalls_ads = get_field('sidebar_smalls_ads', 'option');
@@ -41,6 +67,10 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 			<?php endif; ?>
 
 			<?php get_template_part( 'template-parts/components/featured-networks', 'sidebar' ); ?>
+
+			<div class="newsletter-form-wrap pay-sidebar-item">
+				<?php echo do_shortcode( '[mc4wp_form id="127"]' ); ?>
+			</div>
 
 			<?php
 			if( have_rows('sidebar_big_ads_1', 'option') ):?>
