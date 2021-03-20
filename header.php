@@ -44,7 +44,7 @@
 							<?php if( have_rows('header_ads', 'option') ): ?>
 								<?php while( have_rows('header_ads', 'option') ): the_row();
 									if( get_sub_field('ad_images') ) : ?>
-										<div class="header-banner-ads"><a href="<?php the_sub_field('ad_url'); ?>"><img src="<?php the_sub_field('ad_images'); ?>" alt="header ads"></a></div>
+										<div class="header-banner-ads-wrap"><a href="<?php the_sub_field('ad_url'); ?>"><img src="<?php the_sub_field('ad_images'); ?>" alt="header ads"></a></div>
 									<?php
 									endif;
 								endwhile; ?>

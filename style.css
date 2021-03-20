@@ -995,7 +995,7 @@ form#add-network-program .add-network-program-item .select2-container {
     height: 0;
     width: 2px;
     background-color: rgba(247,51,69);
-    left: 0;
+    left: 1px;
     bottom: 0;
     transition: all 0.3s ease-in-out;
     opacity: 0;
@@ -1040,26 +1040,24 @@ form#add-network-program .add-network-program-item .select2-container {
     opacity: 1;
     visibility: visible;
 }
-.rating-chart .chart {
+.chart {
     position: relative;
-    /*   width: 90%; */
-      height: 100%;
-      text-align: center;
-    /*   font-size: 40px; */
-      line-height: 160px;
-      height: 155px;
-      width: 155px;
-      color: #fff;
-      border-radius: 50%;
-      border: 1px solid red;
-      margin-top: 30px;
+    height: 100%;
+    text-align: center;
+    line-height: 60px;
+    height: 60px;
+    width: 60px;
+    color: #000;
+    border-radius: 50%;
+    border: 1px solid red;
+    margin: auto;
 }
-.rating-chart canvas {
+.chart canvas {
     position: absolute;
     top: -3px;
     left: -3px;
-    width: 160px;
-    width: 160px;
+    width: 60px;
+    width: 60px;
 }
 /* ===============================================
 		Page Top Style Sheet
@@ -1453,6 +1451,383 @@ form#add-network-program .add-network-program-item .select2-container {
 =============================================== */
 
 
+/* ===============================================
+		Single Networks Style Sheet
+=============================================== */
+.pay-sn-top-section,
+.pay-sn-networks-details-wrap,
+.pay-sn-networks-reviews-wrapper {
+    box-shadow: 0 3px 6px rgb(0 0 0 / 20%);
+    padding: 10px 10px 0;
+    margin-bottom: 20px;
+}
+.pay-sn-header-meta {
+    display: flex;
+    flex-wrap: wrap;
+}
+.pay-sn-header-meta .right {
+    width: 200px;
+}
+.pay-sn-header-meta .left {
+    width: calc(100% - 200px);
+}
+.pay-sn-header-meta .left h1.pay-sn-title {
+    font-size: 25px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+.pay-sn-header-meta .left .pay-sn-rat-rev-so {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: rgba(0,0,0,0.5);
+}
+.pay-sn-header-meta .left .pay-sn-rat-rev-so p.rating {
+    margin-right: 10px;
+}
+.pay-sn-header-meta .left .pay-sn-rat-rev-so .reviews {
+    margin-right: 10px;
+}
+.pay-sn-header-meta .left .pay-sn-rat-rev-so .socials-icons {
+    position: relative;
+    margin-top: 2px;
+}
+.pay-sn-header-meta .left .pay-sn-rat-rev-so .socials-icons p {
+    position: relative;
+    padding: 3px 2px;
+    display: inline-block;
+    cursor: pointer;
+    margin: 0 3px;
+}
+.pay-sn-header-meta .left .pay-sn-rat-rev-so .socials-icons p span {
+    position: absolute;
+    left: -90%;
+    width: max-content;
+    padding: 2px 8px;
+    background-color: #000;
+    color: #fff;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 9;
+    font-size: 12px;
+    top: -40%;
+    transition: all 0.3s ease-in-out;
+    border-radius: 4px;
+}
+.pay-sn-header-meta .left .pay-sn-rat-rev-so .socials-icons p:hover span {
+    opacity: 1;
+    visibility: visible;
+    top: -80%;
+}
+.pay-sn-header-meta .left .pay-about-sn {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed rgba(0,0,0,0.2);
+}
+.pay-sn-header-meta .left .pay-about-sn p {
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(0,0,0,0.6);
+    text-transform: uppercase;
+}
+.pay-sn-header-meta .left .pay-about-sn p span {
+    display: inline-block;
+    padding: 0px 5px;
+    background-color: #d6eaff;
+    border-radius: 4px;
+    margin-left: 5px;
+    color: rgba(247,51,69);
+}
+.pay-sn-header-meta .left .pay-sn-btns {
+    margin-bottom: 20px;
+}
+.pay-sn-header-meta .left .pay-sn-btns .write-review-btn {
+    padding: 8px 20px;
+    display: inline-block;
+    background-color: #000;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 5px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.30);
+    margin-right: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.pay-sn-header-meta .left .pay-sn-btns .write-review-btn:hover {
+    background-color: rgba(247,51,69);
+}
+.pay-sn-header-meta .left .pay-sn-btns a.join {
+    background-color: rgba(247,51,69);
+    padding: 8px 20px;
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    font-size: 15px;
+    border-radius: 5px;
+    box-shadow: 0 3px 6px rgb(0 0 0 / 30%);
+    transition: all 0.3s ease-in-out;
+}
+.pay-sn-header-meta .left .pay-sn-btns a.join:hover {
+    background-color: #000;
+}
+.pay-sn-header-meta .right .thumbnail img {
+    width: 100%;
+    padding: 2px;
+    border: 1px solid rgba(247,51,69);
+}
+.pay-about-sn-description {
+    background-color: #f8fafc;
+    padding: 15px;
+    margin-left: -10px;
+    margin-right: -10px;
+}
+.pay-about-sn-description p {
+    font-size: 14px;
+    color: rgba(0,0,0,0.6);
+    line-height: 1.8;
+}
+.pay-about-sn-description .pay-about-sn-description-inner {
+    max-height: 80px;
+    overflow: hidden;
+}
+.pay-sn-networks-details-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 10px;
+}
+.pay-sn-networks-details-wrap .left {
+    width: calc(100% - 220px);
+}
+.pay-sn-networks-details-wrap .right {
+    width: 220px;
+    border-left: 1px solid rgba(0,0,0,0.1);
+    margin-top: -10px;
+    margin-bottom: -10px;
+}
+.pay-sn-networks-details-wrap .left .pay-sn-details-title {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+.pay-sn-networks-details-wrap .left .pay-sn-details-title h3 {
+    font-size: 16px;
+    font-weight: 400;
+}
+.pay-sn-details-items-wrap {
+    position: relative;
+}
+.pay-sn-details-items-wrap .pay-snd-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+.pay-sn-details-items-wrap .pay-snd-item .pay-snd-title {
+    width: 190px;
+}
+.pay-sn-details-items-wrap .pay-snd-item .pay-snd-title p {
+    font-size: 14px;
+    color: rgba(0,0,0,0.5);
+}
+.pay-sn-details-items-wrap .pay-snd-item .pay-snd-content {
+    width: calc(100% - 190px);
+}
+.pay-sn-details-items-wrap .pay-snd-item .pay-snd-content p {
+    font-size: 14px;
+    color: rgba(0,0,0,0.8);
+}
+.pay-sn-details-items-wrap .pay-snd-item .pay-snd-content .pay-snd-manager {
+    display: flex;
+    align-items: center;
+    padding-bottom: 8px;
+}
+.pay-sn-details-items-wrap .pay-snd-item .pay-snd-content .pay-snd-manager p.name {
+    width: 150px;
+}
+.pay-sn-details-items-wrap .pay-snd-item:last-child {
+    border-bottom: none;
+}
+.pay-snd-rat-distribution {
+    position: relative;
+    padding: 20px 10px 10px 20px;
+}
+.pay-snd-rat-distribution h3.rat-dist-title {
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 15px;
+}
+.pay-snd-rat-distribution .rat-indivi {
+    margin: 20px 0;
+}
+.pay-snd-rat-distribution .rat-indivi p {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    color: rgba(0,0,0,0.8);
+    position: relative;
+    padding-left: 20px;
+    padding-bottom: 5px;
+}
+.pay-snd-rat-distribution .rat-indivi p::before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    background-color: #000;
+    left: 0;
+    border-radius: 3px;
+}
+.pay-snd-rat-distribution .rat-indivi p.exce::before {
+    background-color: rgba(247,51,69);
+}
+.pay-snd-rat-distribution .rat-indivi p.v-gd::before {
+    background-color: rgba(247,51,69,0.7);
+}
+.pay-snd-rat-distribution .rat-indivi p.avrg::before {
+    background-color: rgba(247,51,69,0.5);
+}
+.pay-snd-rat-distribution .rat-in-review {
+    position: relative;
+}
+.pay-snd-rat-distribution .rat-in-review p {
+    font-size: 14px;
+    padding-bottom: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.pay-snd-rat-distribution .rat-in-review p span.bar {
+    width: 60px;
+    height: 3px;
+    background-color: rgba(222,222,222,0.5);
+    position: relative;
+    overflow: hidden;
+}
+.pay-snd-rat-distribution .rat-in-review p span.bar::before {
+    position: absolute;
+    content: "";
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(247,51,69);
+}
+.pay-snd-rat-distribution .rat-in-review p span.bar.b5::before {
+    width: 100%;
+}
+
+.pay-snd-rat-distribution .rat-in-review p span.bar.b4::before {
+    width: 80%;
+}
+.pay-snd-rat-distribution .rat-in-review p span.bar.b3::before {
+    width: 60%;
+}
+.pay-snd-rat-distribution .rat-in-review p span.bar.b2::before {
+    width: 40%;
+}
+.pay-snd-rat-distribution .rat-in-review p span.bar.b1::before {
+    width: 20%;
+}
+.pay-sn-review-item {
+    padding: 30px 0;
+    position: relative;
+    display: flex;
+    border-bottom: 1px solid rgba(247,51,69);
+}
+.pay-sn-review-item .avatar {
+    width: 35px;
+    height: 35px;
+    display: flex;
+}
+.pay-sn-review-item .pay-sn-review-context {
+    width: calc(100% - 35px);
+    padding-left: 31px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.pay-sn-review-item .avatar img {
+    object-fit: cover;
+}
+.pay-sn-review-item .pay-sn-review-context .pay-sn-review-metas {
+    width: calc(100% - 120px);
+}
+.pay-sn-review-item .pay-sn-review-context .pay-sn-review-time {
+    width: 120px;
+    text-align: right;
+}
+.pay-sn-review-item .pay-sn-review-context .pay-sn-review-time p {
+    font-size: 14px;
+    color: rgba(0,0,0,0.5);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+.pay-sn-review-item .pay-sn-review-context .pay-sn-review-metas .rat-title {
+    display: flex;
+    align-items: center;
+}
+.pay-sn-review-item .pay-sn-review-context .pay-sn-review-metas .rat-title h4 {
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(0,0,0,0.7);
+    margin-left: 10px;
+}
+.pay-sn-review-item .pay-sn-review-context .pay-sn-review-metas .pay-about-sn {
+    position: relative;
+    padding-top: 5px;
+}
+.pay-sn-review-item .pay-sn-review-context .pay-sn-review-metas .pay-about-sn p {
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(0,0,0,0.6);
+    text-transform: uppercase;
+}
+
+.pay-sn-review-item .pay-sn-review-context .pay-sn-review-metas .pay-about-sn p span {
+    display: inline-block;
+    padding: 0px 5px;
+    background-color: #d6eaff;
+    border-radius: 4px;
+    margin-left: 5px;
+    color: rgba(247,51,69);
+}
+.pay-sn-review-item .pay-sn-review-context .pay-sn-review-content {
+    position: relative;
+    padding-top: 15px;
+}
+.pay-sn-review-item .pay-sn-review-context .pay-sn-review-content p.messages {
+    font-size: 14px;
+    color: rgba(0,0,0,0.5);
+}
+.pay-sn-review-item .pay-sn-review-context .pay-sn-review-content .paymrnt-proof {
+    margin-top: 15px;
+    max-height: 150px;
+}
+.pay-sn-review-item .pay-sn-review-context .pay-sn-review-content .like-dislike-btn {
+    margin-top: 15px;
+    display: flex;
+}
+.pay-sn-review-item .pay-sn-review-context .pay-sn-review-content .like-dislike-btn p {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    color: rgba(0,0,0,0.5);
+}
+.pay-sn-review-item .pay-sn-review-context .pay-sn-review-content .like-dislike-btn p.like {
+    margin-right: 20px;
+}
+/* ===============================================
+		Single Networks Style Sheet
+=============================================== */
+
+
 
 /* ===============================================
 		Responsive Style Sheet
@@ -1513,12 +1888,16 @@ form#add-network-program .add-network-program-item .select2-container {
     }
     .pay-main-header nav#main-navigation ul#primary-menu > li > ul.sub-menu > li > a {
         display: block;
+        font-size: 14px;
+        padding: 9px 25px;
     }
     .pay-main-header nav#main-navigation ul#primary-menu > li > ul.sub-menu > li > ul.sub-menu {
         margin-left: 10px;
     }
     .pay-main-header nav#main-navigation ul#primary-menu > li > ul.sub-menu > li > ul.sub-menu > li > a {
         display: block;
+        font-size: 14px;
+        padding: 9px 25px;
     }
     .pay-main-menu .col-md-12 {
         padding: 0;
