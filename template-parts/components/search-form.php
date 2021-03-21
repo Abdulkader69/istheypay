@@ -6,7 +6,7 @@
             <input type="hidden" name="post_type" value="networks" />
         </div>
         <div class="search-btn">
-            <button type="submit" class="search-submit"><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/search.svg" alt=""></button>
+            <button type="submit" class="search-submit"><i class="icofont-search-2"></i></button>
         </div>
     </form>
 </div>

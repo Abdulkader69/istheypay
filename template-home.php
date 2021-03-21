@@ -36,7 +36,7 @@ get_header();
                                                         <div class="chart" data-percent="4.5" data-scale-color="red">4.5</div>
                                                     </div>
                                                     <div class="reviews-calc-rat">
-                                                        <span>119 Reviews</span>
+                                                        <span>119 Reviews / </span>
                                                         <span>4.9</span>
                                                     </div>
                                                     <div class="btn">
@@ -164,11 +164,11 @@ get_header();
                                             </div>
                                             <div class="right">
                                                 <p class="rating">
-                                                    <span><img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                                                    <span><img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                                                    <span><img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                                                    <span><img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                                                    <span><img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
+                                                    <span><i class="icofont-star"></i></span>
+                                                    <span><i class="icofont-star"></i></span>
+                                                    <span><i class="icofont-star"></i></span>
+                                                    <span><i class="icofont-star"></i></span>
+                                                    <span><i class="icofont-star"></i></span>
                                                 </p>
                                                 <p><a href="#join">Join</a></p>
                                             </div>
@@ -214,11 +214,11 @@ get_header();
                                             </div>
                                             <div class="right">
                                                 <p class="rating">
-                                                    <span><img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                                                    <span><img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                                                    <span><img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                                                    <span><img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                                                    <span><img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
+                                                    <span><i class="icofont-star"></i></span>
+                                                    <span><i class="icofont-star"></i></span>
+                                                    <span><i class="icofont-star"></i></span>
+                                                    <span><i class="icofont-star"></i></span>
+                                                    <span><i class="icofont-star"></i></span>
                                                 </p>
                                                 <p><a href="#join">Join</a></p>
                                             </div>
@@ -264,11 +264,11 @@ get_header();
                                             </div>
                                             <div class="right">
                                                 <p class="rating">
-                                                    <span><img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                                                    <span><img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                                                    <span><img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                                                    <span><img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                                                    <span><img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
+                                                    <span><i class="icofont-star"></i></span>
+                                                    <span><i class="icofont-star"></i></span>
+                                                    <span><i class="icofont-star"></i></span>
+                                                    <span><i class="icofont-star"></i></span>
+                                                    <span><i class="icofont-star"></i></span>
                                                 </p>
                                                 <p><a href="#join">Join</a></p>
                                             </div>
@@ -321,11 +321,11 @@ get_header();
                                             </div>
                                             <div class="right">
                                                 <p class="rating">
-                                                    <span><img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                                                    <span><img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                                                    <span><img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                                                    <span><img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                                                    <span><img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
+                                                    <span><i class="icofont-star"></i></span>
+                                                    <span><i class="icofont-star"></i></span>
+                                                    <span><i class="icofont-star"></i></span>
+                                                    <span><i class="icofont-star"></i></span>
+                                                    <span><i class="icofont-star"></i></span>
                                                 </p>
                                                 <p><a href="#join">Join</a></p>
                                             </div>
@@ -371,11 +371,11 @@ get_header();
                                             </div>
                                             <div class="right">
                                                 <p class="rating">
-                                                    <span><img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                                                    <span><img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                                                    <span><img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                                                    <span><img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                                                    <span><img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
+                                                    <span><i class="icofont-star"></i></span>
+                                                    <span><i class="icofont-star"></i></span>
+                                                    <span><i class="icofont-star"></i></span>
+                                                    <span><i class="icofont-star"></i></span>
+                                                    <span><i class="icofont-star"></i></span>
                                                 </p>
                                                 <p><a href="#join">Join</a></p>
                                             </div>
@@ -421,11 +421,11 @@ get_header();
                                             </div>
                                             <div class="right">
                                                 <p class="rating">
-                                                    <span><img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                                                    <span><img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                                                    <span><img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                                                    <span><img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                                                    <span><img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
+                                                    <span><i class="icofont-star"></i></span>
+                                                    <span><i class="icofont-star"></i></span>
+                                                    <span><i class="icofont-star"></i></span>
+                                                    <span><i class="icofont-star"></i></span>
+                                                    <span><i class="icofont-star"></i></span>
                                                 </p>
                                                 <p><a href="#join">Join</a></p>
                                             </div>
@@ -478,11 +478,11 @@ get_header();
                                             </div>
                                             <div class="right">
                                                 <p class="rating">
-                                                    <span><img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                                                    <span><img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                                                    <span><img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                                                    <span><img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                                                    <span><img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
+                                                    <span><i class="icofont-star"></i></span>
+                                                    <span><i class="icofont-star"></i></span>
+                                                    <span><i class="icofont-star"></i></span>
+                                                    <span><i class="icofont-star"></i></span>
+                                                    <span><i class="icofont-star"></i></span>
                                                 </p>
                                                 <p><a href="#join">Join</a></p>
                                             </div>
@@ -528,11 +528,11 @@ get_header();
                                             </div>
                                             <div class="right">
                                                 <p class="rating">
-                                                    <span><img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                                                    <span><img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                                                    <span><img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                                                    <span><img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                                                    <span><img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
+                                                    <span><i class="icofont-star"></i></span>
+                                                    <span><i class="icofont-star"></i></span>
+                                                    <span><i class="icofont-star"></i></span>
+                                                    <span><i class="icofont-star"></i></span>
+                                                    <span><i class="icofont-star"></i></span>
                                                 </p>
                                                 <p><a href="#join">Join</a></p>
                                             </div>
@@ -578,11 +578,11 @@ get_header();
                                             </div>
                                             <div class="right">
                                                 <p class="rating">
-                                                    <span><img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                                                    <span><img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                                                    <span><img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                                                    <span><img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                                                    <span><img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
+                                                    <span><i class="icofont-star"></i></span>
+                                                    <span><i class="icofont-star"></i></span>
+                                                    <span><i class="icofont-star"></i></span>
+                                                    <span><i class="icofont-star"></i></span>
+                                                    <span><i class="icofont-star"></i></span>
                                                 </p>
                                                 <p><a href="#join">Join</a></p>
                                             </div>

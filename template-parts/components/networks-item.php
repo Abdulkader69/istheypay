@@ -18,11 +18,11 @@
         <div class="right">
             <p class="sponsored">Sponsored</p>
             <p class="rating">
-                <span><img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                <span><img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                <span><img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                <span><img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                <span><img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
+                <span><i class="icofont-star"></i></span>
+                <span><i class="icofont-star"></i></span>
+                <span><i class="icofont-star"></i></span>
+                <span><i class="icofont-star"></i></span>
+                <span><i class="icofont-star"></i></span>
             </p>
         </div>
     </div>

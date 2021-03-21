@@ -9,11 +9,11 @@
                 <div class="titles">Rachell @<span>AdsMain</span></div>
                 <div class="rat-time">
                     <p class="rating">
-                        <span><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                        <span><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                        <span><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                        <span><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                        <span><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
+                        <span><i class="icofont-star"></i></span>
+                        <span><i class="icofont-star"></i></span>
+                        <span><i class="icofont-star"></i></span>
+                        <span><i class="icofont-star"></i></span>
+                        <span><i class="icofont-star"></i></span>
                     </p>
                     <span>1 day ago</span>
                 </div>
@@ -30,11 +30,11 @@
                 <div class="titles">Rachell @<span>AdsMain</span></div>
                 <div class="rat-time">
                     <p class="rating">
-                        <span><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                        <span><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                        <span><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                        <span><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                        <span><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
+                        <span><i class="icofont-star"></i></span>
+                        <span><i class="icofont-star"></i></span>
+                        <span><i class="icofont-star"></i></span>
+                        <span><i class="icofont-star"></i></span>
+                        <span><i class="icofont-star"></i></span>
                     </p>
                     <span>1 day ago</span>
                 </div>
@@ -51,11 +51,11 @@
                 <div class="titles">Rachell @<span>AdsMain</span></div>
                 <div class="rat-time">
                     <p class="rating">
-                        <span><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                        <span><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                        <span><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                        <span><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                        <span><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
+                        <span><i class="icofont-star"></i></span>
+                        <span><i class="icofont-star"></i></span>
+                        <span><i class="icofont-star"></i></span>
+                        <span><i class="icofont-star"></i></span>
+                        <span><i class="icofont-star"></i></span>
                     </p>
                     <span>1 day ago</span>
                 </div>
@@ -72,11 +72,11 @@
                 <div class="titles">Rachell @<span>AdsMain</span></div>
                 <div class="rat-time">
                     <p class="rating">
-                        <span><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                        <span><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                        <span><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                        <span><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                        <span><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
+                        <span><i class="icofont-star"></i></span>
+                        <span><i class="icofont-star"></i></span>
+                        <span><i class="icofont-star"></i></span>
+                        <span><i class="icofont-star"></i></span>
+                        <span><i class="icofont-star"></i></span>
                     </p>
                     <span>1 day ago</span>
                 </div>
@@ -93,11 +93,11 @@
                 <div class="titles">Rachell @<span>AdsMain</span></div>
                 <div class="rat-time">
                     <p class="rating">
-                        <span><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                        <span><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                        <span><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                        <span><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                        <span><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
+                        <span><i class="icofont-star"></i></span>
+                        <span><i class="icofont-star"></i></span>
+                        <span><i class="icofont-star"></i></span>
+                        <span><i class="icofont-star"></i></span>
+                        <span><i class="icofont-star"></i></span>
                     </p>
                     <span>1 day ago</span>
                 </div>

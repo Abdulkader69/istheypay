@@ -25,8 +25,18 @@ get_header();
                                         foreach ( $categories as $cat ) {
                                             if( $cat->parent == 0 ) {
                                                 echo $cat->name;
-                                            }
+                                            } 
+                                            // if( $cat->parent != 0 ) {
+                                            //     echo $cat->name;
+                                            // }
+                                            // if ( $cat->parent != 0 )  {
+                                            //     $categories[$cat->parent]->child = $cat;   
+                                            // } else {
+                                            //     // record the parent term
+                                            //     $parent = $cat;
+                                            // }
                                         }
+                                        // echo "Order: $parent->name, Family: {$parent->child->name}, Sub-Family: {$parent->child->child->name}";
                                         // echo '<pre>';
                                         // print_r($categories);
                                         // echo '</pre>';
@@ -37,32 +47,67 @@ get_header();
                                         <h1 class="pay-sn-title"><?php the_title(); ?></h1>
                                         <div class="pay-sn-rat-rev-so">
                                             <p class="rating">
-                                                <span><img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                                                <span><img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                                                <span><img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                                                <span><img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-                                                <span><img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
+                                                <span><i class="icofont-star"></i></span>
+                                                <span><i class="icofont-star"></i></span>
+                                                <span><i class="icofont-star"></i></span>
+                                                <span><i class="icofont-star"></i></span>
+                                                <span><i class="icofont-star"></i></span>
                                             </p>
                                             <div class="reviews">
                                                 129 reviews
                                             </div>
                                             <div class="socials-icons">
-                                                <p>
-                                                    <span>Name</span>
-                                                    <img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt="">
-                                                </p>
-                                                <p>
-                                                    <span>Name</span>
-                                                    <img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt="">
-                                                </p>
-                                                <p>
-                                                    <span>Name</span>
-                                                    <img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt="">
-                                                </p>
-                                                <p>
-                                                    <span>Name</span>
-                                                    <img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt="">
-                                                </p>
+                                                <?php $mail = get_field('email'); 
+                                                if( ! $mail == '' ) : ?>
+                                                    <p><a href="mailto:<?php echo $mail; ?>">
+                                                        <i class="icofont-ui-message"></i>
+                                                    </a></p>
+                                                <?php endif; ?>
+                                                
+                                                <?php $networksType = get_field( 'network_program_type' );
+                                                if( '1' == $networksType ) { ?>
+                                                    <?php $website = get_field('afn_network_url'); 
+                                                    if( ! $website == '' ) : ?>
+                                                        <p><a href="<?php echo $website; ?>">
+                                                            <i class="icofont-web"></i>
+                                                        </a></p>
+                                                    <?php endif; ?>
+                                                <?php } elseif( '2' == $networksType ) { ?>
+                                                    <?php $website = get_field('afp_program_url'); 
+                                                    if( ! $website == '' ) : ?>
+                                                        <p><a href="<?php echo $website; ?>">
+                                                            <i class="icofont-web"></i>
+                                                        </a></p>
+                                                    <?php endif; ?>
+                                                <?php } elseif( '3' == $networksType ) { ?>
+                                                    <?php $website = get_field('adn_network_url'); 
+                                                    if( ! $website == '' ) : ?>
+                                                        <p><a href="<?php echo $website; ?>">
+                                                            <i class="icofont-web"></i>
+                                                        </a></p>
+                                                    <?php endif; ?>
+                                                <?php } ?>
+
+                                                <?php $facebook = get_field('facebook'); 
+                                                if( ! $facebook == '' ) : ?>
+                                                    <p><a href="<?php echo $facebook; ?>">
+                                                        <i class="icofont-facebook"></i>
+                                                    </a></p>
+                                                <?php endif; ?>
+
+                                                <?php $twitter = get_field('twitter'); 
+                                                if( ! $twitter == '' ) : ?>
+                                                    <p><a href="<?php echo $twitter; ?>">
+                                                        <i class="icofont-twitter"></i>
+                                                    </a></p>
+                                                <?php endif; ?>
+
+                                                <?php $linkedin = get_field('linkedin'); 
+                                                if( ! $linkedin == '' ) : ?>
+                                                    <p><a href="<?php echo $linkedin; ?>">
+                                                        <i class="icofont-linkedin"></i>
+                                                    </a></p>
+                                                <?php endif; ?>
                                             </div>
                                         </div>
                                         <div class="pay-about-sn">
@@ -85,16 +130,14 @@ get_header();
                                         </div>
                                         <div class="pay-sn-btns">
                                             <span class="write-review-btn">Write a reviews</span>
-                                            <?php 
-                                                $networksType = get_field( 'network_program_type' );
-                                                if( '1' == $networksType ) { ?>
-                                                    <a class="join" target="_blank" href="<?php the_field('afn_network_url'); ?>">Join Now</a>
-                                                <?php } elseif( '2' == $networksType ) { ?>
-                                                    <a class="join" target="_blank" href="<?php the_field('afp_program_url'); ?>">Join Now</a>
-                                                <?php } elseif( '3' == $networksType ) { ?>
-                                                    <a class="join" target="_blank" href="<?php the_field('adn_network_url'); ?>">Join Now</a>
-                                                <?php }
-                                            ?>
+                                            <?php $networksType = get_field( 'network_program_type' );
+                                            if( '1' == $networksType ) { ?>
+                                                <a class="join" target="_blank" href="<?php the_field('afn_network_url'); ?>">Join Now</a>
+                                            <?php } elseif( '2' == $networksType ) { ?>
+                                                <a class="join" target="_blank" href="<?php the_field('afp_program_url'); ?>">Join Now</a>
+                                            <?php } elseif( '3' == $networksType ) { ?>
+                                                <a class="join" target="_blank" href="<?php the_field('adn_network_url'); ?>">Join Now</a>
+                                            <?php } ?>
                                         </div>
                                     </div>
                                     <div class="right">
@@ -123,15 +166,14 @@ get_header();
                                 <div class="left">
                                     <div class="pay-sn-details-title">
                                         <h3>
-                                            <img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt="">
                                             <?php 
                                                 $networksType = get_field( 'network_program_type' );
                                                 if( '1' == $networksType ) { ?>
-                                                    <i class="icofont-ui-game"></i> Affiliate Network Details
+                                                    <i class="icofont-listine-dots"></i> Affiliate Network Details
                                                 <?php } elseif( '2' == $networksType ) { ?>
-                                                    Affiliate Program Details
+                                                    <i class="icofont-listine-dots"></i> Affiliate Program Details
                                                 <?php } elseif( '3' == $networksType ) { ?>
-                                                    Advertising Network Details
+                                                    <i class="icofont-listine-dots"></i> Advertising Network Details
                                                 <?php }
                                             ?>
                                         </h3>
@@ -143,35 +185,35 @@ get_header();
                                                 <div class="pay-sn-details-items-inner aff-networks">
                                                     <div class="pay-snd-item">
                                                         <div class="pay-snd-title"><p>Number of Offers</p></div>
-                                                        <div class="pay-snd-content"><p>1000+</p></div>
+                                                        <div class="pay-snd-content"><p><?php the_field('afn_offers_in_your_network'); ?></p></div>
                                                     </div>
                                                     <div class="pay-snd-item">
                                                         <div class="pay-snd-title"><p>Commission Type</p></div>
-                                                        <div class="pay-snd-content"><p>CPA, CPL, CPI, CPS</p></div>
+                                                        <div class="pay-snd-content"><p><?php the_field('afn_commission_type'); ?></p></div>
                                                     </div>
                                                     <div class="pay-snd-item">
                                                         <div class="pay-snd-title"><p>Minimum Payment</p></div>
-                                                        <div class="pay-snd-content"><p>$50</p></div>
+                                                        <div class="pay-snd-content"><p><?php the_field('afn_minimum_payment'); ?></p></div>
                                                     </div>
                                                     <div class="pay-snd-item">
                                                         <div class="pay-snd-title"><p>Payment Frequency</p></div>
-                                                        <div class="pay-snd-content"><p>Weekly, Net-30</p></div>
+                                                        <div class="pay-snd-content"><p><?php the_field('afn_payment_frequency'); ?></p></div>
                                                     </div>
                                                     <div class="pay-snd-item">
                                                         <div class="pay-snd-title"><p>Payment Method</p></div>
-                                                        <div class="pay-snd-content"><p>PayPal, Payoneer, Wire, Check, ACH</p></div>
+                                                        <div class="pay-snd-content"><p><?php the_field('afn_payment_method'); ?></p></div>
                                                     </div>
                                                     <div class="pay-snd-item">
                                                         <div class="pay-snd-title"><p>Referral Commission</p></div>
-                                                        <div class="pay-snd-content"><p>10%</p></div>
+                                                        <div class="pay-snd-content"><p><?php the_field('afn_referral_commission'); ?></p></div>
                                                     </div>
                                                     <div class="pay-snd-item">
                                                         <div class="pay-snd-title"><p>Tracking Software</p></div>
-                                                        <div class="pay-snd-content"><p>In-house proprietary platform and Custom content locking</p></div>
+                                                        <div class="pay-snd-content"><p><?php the_field('afn_affiliate_tracking_software'); ?></p></div>
                                                     </div>
                                                     <div class="pay-snd-item">
                                                         <div class="pay-snd-title"><p>Tracking Link</p></div>
-                                                        <div class="pay-snd-content"><p>N/A</p></div>
+                                                        <div class="pay-snd-content"><p><?php //the_field('afn_commission_type'); ?></p></div>
                                                     </div>
                                                     <div class="pay-snd-item">
                                                         <div class="pay-snd-title"><p>Affiliate Managers</p></div>
@@ -199,35 +241,35 @@ get_header();
                                                 <div class="pay-sn-details-items-inner aff-program">
                                                     <div class="pay-snd-item">
                                                         <div class="pay-snd-title"><p>Number of Offers</p></div>
-                                                        <div class="pay-snd-content"><p>1000+</p></div>
+                                                        <div class="pay-snd-content"><p><?php //the_field('afn_affiliate_tracking_software'); ?></p></div>
                                                     </div>
                                                     <div class="pay-snd-item">
                                                         <div class="pay-snd-title"><p>Commission Type</p></div>
-                                                        <div class="pay-snd-content"><p>CPA, CPL, CPI, CPS</p></div>
+                                                        <div class="pay-snd-content"><p><?php the_field('afp_base_commission'); ?></p></div>
                                                     </div>
                                                     <div class="pay-snd-item">
                                                         <div class="pay-snd-title"><p>Minimum Payment</p></div>
-                                                        <div class="pay-snd-content"><p>$50</p></div>
+                                                        <div class="pay-snd-content"><p><?php the_field('afp_minimum_payment'); ?></p></div>
                                                     </div>
                                                     <div class="pay-snd-item">
                                                         <div class="pay-snd-title"><p>Payment Frequency</p></div>
-                                                        <div class="pay-snd-content"><p>Weekly, Net-30</p></div>
+                                                        <div class="pay-snd-content"><p><?php the_field('afp_payment_frequency'); ?></p></div>
                                                     </div>
                                                     <div class="pay-snd-item">
                                                         <div class="pay-snd-title"><p>Payment Method</p></div>
-                                                        <div class="pay-snd-content"><p>PayPal, Payoneer, Wire, Check, ACH</p></div>
+                                                        <div class="pay-snd-content"><p><?php the_field('afp_payment_method'); ?></p></div>
                                                     </div>
                                                     <div class="pay-snd-item">
                                                         <div class="pay-snd-title"><p>Referral Commission</p></div>
-                                                        <div class="pay-snd-content"><p>10%</p></div>
+                                                        <div class="pay-snd-content"><p><?php the_field('afp_sub-affiliate'); ?></p></div>
                                                     </div>
                                                     <div class="pay-snd-item">
                                                         <div class="pay-snd-title"><p>Tracking Software</p></div>
-                                                        <div class="pay-snd-content"><p>In-house proprietary platform and Custom content locking</p></div>
+                                                        <div class="pay-snd-content"><p><?php the_field('afp_affiliate_tracking'); ?></p></div>
                                                     </div>
                                                     <div class="pay-snd-item">
                                                         <div class="pay-snd-title"><p>Tracking Link</p></div>
-                                                        <div class="pay-snd-content"><p>N/A</p></div>
+                                                        <div class="pay-snd-content"><p><?php //the_field('afn_affiliate_tracking_software'); ?></p></div>
                                                     </div>
                                                     <div class="pay-snd-item">
                                                         <div class="pay-snd-title"><p>Affiliate Managers</p></div>
@@ -253,39 +295,67 @@ get_header();
                                                 </div>
                                             <?php } elseif( '3' == $networksType ) { ?>
                                                 <div class="pay-sn-details-items-inner aff-advertise">
+
                                                     <div class="inner-title"><p>For Publisher</p></div>
-                                                    <div class="pay-snd-item">
-                                                        <div class="pay-snd-title"><p>Number of Offers</p></div>
-                                                        <div class="pay-snd-content"><p>1000+</p></div>
-                                                    </div>
+
                                                     <div class="pay-snd-item">
                                                         <div class="pay-snd-title"><p>Commission Type</p></div>
-                                                        <div class="pay-snd-content"><p>CPA, CPL, CPI, CPS</p></div>
+                                                        <div class="pay-snd-content"><p><?php the_field('adn_fp_commission_type'); ?></p></div>
                                                     </div>
                                                     <div class="pay-snd-item">
                                                         <div class="pay-snd-title"><p>Minimum Payment</p></div>
-                                                        <div class="pay-snd-content"><p>$50</p></div>
+                                                        <div class="pay-snd-content"><p><?php the_field('adn_fp_minimum_payment'); ?></p></div>
                                                     </div>
                                                     <div class="pay-snd-item">
                                                         <div class="pay-snd-title"><p>Payment Frequency</p></div>
-                                                        <div class="pay-snd-content"><p>Weekly, Net-30</p></div>
+                                                        <div class="pay-snd-content"><p><?php the_field('adn_fp_payment_frequency'); ?></p></div>
                                                     </div>
                                                     <div class="pay-snd-item">
                                                         <div class="pay-snd-title"><p>Payment Method</p></div>
-                                                        <div class="pay-snd-content"><p>PayPal, Payoneer, Wire, Check, ACH</p></div>
+                                                        <div class="pay-snd-content"><p><?php the_field('adn_fp_payment_method'); ?></p></div>
                                                     </div>
                                                     <div class="pay-snd-item">
                                                         <div class="pay-snd-title"><p>Referral Commission</p></div>
-                                                        <div class="pay-snd-content"><p>10%</p></div>
+                                                        <div class="pay-snd-content"><p><?php the_field('adn_fp_referral_commission'); ?></p></div>
                                                     </div>
+                                                    <div class="pay-snd-item">
+                                                        <div class="pay-snd-title"><p>Top Vertical</p></div>
+                                                        <div class="pay-snd-content"><p><?php the_field('afn_top_verticals'); ?></p></div>
+                                                    </div>
+
                                                     <div class="inner-title"><p>For Advertiser</p></div>
+
                                                     <div class="pay-snd-item">
-                                                        <div class="pay-snd-title"><p>Tracking Software</p></div>
-                                                        <div class="pay-snd-content"><p>In-house proprietary platform and Custom content locking</p></div>
+                                                        <div class="pay-snd-title"><p>Ad Format</p></div>
+                                                        <div class="pay-snd-content"><p><?php the_field('adn_fa_ad_format'); ?></p></div>
                                                     </div>
                                                     <div class="pay-snd-item">
-                                                        <div class="pay-snd-title"><p>Tracking Link</p></div>
-                                                        <div class="pay-snd-content"><p>N/A</p></div>
+                                                        <div class="pay-snd-title"><p>Cost Model</p></div>
+                                                        <div class="pay-snd-content"><p><?php the_field('adn_fa_cost_model'); ?></p></div>
+                                                    </div>
+                                                    <div class="pay-snd-item">
+                                                        <div class="pay-snd-title"><p>Minimum Deposit </p></div>
+                                                        <div class="pay-snd-content"><p><?php the_field('adn_fa_minimum_deposit'); ?></p></div>
+                                                    </div>
+                                                    <div class="pay-snd-item">
+                                                        <div class="pay-snd-title"><p>Payment Method </p></div>
+                                                        <div class="pay-snd-content"><p><?php the_field('adn_fa_payment_method'); ?></p></div>
+                                                    </div>
+                                                    <div class="pay-snd-item">
+                                                        <div class="pay-snd-title"><p>Referral Commission </p></div>
+                                                        <div class="pay-snd-content"><p><?php the_field('adn_fa_referral_commission'); ?></p></div>
+                                                    </div>
+                                                    <div class="pay-snd-item">
+                                                        <div class="pay-snd-title"><p>Daily Impression </p></div>
+                                                        <div class="pay-snd-content"><p><?php the_field('adn_fa_daily_impression'); ?></p></div>
+                                                    </div>
+                                                    <div class="pay-snd-item">
+                                                        <div class="pay-snd-title"><p>Top GEO</p></div>
+                                                        <div class="pay-snd-content"><p><?php the_field('adn_fa_top_geo'); ?></p></div>
+                                                    </div>
+                                                    <div class="pay-snd-item">
+                                                        <div class="pay-snd-title"><p>Top Vertical</p></div>
+                                                        <div class="pay-snd-content"><p><?php the_field('adn_fa_top_vertical'); ?></p></div>
                                                     </div>
                                                     <div class="pay-snd-item">
                                                         <div class="pay-snd-title"><p>Affiliate Managers</p></div>
@@ -335,6 +405,26 @@ get_header();
                                     </div>
                                 </div>
                             </div>
+                            
+                            <?php 
+                            $networksType = get_field( 'network_program_type' );
+                            if( '3' == $networksType ) { ?>
+                                <?php $targetOptimize = get_field('adn_fa_targeting_optimization');
+                                if( $targetOptimize ): ?>
+                                    <div class="pay-sn-d-target-optimize-wrap">
+                                        <div class="pay-sn-details-title">
+                                            <h3>
+                                                <i class="icofont-listine-dots"></i> Targeting & Optimization
+                                            </h3>
+                                        </div>
+                                        <ul>
+                                            <?php foreach( $targetOptimize as $TO ): ?>
+                                                <li><?php echo $TO ?> <i class="icofont-check"></i></li>
+                                            <?php endforeach; ?>
+                                        </ul>
+                                    </div>
+                                <?php endif; ?>
+                            <?php } ?>
 
                             <div class="pay-sn-networks-reviews-wrapper">
                                 <div class="pay-sn-reviews-row">

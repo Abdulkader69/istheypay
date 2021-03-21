@@ -26,16 +26,50 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 						<div class="thumbnail">
 							<img src="<?php echo get_the_post_thumbnail_url( $network_of_month->ID, 'full' ); ?>" alt="<?php $network_of_month->post_title; ?>">
 						</div>
-						<div class="nm-review-slide-wrap">
+						<div class="nm-review-slide-wrap owl-carousel">
 							<div class="nm-review-slide-item">
 								<a href="<?php the_permalink( $network_of_month->ID ) ?>">
 									<div class="top-info">
 										<p class="rating">
-											<span><img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-											<span><img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-											<span><img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-											<span><img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
-											<span><img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/star.svg" alt=""></span>
+											<span><i class="icofont-star"></i></span>
+											<span><i class="icofont-star"></i></span>
+											<span><i class="icofont-star"></i></span>
+											<span><i class="icofont-star"></i></span>
+											<span><i class="icofont-star"></i></span>
+										</p>
+										<p>Omer</p>
+									</div>
+									<div class="review-coment">
+										<p>Really nice crypto cpa network. Nice offers and nice support. I recommend Algo-Affiliates.</p>
+									</div>
+								</a>
+							</div>
+							<div class="nm-review-slide-item">
+								<a href="<?php the_permalink( $network_of_month->ID ) ?>">
+									<div class="top-info">
+										<p class="rating">
+											<span><i class="icofont-star"></i></span>
+											<span><i class="icofont-star"></i></span>
+											<span><i class="icofont-star"></i></span>
+											<span><i class="icofont-star"></i></span>
+											<span><i class="icofont-star"></i></span>
+										</p>
+										<p>Omer</p>
+									</div>
+									<div class="review-coment">
+										<p>Really nice crypto cpa network. Nice offers and nice support. I recommend Algo-Affiliates.</p>
+									</div>
+								</a>
+							</div>
+							<div class="nm-review-slide-item">
+								<a href="<?php the_permalink( $network_of_month->ID ) ?>">
+									<div class="top-info">
+										<p class="rating">
+											<span><i class="icofont-star"></i></span>
+											<span><i class="icofont-star"></i></span>
+											<span><i class="icofont-star"></i></span>
+											<span><i class="icofont-star"></i></span>
+											<span><i class="icofont-star"></i></span>
 										</p>
 										<p>Omer</p>
 									</div>

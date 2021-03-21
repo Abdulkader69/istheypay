@@ -166,6 +166,16 @@
         
         });
 
+        // Sidebar Reviews Sliders
+        $('.nm-review-slide-wrap').owlCarousel({
+            items: 1,
+            loop: true,
+            autoplay: true,
+            dots: false,
+            nav: false,
+            smartSpeed: 1000,
+        });
+
 
     }); //Document Ready
 })(jQuery);
