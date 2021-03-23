@@ -2421,6 +2421,15 @@ ul#stars li.star.selected i {
         padding: 10px 14px;
         font-size: 13px;
     }
+    /* home */
+    .pay-home-top-section {
+        flex-flow: column-reverse;
+    }
+    .pay-home-top-section .pay-top-five-networks, 
+    .pay-home-top-section .pay-blog-slider-wrap {
+        width: 100%;
+    }
+    /* home */
     /* Header */
     /* sidebar */
     .pay-left {
@@ -2653,6 +2662,17 @@ ul#stars li.star.selected i {
 		padding-left: 10px;
 	}
     /* Header */
+    /* Home */
+    .pay-top-five-networks-inner .pay-top-five-left .pay-top-five-title span {
+        font-size: 12px;
+    }
+    .pay-top-five-networks-inner .pay-top-five-left .pay-top-five-title span.logo {
+        margin-right: 8px;
+    }
+    .pay-top-five-networks-inner .pay-top-five-right {
+        width: calc(100% - 140px);
+    }
+    /* Home */
     /* sidebar */
     .pay-left, .pay-right {
         width: 100%;
