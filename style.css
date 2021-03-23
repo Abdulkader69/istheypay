@@ -1612,7 +1612,6 @@ form#add-network-program .add-network-program-item .select2-container {
     justify-content: center;
 }
 .chart canvas {
-=======
     /*   width: 90%; */
     height: 100%;
     text-align: center;
@@ -1626,7 +1625,6 @@ form#add-network-program .add-network-program-item .select2-container {
     margin-top: 30px;
 }
 .rating-chart canvas {
->>>>>>> sazol
     position: absolute;
     top: -5px;
     left: -5px;
