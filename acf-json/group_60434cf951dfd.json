@@ -1124,7 +1124,7 @@
         {
             "key": "field_6049e76a92bee",
             "label": "Affiliate Support Team",
-            "name": "afp_aa_contacts",
+            "name": "afp_as_team",
             "type": "repeater",
             "instructions": "",
             "required": 0,
@@ -1190,8 +1190,8 @@
         },
         {
             "key": "field_6049f1e98ed7d",
-            "label": "Publishers Contact",
-            "name": "adn_fp_contact",
+            "label": "Publishers Contacts",
+            "name": "adn_fp_contacts",
             "type": "repeater",
             "instructions": "",
             "required": 0,
@@ -1498,8 +1498,8 @@
         },
         {
             "key": "field_6049fb1e150dc",
-            "label": "Advertisers Contact",
-            "name": "adn_fa_contact",
+            "label": "Advertisers Contacts",
+            "name": "adn_fa_contacts",
             "type": "repeater",
             "instructions": "",
             "required": 0,
@@ -1712,5 +1712,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1615790105
+    "modified": 1616494625
 }

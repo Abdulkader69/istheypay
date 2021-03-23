@@ -1,4 +1,4 @@
-<div class="fade" id="add-network-program">
+<div class="fade">
     <div class="modal-dialog modal-pay">
         <div class="modal-content">
             <div class="modal-header">
@@ -244,66 +244,62 @@
                         <div class="error-wrapper"></div>
                     </div>
 
-                    <div class="add-network-program-item afn-field">
+                    <div class="add-network-program-item afn-field afn_aa_contacts-repeater">
                         <label for="afn_aa_contacts">Affiliate/Advertiser Contacts
-                            <span id="add-more">+ Add</span>
+                            <span class="add-more">+ Add</span>
                         </label>
-                        <input type="hidden" name="afn_aa_contacts">
                         <div class="aff-contact">
                             <div class="add-network-program-item-sub">
                                 <div class="repeater-item">
-                                    <input type="text" class="repeater_name" name="afn_aa_contacts_name"
-                                           placeholder="Name">
+                                    <input type="text" class="repeater_name" placeholder="Name">
                                     <div class="error-wrapper"></div>
                                 </div>
                                 <div class="repeater-item">
-                                    <input type="text" class="repeater_email" name="afn_aa_contacts_email"
+                                    <input type="text" class="repeater_email"
                                            placeholder="ex: Email:abc@abc.com, skype:abcde">
                                     <div class="error-wrapper"></div>
                                 </div>
-                                <span id="close">-</span>
+                                <span class="itp-close">-</span>
                             </div>
                         </div>
                     </div>
-                    <div class="add-network-program-item afp-field">
-                        <label for="afp_aa_contacts">Affiliate Support Team
-                            <span id="add-more">+ Add</span>
+
+                    <div class="add-network-program-item afp-field afp_as_team-repeater">
+                        <label for="afp_as_team">Affiliate Support Team
+                            <span class="add-more">+ Add</span>
                         </label>
-                        <input type="hidden" name="afp_aa_contacts">
                         <div class="aff-contact">
                             <div class="add-network-program-item-sub">
                                 <div class="repeater-item">
-                                    <input type="text" class="repeater_name" name="afn_aa_contacts_name"
-                                           placeholder="Name">
+                                    <input type="text" class="repeater_name" placeholder="Name">
                                     <div class="error-wrapper"></div>
                                 </div>
                                 <div class="repeater-item">
-                                    <input type="text" class="repeater_email" name="afn_aa_contacts_email"
+                                    <input type="text" class="repeater_email"
                                            placeholder="ex: Email:abc@abc.com, skype:abcde">
                                     <div class="error-wrapper"></div>
                                 </div>
-                                <span id="close">-</span>
+                                <span class="itp-close">-</span>
                             </div>
                         </div>
                     </div>
-                    <div class="add-network-program-item afp-field">
-                        <label for="adn_fp_contact">Publishers Contact
-                            <span id="add-more">+ Add</span>
+
+                    <div class="add-network-program-item adn-field adn_fp_contacts-repeater">
+                        <label for="adn_fp_contacts">Publishers Contact
+                            <span class="add-more">+ Add</span>
                         </label>
-                        <input type="hidden" name="adn_fp_contact">
                         <div class="aff-contact">
                             <div class="add-network-program-item-sub">
                                 <div class="repeater-item">
-                                    <input type="text" class="repeater_name" name="afn_aa_contacts_name"
-                                           placeholder="Name">
+                                    <input type="text" class="repeater_name" placeholder="Name">
                                     <div class="error-wrapper"></div>
                                 </div>
                                 <div class="repeater-item">
-                                    <input type="text" class="repeater_email" name="afn_aa_contacts_email"
+                                    <input type="text" class="repeater_email"
                                            placeholder="ex: Email:abc@abc.com, skype:abcde">
                                     <div class="error-wrapper"></div>
                                 </div>
-                                <span id="close">-</span>
+                                <span class="itp-close">-</span>
                             </div>
                         </div>
                     </div>
@@ -361,24 +357,22 @@
                         <div class="error-wrapper"></div>
                     </div>
 
-                    <div class="add-network-program-item adn-field">
-                        <label for="adn_fa_contact">Publishers Contact
-                            <span id="add-more">+ Add</span>
+                    <div class="add-network-program-item adn-field adn_fa_contacts-repeater">
+                        <label for="adn_fa_contacts">Advertisers Contact
+                            <span class="add-more">+ Add</span>
                         </label>
-                        <input type="hidden" name="adn_fa_contact">
                         <div class="aff-contact">
                             <div class="add-network-program-item-sub">
                                 <div class="repeater-item">
-                                    <input type="text" class="repeater_name" name="afn_aa_contacts_name"
-                                           placeholder="Name">
+                                    <input type="text" class="repeater_name" placeholder="Name">
                                     <div class="error-wrapper"></div>
                                 </div>
                                 <div class="repeater-item">
-                                    <input type="text" class="repeater_email" name="afn_aa_contacts_email"
+                                    <input type="text" class="repeater_email"
                                            placeholder="ex: Email:abc@abc.com, skype:abcde">
                                     <div class="error-wrapper"></div>
                                 </div>
-                                <span id="close">-</span>
+                                <span class="itp-close">-</span>
                             </div>
                         </div>
                     </div>
@@ -387,81 +381,80 @@
                         <div class="label">Targeting & Optimization</div>
                         <div class="checkbox-wrap">
                             <label class="checkbox-item">
-                                <input type="checkbox" name="adn_fa_targeting_optimization" value="1">
+                                <input type="checkbox" name="adn_fa_targeting_optimization[]" value="1">
                                 Self-serve Platform
                             </label>
                             <label>
-                                <input type="checkbox" name="adn_fa_targeting_optimization" value="2">
+                                <input type="checkbox" name="adn_fa_targeting_optimization[]" value="2">
                                 GEO Targeting
                             </label>
                             <label>
-                                <input type="checkbox" name="adn_fa_targeting_optimization" value="3">
+                                <input type="checkbox" name="adn_fa_targeting_optimization[]" value="3">
                                 Device Targeting</label>
                             <label>
-                                <input type="checkbox" name="adn_fa_targeting_optimization" value="4">
+                                <input type="checkbox" name="adn_fa_targeting_optimization[]" value="4">
                                 OS Targeting</label>
                             <label>
-                                <input type="checkbox" name="adn_fa_targeting_optimization" value="5">
+                                <input type="checkbox" name="adn_fa_targeting_optimization[]" value="5">
                                 ISP/Carrier Targeting</label>
                             <label>
-                                <input type="checkbox" name="adn_fa_targeting_optimization" value="6">
+                                <input type="checkbox" name="adn_fa_targeting_optimization[]" value="6">
                                 Browser Targeting
                             </label>
                             <label>
-                                <input type="checkbox" name="adn_fa_targeting_optimization" value="7">
+                                <input type="checkbox" name="adn_fa_targeting_optimization[]" value="7">
                                 IP Targeting
                             </label>
                             <label>
-                                <input type="checkbox" name="adn_fa_targeting_optimization" value="8">
+                                <input type="checkbox" name="adn_fa_targeting_optimization[]" value="8">
                                 Website Targeting
                             </label>
                             <label>
-                                <input type="checkbox" name="adn_fa_targeting_optimization" value="9">
+                                <input type="checkbox" name="adn_fa_targeting_optimization[]" value="9">
                                 Language Targeting
                             </label>
                             <label>
-                                <input type="checkbox" name="adn_fa_targeting_optimization" value="10">
+                                <input type="checkbox" name="adn_fa_targeting_optimization[]" value="10">
                                 Time Targeting
                             </label>
-
                             <label>
-                                <input type="checkbox" name="adn_fa_targeting_optimization" value="11">
+                                <input type="checkbox" name="adn_fa_targeting_optimization[]" value="11">
                                 Category Targeting
                             </label>
                             <label>
-                                <input type="checkbox" name="adn_fa_targeting_optimization" value="12">
+                                <input type="checkbox" name="adn_fa_targeting_optimization[]" value="12">
                                 Demographic Targeting
                             </label>
                             <label>
-                                <input type="checkbox" name="adn_fa_targeting_optimization" value="13">
+                                <input type="checkbox" name="adn_fa_targeting_optimization[]" value="13">
                                 Retargeting
                             </label>
                             <label>
-                                <input type="checkbox" name="adn_fa_targeting_optimization" value="14">
+                                <input type="checkbox" name="adn_fa_targeting_optimization[]" value="14">
                                 Black/White List
                             </label>
                             <label>
-                                <input type="checkbox" name="adn_fa_targeting_optimization" value="15">
+                                <input type="checkbox" name="adn_fa_targeting_optimization[]" value="15">
                                 Frequency Capping
                             </label>
                             <label>
-                                <input type="checkbox" name="adn_fa_targeting_optimization" value="16">
+                                <input type="checkbox" name="adn_fa_targeting_optimization[]" value="16">
                                 Token
                             </label>
                             <label>
-                                <input type="checkbox" name="adn_fa_targeting_optimization" value="17">
+                                <input type="checkbox" name="adn_fa_targeting_optimization[]" value="17">
                                 Anti-Fraud
                             </label>
                             <label>
-                                <input type="checkbox" name="adn_fa_targeting_optimization" value="18">
+                                <input type="checkbox" name="adn_fa_targeting_optimization[]" value="18">
                                 Adult Ads
                             </label>
                             <label>
-                                <input type="checkbox" name="adn_fa_targeting_optimization" value="19">
+                                <input type="checkbox" name="adn_fa_targeting_optimization[]" value="19">
                                 Gambling Ads
                             </label>
                             <label>
-                                <input type="checkbox" name="adn_fa_targeting_optimization" value="20">
+                                <input type="checkbox" name="adn_fa_targeting_optimization[]" value="20">
                                 Personal Account Manager
                             </label>
                         </div>
