@@ -11,7 +11,9 @@ get_header();
             <div class="row">
                 <div class="col-lg-12 pay-main-content-wrapper">
                     <div class="pay-left">
-						<?php get_template_part( 'template-parts/components/add-network', 'program' ); ?>
+						<div class="add-new-networks-form-wrapper">
+                            <?php get_template_part( 'template-parts/components/add-network', 'program' ); ?>
+                        </div>
                     </div>
 					<?php get_sidebar(); ?>
                 </div>

@@ -852,6 +852,69 @@ form#add-network-program {
     position: relative;
     margin-top: 30px;
 }
+.add-new-networks-form-wrapper {
+    padding: 25px 30px 50px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.16);
+}
+.add-new-networks-form-wrapper .modal-header h4 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: 500;
+}
+.add-new-networks-form-wrapper .modal-header p {
+    font-size: 14px;
+}
+form#add-network-program .add-network-program-item .add-network-program-item-sub {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    margin: 10px 0;
+}
+form#add-network-program .add-network-program-item .add-network-program-item-sub .repeater-item:first-child {
+    width: 40%;
+    padding-right: 10px;
+}
+form#add-network-program .add-network-program-item .add-network-program-item-sub .repeater-item:nth-child(2) {
+    width: 60%;
+}
+form#add-network-program .add-network-program-item .add-network-program-item-sub span.itp-close {
+    position: absolute;
+    right: -14px;
+    font-size: 35px;
+    line-height: 1;
+    cursor: pointer;
+}
+form#add-network-program .add-network-program-item .add-network-program-item-sub:first-child span.itp-close {
+    display: none;
+}
+form#add-network-program .add-network-program-item .add-network-program-item-sub:first-child {
+    margin-top: 5px;
+}
+form#add-network-program h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    margin-top: 30px;
+}
+form#add-network-program .add-network-program-item .checkbox-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+form#add-network-program .add-network-program-item .checkbox-wrap label {
+    width: 50%;
+    padding-right: 80px;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row-reverse;
+    max-width: 320px;
+    font-size: 14px;
+    margin: 6px 0;
+}
+form#add-network-program .add-network-program-item .checkbox-wrap label input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+}
 form#add-network-program .add-network-program-item {
     position: relative;
     margin-bottom: 20px;
@@ -873,6 +936,13 @@ form#add-network-program .add-network-program-item select {
     color: #000;
     font-size: 14px;
     padding: 3px 10px;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+form#add-network-program .add-network-program-item input:focus,
+form#add-network-program .add-network-program-item textarea:focus,
+form#add-network-program .add-network-program-item select:focus {
+    border-color:rgba(247,51,69);
 }
 .modal .modal-dialog .modal-header {
     position: relative;
@@ -1612,19 +1682,6 @@ form#add-network-program .add-network-program-item .select2-container {
     justify-content: center;
 }
 .chart canvas {
-    /*   width: 90%; */
-    height: 100%;
-    text-align: center;
-    /*   font-size: 40px; */
-    line-height: 160px;
-    height: 155px;
-    width: 155px;
-    color: #fff;
-    border-radius: 50%;
-    border: 1px solid red;
-    margin-top: 30px;
-}
-.rating-chart canvas {
     position: absolute;
     top: -5px;
     left: -5px;
@@ -2027,7 +2084,7 @@ form#add-network-program .add-network-program-item .select2-container {
     padding: 10px 10px 0;
     margin-bottom: 20px;
 }
-@media only screen and (min-width: 768px) {
+/* @media only screen and (min-width: 768px) {
     button.hamburger {
         display: none;
     }
@@ -2093,7 +2150,7 @@ form#add-network-program .add-network-program-item .select2-container {
     .pay-main-menu .col-md-12 {
         padding: 0;
     }
-}
+} */
 .pay-sn-top-section .pay-sn-categories {
     position: relative;
     padding-bottom: 10px;
@@ -3010,6 +3067,11 @@ ul#stars li.star.selected i {
         font-size: 13px;
     }
     /* Single Networks */
+    /* Add Network Networks */
+    form#add-network-program .add-network-program-item .checkbox-wrap label {
+        padding-right: 30px;
+    }
+    /* Add Network Networks */
 }
 @media only screen and (max-width: 767px) {
     /* Header */
@@ -3200,6 +3262,11 @@ ul#stars li.star.selected i {
         font-size: 20px;
     }
     /* Review Form */
+    /* Add Network Form */
+    .add-new-networks-form-wrapper {
+        padding: 20px 20px 54px;
+    }
+    /* Add Network Form */
 }
 @media only screen and (max-width: 575px) {
     /* Modal Popup */
@@ -3320,6 +3387,12 @@ ul#stars li.star.selected i {
         width: 100%;
     }
     /* Review form */
+    /* Add Network form */
+    form#add-network-program .add-network-program-item .checkbox-wrap label {
+        width: 100%;
+        padding-right: 0;
+    }
+    /* Add Network form */
 }
 @media only screen and (max-width: 400px) {
     form#add-network-program .add-network-program-item.aff-contact-info .add-network-program-item-sub input#aff-contact-name {

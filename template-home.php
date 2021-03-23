@@ -71,8 +71,9 @@ get_header();
                             </div>
                         </div>
                         <div class="pay-premium-networks-section">
-                            <div class="pay-premium-networks-wrap">
-                                <!-- <div class="pay-premium-networks-top">
+                            <?php echo do_shortcode( '[pay_premium_networks_shortcodes]' ); ?>
+                            <!-- <div class="pay-premium-networks-wrap">
+                                <div class="pay-premium-networks-top">
                                     <form action="">
                                         <div class="pay-title-bar">
                                             <h2 class="title">Premium Networks</h2>
@@ -124,7 +125,7 @@ get_header();
                                         </div>
                                     </form>
                                     <div class="pay-ads-area"></div>
-                                </div> -->
+                                </div>
                                 <h2 class="home-networks-title">Premium Networks</h2>
                                 <div class="pay-premium-networks-posts">
                                     <div class="pay-premium-network-item">
@@ -140,11 +141,11 @@ get_header();
                                                     <p class="title"><a href="#networks">DatingGold</a></p>
                                                     <div class="categories">
                                                         <p>
-                                                            <img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/love.svg" alt="">
+                                                            <img width="15px" height="15px" src="<?php //bloginfo('stylesheet_directory'); ?>/assets/images/love.svg" alt="">
                                                             <span>Dating</span>
                                                         </p>
                                                         <p>
-                                                            <img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/plus-18-movie.svg" alt="">
+                                                            <img width="15px" height="15px" src="<?php //bloginfo('stylesheet_directory'); ?>/assets/images/plus-18-movie.svg" alt="">
                                                             <span>Adult</span>
                                                         </p>
                                                     </div>
@@ -190,11 +191,11 @@ get_header();
                                                     <p class="title"><a href="#networks">DatingGold</a></p>
                                                     <div class="categories">
                                                         <p>
-                                                            <img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/love.svg" alt="">
+                                                            <img width="15px" height="15px" src="<?php //bloginfo('stylesheet_directory'); ?>/assets/images/love.svg" alt="">
                                                             <span>Dating</span>
                                                         </p>
                                                         <p>
-                                                            <img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/plus-18-movie.svg" alt="">
+                                                            <img width="15px" height="15px" src="<?php //bloginfo('stylesheet_directory'); ?>/assets/images/plus-18-movie.svg" alt="">
                                                             <span>Adult</span>
                                                         </p>
                                                     </div>
@@ -240,11 +241,11 @@ get_header();
                                                     <p class="title"><a href="#networks">DatingGold</a></p>
                                                     <div class="categories">
                                                         <p>
-                                                            <img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/love.svg" alt="">
+                                                            <img width="15px" height="15px" src="<?php //bloginfo('stylesheet_directory'); ?>/assets/images/love.svg" alt="">
                                                             <span>Dating</span>
                                                         </p>
                                                         <p>
-                                                            <img width="15px" height="15px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/plus-18-movie.svg" alt="">
+                                                            <img width="15px" height="15px" src="<?php //bloginfo('stylesheet_directory'); ?>/assets/images/plus-18-movie.svg" alt="">
                                                             <span>Adult</span>
                                                         </p>
                                                     </div>
@@ -278,7 +279,7 @@ get_header();
                                             </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="pay-premium-networks-section">
                             <div class="pay-premium-networks-wrap">
