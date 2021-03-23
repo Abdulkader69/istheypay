@@ -115,7 +115,9 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 				</div>
 			<?php endif; ?>
 
-			<?php get_template_part( 'template-parts/components/recent-reviews', 'sidebar' ); ?>
+			<?php //get_template_part( 'template-parts/components/recent-reviews', 'sidebar' ); 
+				echo do_shortcode( '[pay_review_sidebar_shortcodes]' );
+			?>
 
 			<?php
 			if( have_rows('sidebar_big_ads_2', 'option') ):?>

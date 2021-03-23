@@ -47,6 +47,7 @@
 				</div>
 			<?php endif; ?>
 		</footer>
+		<?php get_template_part( 'template-parts/components/reviews-form', 'popup' ); ?>
 	</div>
 </div>
 

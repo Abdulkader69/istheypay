@@ -33,11 +33,15 @@ get_header();
                                                 <li id="tab-<?php echo $random5Networks->ID; ?>" class="pay-top-five-hover-state">
                                                     <div class="main-logo"><img src="<?php echo get_field( 'networks_logo', $random5Networks->ID ); ?>" alt=""></div>
                                                     <div class="rating-chart">
-                                                        <div class="chart" data-percent="4.5" data-scale-color="red">4.5</div>
+                                                        <?php 
+                                                            $overall_ratting = 3;
+                                                            $rating_for_chart = $overall_ratting * 20;
+                                                        ?>
+                                                        <div class="chart" data-percent="<?php echo $rating_for_chart; ?>" data-scale-color="red"><span><?php echo $overall_ratting; ?></span></div>
                                                     </div>
                                                     <div class="reviews-calc-rat">
                                                         <span>119 Reviews / </span>
-                                                        <span>4.9</span>
+                                                        <span><?php echo $overall_ratting; ?></span>
                                                     </div>
                                                     <div class="btn">
                                                         <a href="<?php echo $permalink; ?>">Details</a>

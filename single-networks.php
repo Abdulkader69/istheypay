@@ -387,7 +387,11 @@ get_header();
                                     <div class="pay-snd-rat-distribution">
                                         <h3 class="rat-dist-title">Rating Distribution</h3>
                                         <div class="rat-dist-chart">
-                                            <div class="chart" data-percent="4.5" data-scale-color="red">4.5</div>
+                                            <?php 
+                                                $overall_ratting = 3;
+                                                $rating_for_chart = $overall_ratting * 20;
+                                            ?>
+                                            <div class="chart" data-percent="<?php echo $rating_for_chart; ?>" data-scale-color="red"><span><?php echo $overall_ratting; ?></span></div>
                                         </div>
                                         <div class="rat-indivi">
                                             <p class="exce"><span class="name">Excellent</span><span class="count">23</span></p>
