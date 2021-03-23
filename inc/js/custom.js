@@ -54,11 +54,25 @@
                 $adnField.find('input').attr('disabled', false);
                 $adnField.find('textarea').attr('disabled', false);
             }
+        }).on('click', '.add-more', function (e) {
+            e.preventDefault();
+            const $repeaterWrapper = $(this).closest('.add-network-program-item').find('.aff-contact');
+            const $repeaterItem = $(this).closest('.add-network-program-item').find('.add-network-program-item-sub').first();
+            $('.repeater-item .error-message').remove();
+            const $newClonedItem = $repeaterItem.clone();
+            $newClonedItem.find('.repeater_name').val('');
+            $newClonedItem.find('.repeater_email').val('');
+            $repeaterWrapper.append($newClonedItem);
+
+        }).on('click', '.itp-close', function (e) {
+            const $totalItems = $(this).closest('.aff-contact').find('.add-network-program-item-sub').length;
+            const $item = $(this).closest('.add-network-program-item-sub');
+            if ($totalItems > 1) {
+                $item.remove();
+            } else {
+                alert('At least 1 item needs to be here!')
+            }
         });
-
-
-
-
 
 
         $('.multiselect-select2').select2({
@@ -130,20 +144,20 @@
         $('.pay-top-five-title:first-child').addClass('current');
         $('.pay-top-five-hover-state:first-child').addClass('current');
         // Pages Top Five Networks Tabs
-        $('.pay-top-five-networks-inner .pay-top-five-left li').hover(function(){
+        $('.pay-top-five-networks-inner .pay-top-five-left li').hover(function () {
             var tab_id = $(this).attr('data-tab');
-    
+
             $('.pay-top-five-networks-inner .pay-top-five-left li').removeClass('current');
             $('.pay-top-five-hover-state').removeClass('current');
-    
+
             $(this).addClass('current');
-            $("#"+tab_id).addClass('current');
+            $("#" + tab_id).addClass('current');
         })
 
 
         var cont = 0
         var initialTime = $('.chart').data('percent');
-        $(function() {
+        $(function () {
             //create instance
             $('.chart').easyPieChart({
                 size: 230,
@@ -155,15 +169,15 @@
                 animate: 1000,
             });
 
-            var interval = setInterval(function() {
-                cont = cont + 0.3
-                $('.chart').data('easyPieChart').update(initialTime + cont);
-                console.log(initialTime + cont)
-                if(initialTime + cont >= 5){
-                    clearInterval(interval)
-                }
-            }, 1000);
-        
+            // var interval = setInterval(function() {
+            //     cont = cont + 0.3
+            //     $('.chart').data('easyPieChart').update(initialTime + cont);
+            //     console.log(initialTime + cont)
+            //     if(initialTime + cont >= 5){
+            //         clearInterval(interval)
+            //     }
+            // }, 1000);
+
         });
 
 
