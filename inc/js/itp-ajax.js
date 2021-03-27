@@ -80,7 +80,7 @@
                 data: formData,
                 beforeSend: function () {
                     $("p.error-message").remove();
-                    $('#add-network-program').append('<div class="loader-spinner"><div>Loading</div></div>');
+                    $('#add-network-program #loading').append('<div class="loader-spinner"></div>');
                 },
                 success: function (res) {
                     $('.loader-spinner').remove();

@@ -252,4 +252,8 @@
         });
 
     }); //Document Ready
+
+    $(window).on('load', function() {
+		$('#preloader').fadeOut('slow');
+	})
 })(jQuery);
