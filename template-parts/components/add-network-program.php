@@ -110,8 +110,8 @@
 
                     <div class="add-network-program-item afp-field">
                         <label for="afp_program_category">Program Category (Dating, Web Hosting, Health & Beauty, Forex,
-                            etc)*</label>
-                        <input type="text" name="afp_program_category" id="afp_program_category" required>
+                            etc)</label>
+                        <input type="text" name="afp_program_category" id="afp_program_category">
                         <div class="error-wrapper"></div>
                     </div>
 
@@ -477,6 +477,7 @@
 
                     <div class="add-network-program-btn">
                         <button type="submit">Submit</button>
+                        <div id="loading"></div>
                     </div>
                 </form>
             </div>
