@@ -18,6 +18,13 @@
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
+<div id="preloader">
+	<div class="preloader-orbit-loading">
+		<div class="cssload-inner cssload-one"></div>
+		<div class="cssload-inner cssload-two"></div>
+		<div class="cssload-inner cssload-three"></div>
+	</div>
+</div>
 <div id="page-container" class="<?php if( get_field('site_layout', 'option') ) : ?>boxed-layout<?php else: ?>fullwidth-layout<?php endif;?>"
 	<?php if( get_field('site_layout', 'option') ) : ?>
 		style="background-image:url(<?php the_field('site_background_images', 'option') ?>);

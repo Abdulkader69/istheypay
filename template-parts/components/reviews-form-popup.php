@@ -120,8 +120,8 @@
                     </div>
 
 					<?php wp_nonce_field( 'review_form_nonce', 'review_wpnonce' ); ?>
-
                     <input type="hidden" name="network_id" value="<?php the_ID(); ?>"/>
+
                     <div class="review-submit-btn">
                         <button type="submit">Submit Review</button>
                     </div>
