@@ -201,3 +201,4 @@ function searchfilter( $query ) {
 add_filter( 'pre_get_posts', 'searchfilter' );
 
 require get_template_directory() . '/inc/helpers/network.php';
+require get_template_directory() . '/inc/helpers/review.php';

@@ -61,7 +61,7 @@
             </div>
         </div>
         <div class="right">
-            <p class="ovarall-rating-count">4.95</p>
+            <p class="overall-rating-count">4.95</p>
         </div>
     </div>
 </div>

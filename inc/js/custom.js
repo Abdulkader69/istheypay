@@ -118,16 +118,6 @@
             $(this).next('ul.sub-menu').slideToggle();
         });
 
-        // Add dynamacally add fields
-        $("#add-more").click(function (e) {
-            $("#aff-contact").append(
-                '<div class="add-network-program-item-sub"><input type="text" name="aff-contact-name" id="aff-contact-name" placeholder="Name"><input type="text" name="aff-contacts-info" id="aff-contacts-info" placeholder="ex: Email:abc@abc.com, skype:abcde"><span id="close">-</span></div>'
-            );
-        });
-        $("body").on("click", ".add-network-program-item-sub span#close", function (e) {
-            $(this).parent().remove();
-        });
-
         // Pages Blogs Sliders
         $('.pay-blog-slider-wrapper').owlCarousel({
             items: 1,
@@ -179,12 +169,10 @@
             smartSpeed: 1000,
         });
 
-        
         // Submit Review Form Active/ Deactive
         $("body").on("click", ".pay-sn-btns .write-review-btn", function (e) {
             $('#reviews-form-popup').addClass('active');
-        });
-        $("body").on("click", "#reviews-form-popup span#close", function (e) {
+        }).on("click", "#reviews-form-popup span#close", function (e) {
             $('#reviews-form-popup').removeClass('active');
         });
 
@@ -192,83 +180,75 @@
         function readURL(input) {
             if (input.files && input.files[0]) {
                 var reader = new FileReader();
-                reader.onload = function(e) {
-                $('#image-preview').attr('src', e.target.result);
-                $('#image-preview').hide();
-                $('#image-preview').fadeIn(650);
+                reader.onload = function (e) {
+                    $('#image-preview').attr('src', e.target.result);
+                    $('#image-preview').hide();
+                    $('#image-preview').fadeIn(650);
                 }
                 reader.readAsDataURL(input.files[0]);
             }
         }
-        $("#file-input").change(function() {
+
+        $("#file-input").change(function () {
             readURL(this);
         });
 
         // Rating System 
         /* 1. Visualizing things on Hover - See next part for action on click */
-        $('.pay-rat li').on('mouseover', function(){
+        $('.pay-rat li').on('mouseover', function () {
             var onStar = parseInt($(this).data('value'), 10); // The star currently mouse on
-            
+
             // Now highlight all the stars that's not after the current hovered star
-            $(this).parent().children('li.pay-rat-li').each(function(e){
+            $(this).parent().children('li.pay-rat-li').each(function (e) {
                 if (e < onStar) {
                     $(this).addClass('hover');
-                }
-                else {
+                } else {
                     $(this).removeClass('hover');
                 }
             });
-            
-        }).on('mouseout', function(){
-            $(this).parent().children('li.pay-rat-li').each(function(e){
+
+        }).on('mouseout', function () {
+            $(this).parent().children('li.pay-rat-li').each(function (e) {
                 $(this).removeClass('hover');
             });
         });
-        
-        
+
+
         /* 2. Action to perform on click */
-        $('.pay-rat li').on('click', function(){
+        $('.pay-rat li').on('click', function () {
             var onStar = parseInt($(this).data('value'), 10); // The star currently selected
             var stars = $(this).parent().children('li.pay-rat-li');
-            
+
             for (i = 0; i < stars.length; i++) {
                 $(stars[i]).removeClass('selected');
             }
-            
+
             for (i = 0; i < onStar; i++) {
                 $(stars[i]).addClass('selected');
             }
         });
 
-        $('.pay-rat li.star').on('mouseover', function(){
+        $('.pay-rat li.star').on('mouseover', function () {
             var value = $(this).data('title');
-            $('.ovarall-rat .message-box').html("<p>" + value + "</p>");
+            $('.overall-rat .message-box').html("<p>" + value + "</p>");
         });
 
         // On click update input value
         $("body").on("click", "#stars li.star", function (e) {
             var value = $(this).data('value');
-            $('#ovarall-rating').val(value);
-        });
-        // On click update input value
-        $("body").on("click", "#offers li", function (e) {
+            $('#overall-rating').val(value).next('.error-wrapper').find('.error-message').remove();
+        }).on("click", "#offers li", function (e) {
             var value = $(this).data('value');
-            $('#offers-rating').val(value);
-        });
-        // On click update input value
-        $("body").on("click", "#payout li", function (e) {
+            $('#offers-rating').val(value).next('.error-wrapper').find('.error-message').remove();
+        }).on("click", "#payout li", function (e) {
             var value = $(this).data('value');
-            $('#payout-rating').val(value);
-        });
-        // On click update input value
-        $("body").on("click", "#tracking li", function (e) {
+            $('#payout-rating').val(value).next('.error-wrapper').find('.error-message').remove();
+        }).on("click", "#tracking li", function (e) {
             var value = $(this).data('value');
-            $('#tracking-rating').val(value);
-        });
-        // On click update input value
-        $("body").on("click", "#support li", function (e) {
+            $('#tracking-rating').val(value).next('.error-wrapper').find('.error-message').remove();
+        }).on("click", "#support li", function (e) {
             var value = $(this).data('value');
-            $('#support-rating').val(value);
+            $('#support-rating').val(value).next('.error-wrapper').find('.error-message').remove();
         });
 
     }); //Document Ready

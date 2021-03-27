@@ -4,9 +4,6 @@
         $('body').on('submit', '#add-network-program', function (e) {
             e.preventDefault();
 
-            // const _this = $(this);
-            // let hasError = false;
-            // const requiredInputs1 = $('.add-network-program-item input, .add-network-program-item textarea, .add-network-program-item select').filter('[required]:not([disabled])');
             const requiredInputs = $('.add-network-program-item input[required]:not([disabled]), .add-network-program-item textarea[required]:not([disabled]), .add-network-program-item select[required]:not([disabled])');
             const requiredFields = requiredInputs.map(function (index, item) {
                 return item.name;
@@ -98,7 +95,43 @@
                             500
                         );
                     } else if (res.status === true) {
-                        alert('success');
+                        location.reload();
+                    }
+                },
+                error: function (err) {
+                    $('.loader-spinner').remove();
+                    alert('Something went wrong! Please, try again.');
+                }
+            });
+        }).on('submit', '#submit-review-form', function (e) {
+            e.preventDefault();
+
+            const formData = new FormData(this);
+            formData.append('action', 'itp_create_review');
+
+            $.ajax({
+                method: 'POST',
+                url: itpAjax.ajaxUrl,
+                contentType: false,
+                processData: false,
+                data: formData,
+                beforeSend: function () {
+                    $("p.error-message").remove();
+                    $('#submit-review-form').append('<div class="loader-spinner"><div>Loading</div></div>');
+                },
+                success: function (res) {
+                    $('.loader-spinner').remove();
+                    if (res.status === false) {
+                        // Show error message
+                        res.errors.map(function (item) {
+                            $('#' + item).next('.error-wrapper').append('<p class="error-message">This field is required!</p>');
+                        });
+                        // Scroll to first error message
+                        $([document.documentElement, document.body]).animate(
+                            {scrollTop: $("p.error-message").first().offset().top - 200},
+                            500
+                        );
+                    } else if (res.status === true) {
                         location.reload();
                     }
                 },

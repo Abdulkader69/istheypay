@@ -94,6 +94,81 @@ class Network {
 		wp_die();
 
 	}
+
+	/**
+	 * @param $network_id
+	 *
+	 * @return WP_Query
+	 */
+	public function get_all_reviews( $network_id ): WP_Query {
+		$args = array(
+			'post_type'      => 'review',
+			'post_parent'    => $network_id,
+			'posts_per_page' => - 1,
+		);
+
+		return new WP_Query( $args );
+	}
+
+	/**
+	 * @param $network_id
+	 *
+	 * @return int
+	 */
+	public function get_total_rating_count( $network_id ): int {
+		$ratings = $this->get_all_reviews( $network_id );
+
+		return $ratings->post_count;
+	}
+
+
+	/**
+	 * @param $network_id
+	 * @param string $type
+	 *
+	 * @return float|int
+	 */
+	public function get_rating( $network_id, $type = 'overall' ) {
+		$ratings        = $this->get_all_reviews( $network_id )->posts;
+		$average_rating = 0;
+		if ( ! $ratings ) {
+			return $average_rating;
+		}
+
+		foreach ( $ratings as $rating ) {
+			$average_rating += get_field( $type . '_rating', $rating->ID );
+		}
+
+		return round( $average_rating / $this->get_total_rating_count( $network_id ), 1 );
+	}
+
+
+	/**
+	 * @param $network_id
+	 * @param string $type
+	 * @param int $star
+	 *
+	 * @return int
+	 */
+	public function get_rating_by_star( $network_id, $type = 'overall', $star = 5 ): int {
+		$args = array(
+			'post_type'      => 'review',
+			'post_parent'    => $network_id,
+			'posts_per_page' => - 1,
+			'meta_query'     => array(
+				'relation' => 'AND',
+				array(
+					'key'     => $type . '_rating',
+					'value'   => $star,
+					'compare' => '=',
+				)
+			),
+		);
+
+		$ratings = new WP_Query( $args );
+
+		return $ratings->post_count;
+	}
 }
 
 new Network();

@@ -854,7 +854,7 @@ form#add-network-program {
 }
 .add-new-networks-form-wrapper {
     padding: 25px 30px 50px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.16);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.16);
 }
 .add-new-networks-form-wrapper .modal-header h4 {
     margin-bottom: 15px;
@@ -942,7 +942,7 @@ form#add-network-program .add-network-program-item select {
 form#add-network-program .add-network-program-item input:focus,
 form#add-network-program .add-network-program-item textarea:focus,
 form#add-network-program .add-network-program-item select:focus {
-    border-color:rgba(247,51,69);
+    border-color: rgba(247, 51, 69);
 }
 .modal .modal-dialog .modal-header {
     position: relative;
@@ -1111,7 +1111,7 @@ p.rating span {
 }
 p.rating span i {
     font-size: 16px;
-    color: rgba(0,0,0,0.2);
+    color: rgba(0, 0, 0, 0.2);
 }
 .pay-sidebar-big-ads.pay-sidebar-item {
     padding: 0;
@@ -1127,7 +1127,7 @@ p.rating.rat3 span:nth-child(2) i,
 p.rating.rat3 span:nth-child(3) i,
 p.rating.rat4 span:not(:last-child) i,
 p.rating.rat5 span i {
-    color: rgba(247,51,69);
+    color: rgba(247, 51, 69);
 }
 /* ===============================================
 		Sidebar Style Sheet
@@ -1310,25 +1310,25 @@ form#add-network-program .add-network-program-item .select2-container {
     align-items: center;
     transition: all 0.3s ease-in-out;
     padding: 8px 0;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 .pay-featured-networks-wrap .pay-featured-network-item:first-child .pay-featured-n-inner {
-    border-top: 1px solid rgba(0,0,0,0.05);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 .pay-featured-networks-wrap .pay-featured-network-item .title a {
     text-decoration: none;
 }
 .pay-featured-networks-wrap .pay-featured-network-item .title a h3 {
     font-size: 16px;
-    color: rgba(0,0,0,0.7);
+    color: rgba(0, 0, 0, 0.7);
 }
 .pay-featured-networks-wrap .pay-featured-network-item .overall-rating {
     padding: 0 10px;
 }
 .pay-featured-networks-wrap .pay-featured-network-item .overall-rating p {
     font-size: 14px;
-    color: rgba(247,51,69);
-    border: 1px solid rgba(247,51,69);
+    color: rgba(247, 51, 69);
+    border: 1px solid rgba(247, 51, 69);
     padding: 3px 7px;
     line-height: 1;
     border-radius: 3px;
@@ -1344,7 +1344,7 @@ form#add-network-program .add-network-program-item .select2-container {
     line-height: 45px;
     display: inline-block;
     width: 70px;
-    background-color: rgba(247,51,69);
+    background-color: rgba(247, 51, 69);
     color: #fff;
     text-decoration: none;
 }
@@ -1365,8 +1365,6 @@ form#add-network-program .add-network-program-item .select2-container {
 /* ===============================================
 		Featured Networks Style Sheet
 =============================================== */
-
-
 /* ===============================================
 		Recents Reviews Style Sheet
 =============================================== */
@@ -1400,10 +1398,10 @@ form#add-network-program .add-network-program-item .select2-container {
     text-align: center;
     line-height: 30px;
     border-radius: 50%;
-    background-color: rgba(0,0,0,0.1);
+    background-color: rgba(0, 0, 0, 0.1);
 }
 .pay-recent-reviews-wrap .pay-recent-review-item .left span i {
-    color: rgba(247,51,69);
+    color: rgba(247, 51, 69);
     font-size: 18px;
 }
 .pay-recent-reviews-wrap .pay-recent-review-item .right {
@@ -1654,18 +1652,18 @@ form#add-network-program .add-network-program-item .select2-container {
     font-size: 14px;
     margin-top: 10px;
     display: inline-block;
-    border: 2px solid rgba(247,51,69);
-    color: rgba(247,51,69);
+    border: 2px solid rgba(247, 51, 69);
+    color: rgba(247, 51, 69);
     padding: 3px 15px;
     border-radius: 5px;
     transition: all 0.3s ease-in-out;
 }
 .pay-top-five-networks-inner .pay-top-five-right .pay-top-five-hover-state .btn a:hover {
     color: #fff;
-    background-color: rgba(247,51,69);
+    background-color: rgba(247, 51, 69);
 }
 .pay-top-five-networks-inner .pay-top-five-right .pay-top-five-hover-state .reviews-calc-rat span:last-child {
-    color: rgba(247,51,69);
+    color: rgba(247, 51, 69);
 }
 .chart {
     position: relative;
@@ -1675,7 +1673,7 @@ form#add-network-program .add-network-program-item .select2-container {
     width: 60px;
     color: #000;
     border-radius: 50%;
-    border: 5px solid rgba(0,0,0,0.1);
+    border: 5px solid rgba(0, 0, 0, 0.1);
     margin: auto;
     display: flex;
     align-items: center;
@@ -2072,7 +2070,6 @@ form#add-network-program .add-network-program-item .select2-container {
 /* ===============================================
 		Blogs Style Sheet
 =============================================== */
-
 /* ===============================================
 		Single Networks Style Sheet
 =============================================== */
@@ -2155,7 +2152,7 @@ form#add-network-program .add-network-program-item .select2-container {
     position: relative;
     padding-bottom: 10px;
     margin-bottom: 10px;
-    border-bottom: 1px solid rgba(222,222,222,0.7);
+    border-bottom: 1px solid rgba(222, 222, 222, 0.7);
     font-size: 16px;
     padding-left: 30px;
     padding-top: 5px;
@@ -2169,14 +2166,14 @@ form#add-network-program .add-network-program-item .select2-container {
     border-radius: 50%;
 }
 .pay-sn-top-section .pay-sn-categories::before {
-    border: 2px solid rgba(247,51,69);
+    border: 2px solid rgba(247, 51, 69);
     left: 0;
     top: 4px;
 }
 .pay-sn-top-section .pay-sn-categories::after {
     width: 7px;
     height: 7px;
-    background-color: rgba(247,51,69);
+    background-color: rgba(247, 51, 69);
     left: 7px;
     top: 10px;
 }
@@ -2200,7 +2197,7 @@ form#add-network-program .add-network-program-item .select2-container {
     align-items: center;
     font-size: 14px;
     margin-bottom: 10px;
-    color: rgba(0,0,0,0.5);
+    color: rgba(0, 0, 0, 0.5);
 }
 .pay-sn-header-meta .left .pay-sn-rat-rev-so p.rating {
     margin-right: 10px;
@@ -2219,7 +2216,7 @@ form#add-network-program .add-network-program-item .select2-container {
 .pay-sn-header-meta .left .pay-sn-rat-rev-so .socials-icons p a {
     text-decoration: none;
     color: #fff;
-    background-color: rgba(247,51,69);
+    background-color: rgba(247, 51, 69);
     width: 25px;
     height: 25px;
     display: inherit;
@@ -2237,14 +2234,14 @@ form#add-network-program .add-network-program-item .select2-container {
     display: inline-block;
     margin-bottom: 15px;
     padding-bottom: 10px;
-    border-bottom: 1px dashed rgba(0,0,0,0.2);
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
 }
 .pay-sn-header-meta .left .pay-about-sn p {
     display: inline-block;
     margin-right: 15px;
     font-size: 14px;
     font-weight: 500;
-    color: rgba(0,0,0,0.6);
+    color: rgba(0, 0, 0, 0.6);
     text-transform: uppercase;
     margin-bottom: 5px;
 }
@@ -2257,7 +2254,7 @@ form#add-network-program .add-network-program-item .select2-container {
     background-color: #d6eaff;
     border-radius: 4px;
     margin-left: 5px;
-    color: rgba(247,51,69);
+    color: rgba(247, 51, 69);
 }
 .pay-sn-header-meta .left .pay-sn-btns {
     margin-bottom: 20px;
@@ -2270,16 +2267,16 @@ form#add-network-program .add-network-program-item .select2-container {
     font-size: 15px;
     font-weight: 500;
     border-radius: 5px;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.30);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.30);
     margin-right: 10px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
 }
 .pay-sn-header-meta .left .pay-sn-btns .write-review-btn:hover {
-    background-color: rgba(247,51,69);
+    background-color: rgba(247, 51, 69);
 }
 .pay-sn-header-meta .left .pay-sn-btns a.join {
-    background-color: rgba(247,51,69);
+    background-color: rgba(247, 51, 69);
     padding: 8px 20px;
     display: inline-block;
     text-decoration: none;
@@ -2295,7 +2292,7 @@ form#add-network-program .add-network-program-item .select2-container {
 .pay-sn-header-meta .right .thumbnail img {
     width: 100%;
     padding: 2px;
-    border: 1px solid rgba(247,51,69);
+    border: 1px solid rgba(247, 51, 69);
 }
 .pay-about-sn-description {
     background-color: #f8fafc;
@@ -2305,7 +2302,7 @@ form#add-network-program .add-network-program-item .select2-container {
 }
 .pay-about-sn-description p {
     font-size: 14px;
-    color: rgba(0,0,0,0.6);
+    color: rgba(0, 0, 0, 0.6);
     line-height: 1.8;
 }
 .pay-about-sn-description .pay-about-sn-description-inner {
@@ -2322,13 +2319,13 @@ form#add-network-program .add-network-program-item .select2-container {
 }
 .pay-sn-networks-details-wrap .right {
     width: 220px;
-    border-left: 1px solid rgba(0,0,0,0.1);
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
     margin-top: -10px;
     margin-bottom: -10px;
 }
 .pay-single-networks-wrapper .pay-sn-details-title {
     padding: 10px 0;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 .pay-single-networks-wrapper .pay-sn-details-title h3 {
     font-size: 16px;
@@ -2337,7 +2334,7 @@ form#add-network-program .add-network-program-item .select2-container {
     align-items: center;
 }
 .pay-single-networks-wrapper .pay-sn-details-title h3 i {
-    color: rgba(247,51,69);
+    color: rgba(247, 51, 69);
     font-size: 20px;
     margin-right: 10px;
 }
@@ -2348,21 +2345,21 @@ form#add-network-program .add-network-program-item .select2-container {
     display: flex;
     align-items: flex-start;
     padding: 10px 0;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 .pay-sn-details-items-wrap .pay-snd-item .pay-snd-title {
     width: 190px;
 }
 .pay-sn-details-items-wrap .pay-snd-item .pay-snd-title p {
     font-size: 14px;
-    color: rgba(0,0,0,0.5);
+    color: rgba(0, 0, 0, 0.5);
 }
 .pay-sn-details-items-wrap .pay-snd-item .pay-snd-content {
     width: calc(100% - 190px);
 }
 .pay-sn-details-items-wrap .pay-snd-item .pay-snd-content p {
     font-size: 14px;
-    color: rgba(0,0,0,0.8);
+    color: rgba(0, 0, 0, 0.8);
 }
 .pay-sn-details-items-wrap .pay-snd-item .pay-snd-content .pay-snd-manager {
     display: flex;
@@ -2393,7 +2390,7 @@ form#add-network-program .add-network-program-item .select2-container {
     align-items: center;
     justify-content: space-between;
     font-size: 14px;
-    color: rgba(0,0,0,0.8);
+    color: rgba(0, 0, 0, 0.8);
     position: relative;
     padding-left: 20px;
     padding-bottom: 5px;
@@ -2408,13 +2405,13 @@ form#add-network-program .add-network-program-item .select2-container {
     border-radius: 3px;
 }
 .pay-snd-rat-distribution .rat-indivi p.exce::before {
-    background-color: rgba(247,51,69);
+    background-color: rgba(247, 51, 69);
 }
 .pay-snd-rat-distribution .rat-indivi p.v-gd::before {
-    background-color: rgba(247,51,69,0.7);
+    background-color: rgba(247, 51, 69, 0.7);
 }
 .pay-snd-rat-distribution .rat-indivi p.avrg::before {
-    background-color: rgba(247,51,69,0.5);
+    background-color: rgba(247, 51, 69, 0.5);
 }
 .pay-snd-rat-distribution .rat-in-review {
     position: relative;
@@ -2429,7 +2426,7 @@ form#add-network-program .add-network-program-item .select2-container {
 .pay-snd-rat-distribution .rat-in-review p span.bar {
     width: 60px;
     height: 3px;
-    background-color: rgba(222,222,222,0.5);
+    background-color: rgba(222, 222, 222, 0.5);
     position: relative;
     overflow: hidden;
 }
@@ -2439,12 +2436,11 @@ form#add-network-program .add-network-program-item .select2-container {
     height: 100%;
     left: 0;
     top: 0;
-    background-color: rgba(247,51,69);
+    background-color: rgba(247, 51, 69);
 }
 .pay-snd-rat-distribution .rat-in-review p span.bar.b5::before {
     width: 100%;
 }
-
 .pay-snd-rat-distribution .rat-in-review p span.bar.b4::before {
     width: 80%;
 }
@@ -2461,7 +2457,7 @@ form#add-network-program .add-network-program-item .select2-container {
     padding: 30px 0;
     position: relative;
     display: flex;
-    border-bottom: 1px solid rgba(247,51,69);
+    border-bottom: 1px solid rgba(247, 51, 69);
 }
 .pay-sn-review-item .avatar {
     width: 35px;
@@ -2485,7 +2481,7 @@ form#add-network-program .add-network-program-item .select2-container {
 }
 .pay-sn-review-item .pay-sn-review-context .pay-sn-review-time p {
     font-size: 14px;
-    color: rgba(0,0,0,0.5);
+    color: rgba(0, 0, 0, 0.5);
     font-weight: 500;
     letter-spacing: 0.5px;
 }
@@ -2501,7 +2497,7 @@ form#add-network-program .add-network-program-item .select2-container {
 .pay-sn-review-item .pay-sn-review-context .pay-sn-review-metas .rat-title h4 {
     font-size: 16px;
     font-weight: 400;
-    color: rgba(0,0,0,0.7);
+    color: rgba(0, 0, 0, 0.7);
     margin-left: 10px;
 }
 .pay-sn-review-item .pay-sn-review-context .pay-sn-review-metas .pay-about-sn {
@@ -2513,7 +2509,7 @@ form#add-network-program .add-network-program-item .select2-container {
     margin-right: 15px;
     font-size: 14px;
     font-weight: 500;
-    color: rgba(0,0,0,0.6);
+    color: rgba(0, 0, 0, 0.6);
     text-transform: uppercase;
 }
 .pay-sn-review-item .pay-sn-review-context .pay-sn-review-metas .pay-about-sn p:last-child {
@@ -2525,7 +2521,7 @@ form#add-network-program .add-network-program-item .select2-container {
     background-color: #d6eaff;
     border-radius: 4px;
     margin-left: 5px;
-    color: rgba(247,51,69);
+    color: rgba(247, 51, 69);
 }
 .pay-sn-review-item .pay-sn-review-context .pay-sn-review-content {
     position: relative;
@@ -2533,10 +2529,12 @@ form#add-network-program .add-network-program-item .select2-container {
 }
 .pay-sn-review-item .pay-sn-review-context .pay-sn-review-content p.messages {
     font-size: 14px;
-    color: rgba(0,0,0,0.5);
+    color: rgba(0, 0, 0, 0.5);
 }
 .pay-sn-review-item .pay-sn-review-context .pay-sn-review-content .paymrnt-proof {
     margin-top: 15px;
+}
+.pay-sn-review-item .pay-sn-review-context .pay-sn-review-content .paymrnt-proof img {
     max-height: 150px;
 }
 .pay-sn-review-item .pay-sn-review-context .pay-sn-review-content .like-dislike-btn {
@@ -2547,7 +2545,7 @@ form#add-network-program .add-network-program-item .select2-container {
     font-size: 14px;
     display: flex;
     align-items: center;
-    color: rgba(0,0,0,0.5);
+    color: rgba(0, 0, 0, 0.5);
 }
 .pay-sn-review-item .pay-sn-review-context .pay-sn-review-content .like-dislike-btn p i {
     margin-right: 5px;
@@ -2559,7 +2557,7 @@ form#add-network-program .add-network-program-item .select2-container {
     position: relative;
     text-align: center;
     padding: 19px 0;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 .pay-sn-details-items-wrap .inner-title::before {
     position: absolute;
@@ -2568,12 +2566,12 @@ form#add-network-program .add-network-program-item .select2-container {
     width: 100%;
     top: 50%;
     transform: translateX(-50%);
-    background-color: rgba(247,51,69);
+    background-color: rgba(247, 51, 69);
 }
 .pay-sn-details-items-wrap .inner-title p {
     width: max-content;
     margin: auto;
-    background-color: rgba(247,51,69);
+    background-color: rgba(247, 51, 69);
     position: relative;
     color: #fff;
     padding: 6px 15px;
@@ -2593,9 +2591,9 @@ form#add-network-program .add-network-program-item .select2-container {
     flex-basis: 50%;
     width: 50%;
     font-size: 14px;
-    color: rgba(0,0,0,0.7);
+    color: rgba(0, 0, 0, 0.7);
     padding: 10px 0;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     padding-right: 30px;
     position: relative;
     display: flex;
@@ -2603,7 +2601,7 @@ form#add-network-program .add-network-program-item .select2-container {
     align-items: center;
 }
 .pay-sn-d-target-optimize-wrap ul li i {
-    color: rgba(247,51,69);
+    color: rgba(247, 51, 69);
     font-size: 20px;
 }
 .logged-in #reviews-form-popup {
@@ -2616,7 +2614,7 @@ form#add-network-program .add-network-program-item .select2-container {
     width: 100%;
     height: 100%;
     z-index: 99;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2639,7 +2637,7 @@ form#add-network-program .add-network-program-item .select2-container {
     max-width: 600px;
     background-color: #fff;
     padding: 20px 30px 0 30px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.5);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
     position: absolute;
     top: 70%;
     transition: all 0.3s ease-in-out;
@@ -2669,7 +2667,7 @@ img#image-preview {
 #reviews-form-popup .modal-header h4 {
     font-size: 30px;
     line-height: 1.2;
-    color: rgba(247,51,69);
+    color: rgba(247, 51, 69);
 }
 #reviews-form-popup .modal-header {
     position: relative;
@@ -2689,7 +2687,7 @@ img#image-preview {
     width: 100%;
     display: block;
     padding-bottom: 10px;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 #reviews-form-popup input,
 #reviews-form-popup textarea {
@@ -2717,16 +2715,16 @@ form#submit-review-form .review-submit-btn button {
     max-width: 180px;
     height: 38px;
     font-size: 16px;
-    background-color: rgba(247,51,69);
+    background-color: rgba(247, 51, 69);
     color: #fff;
-    border: 2px solid rgba(247,51,69);
+    border: 2px solid rgba(247, 51, 69);
     border-radius: 5px;
     transition: all 0.3s ease-in-out;
     cursor: pointer;
 }
 form#submit-review-form .review-submit-btn button:hover {
     background-color: transparent;
-    color: rgba(247,51,69);
+    color: rgba(247, 51, 69);
 }
 .your-file .upload-field {
     position: relative;
@@ -2762,17 +2760,17 @@ ul#stars li.star {
 }
 ul#stars li.star i {
     font-size: 25px;
-    color: rgba(0,0,0,0.2);
+    color: rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease-in-out;
 }
 ul#stars li.star.hover i,
 ul#stars li.star.selected i {
-    color: rgba(247,51,69);
+    color: rgba(247, 51, 69);
 }
-.ovarall-rat .rating-stars {
+.overall-rat .rating-stars {
     display: flex;
 }
-.ovarall-rat .rating-stars ul#stars {
+.overall-rat .rating-stars ul#stars {
     margin-right: 20px;
 }
 .little-more-rat {
@@ -2785,23 +2783,38 @@ ul#stars li.star.selected i {
     width: 50%;
     align-items: center;
     margin: 5px 0;
+    position: relative;
+    padding-bottom: 10px;
 }
-.little-more-rat .error-wrapper {
+.little-more-rat .error-wrapper, .overall-rat .error-wrapper {
     flex-basis: 100%;
     width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.overall-rat {
+    position: relative;
+    padding-bottom: 15px;
+}
+.little-more-rat .error-wrapper p.error-message, .overall-rat .error-wrapper p.error-message {
+    width: 100%;
+    margin-bottom: -3px !important;
+    padding: 0 !important;
+    font-size: 12px;
 }
 .little-more-rat .little-more-rat-item ul li {
     display: inline-block;
     width: 16px;
     height: 16px;
-    background-color: rgba(0,0,0,0.2);
+    background-color: rgba(0, 0, 0, 0.2);
     border-radius: 3px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
 }
 .little-more-rat .little-more-rat-item ul li.hover,
 .little-more-rat .little-more-rat-item ul li.selected {
-    background-color: rgba(247,51,69);
+    background-color: rgba(247, 51, 69);
 }
 .little-more-rat .little-more-rat-item p {
     font-size: 14px;
@@ -2811,14 +2824,11 @@ ul#stars li.star.selected i {
     width: 60px;
 }
 .message-box p {
-    color: rgba(0,0,0,0.5);
+    color: rgba(0, 0, 0, 0.5);
 }
 /* ===============================================
 		Single Networks Style Sheet
 =============================================== */
-
-
-
 /* ===============================================
 		Review Page Style Sheet
 =============================================== */
@@ -2834,18 +2844,15 @@ ul#stars li.star.selected i {
     text-align: center;
     line-height: 35px;
     border-radius: 50%;
-    background-color: rgba(0,0,0,0.1);
+    background-color: rgba(0, 0, 0, 0.1);
 }
 .pay-sn-review-item .avatar span i {
-    color: rgba(247,51,69);
+    color: rgba(247, 51, 69);
     font-size: 18px;
 }
 /* ===============================================
 		Review Page Style Sheet
 =============================================== */
-
-
-
 /* ===============================================
 		Responsive Style Sheet
 =============================================== */
@@ -2858,7 +2865,7 @@ ul#stars li.star.selected i {
         flex-wrap: wrap;
     }
     .pay-main-header nav#main-navigation ul#primary-menu > li {
-        border-left: 1px solid rgba(255,255,255,0.3);
+        border-left: 1px solid rgba(255, 255, 255, 0.3);
         position: relative;
         cursor: pointer;
     }
@@ -2884,7 +2891,7 @@ ul#stars li.star.selected i {
     .pay-main-header nav#main-navigation ul#primary-menu > li:hover > a,
     .pay-main-header nav#main-navigation ul#primary-menu > li > ul.sub-menu > li:hover > a,
     .pay-main-header nav#main-navigation ul#primary-menu > li > ul.sub-menu > li > ul.sub-menu > li:hover > a {
-        background-color: rgba(247,51,69);
+        background-color: rgba(247, 51, 69);
     }
     .pay-main-header nav#main-navigation ul#primary-menu > li > ul.sub-menu {
         position: absolute;
@@ -2965,7 +2972,7 @@ ul#stars li.star.selected i {
     .pay-home-top-section {
         flex-flow: column-reverse;
     }
-    .pay-home-top-section .pay-top-five-networks, 
+    .pay-home-top-section .pay-top-five-networks,
     .pay-home-top-section .pay-blog-slider-wrap {
         width: 100%;
     }
