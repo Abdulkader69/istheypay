@@ -11,6 +11,7 @@ get_header();
             <div class="row">
                 <div class="col-lg-12 pay-main-content-wrapper">
                     <div class="pay-left">
+                        <?php get_template_part( 'template-parts/components/page-top', 'section' ); ?>
 						<div class="add-new-networks-form-wrapper">
                             <?php get_template_part( 'template-parts/components/add-network', 'program' ); ?>
                         </div>

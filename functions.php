@@ -96,8 +96,9 @@ function is_they_pay_scripts() {
 	wp_enqueue_script( 'jquery' );
 	wp_enqueue_script( 'is-they-pay-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'pay-custom-js', get_template_directory_uri() . '/inc/js/custom.js', array(), _S_VERSION, true );
-	wp_enqueue_script( 'select2-js', '//cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js', array( 'jquery' ), '4.1.0', true );
-	wp_enqueue_style( 'select2-css', '//cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css', null, '4.1.0', 'all' );
+
+	wp_enqueue_script( 'magnific-js', '//cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.0.0/jquery.magnific-popup.min.js', array( 'jquery' ), '4.1.0', true );
+	wp_enqueue_style( 'magnific-css', '//cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.0.0/magnific-popup.min.css', null, '4.1.0', 'all' );
 
     wp_enqueue_style( 'icon-fonts', get_template_directory_uri() . '/inc/css/icofont.min.css', null, '4.1.0', 'all' );
 

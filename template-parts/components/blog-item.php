@@ -10,8 +10,8 @@
             <p><?php echo wp_trim_words( get_the_content(), 40 ); ?></p>
         </div>
         <div class="blog-meta">
-            <p><img width="16px" height="16px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/love.svg" alt=""> <span><?php echo get_the_date( 'Y-m-d' ); ?></span> <span><?php echo get_the_date( 'h:i:s' ); ?></span></p>
-            <p><a href="<?php the_permalink(); ?>">Read More <img width="16px" height="16px" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/love.svg" alt=""></a></p>
+            <p><i class="icofont-wall-clock"></i> <span><?php echo get_the_date( 'Y-m-d' ); ?></span> <span><?php echo get_the_date( 'h:i:s' ); ?></span></p>
+            <p><a href="<?php the_permalink(); ?>">Read More <i class="icofont-bubble-right"></i></a></p>
         </div>
     </div>
 </div>

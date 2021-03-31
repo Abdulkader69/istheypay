@@ -43,7 +43,7 @@
 			</div>
 			<div class="pay-main-header">
 				<div class="container">
-					<div class="row align-end">
+					<div class="row align-center">
 						<div class="col-md-4">
 							<div class="logo"><?php the_custom_logo(); ?></div>
 						</div>

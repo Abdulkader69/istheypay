@@ -9,10 +9,17 @@ function pay_networks_shortcodes_func( $atts ) {
 
 	$args = array(
 		'post_type'      => 'networks',
-		'posts_per_page' => 5,
+		'posts_per_page' => 20,
 		'order'          => 'DESC',
 		'post_status'    => 'publish',
 		'paged'          => $paged,
+        'tax_query' => array(
+            array(
+                'taxonomy' => 'network_category',
+                'field'    => 'slug',
+                'terms'    => 'affiliate-networks',
+            ),
+        ),
 	);
 
 	ob_start();
@@ -69,7 +76,7 @@ function pay_blogs_shortcodes_func( $atts ) {
 
 	$args = array(
 		'post_type'      => 'post',
-		'posts_per_page' => 10,
+		'posts_per_page' => 15,
 		'order'          => 'DESC',
 		'post_status'    => 'publish',
 		'paged'          => $paged,
@@ -139,37 +146,42 @@ function pay_review_sidebar_shortcodes_func( $atts ) {
         <h2 class="title">Recent Reviews</h2>
         <div class="pay-recent-reviews-wrap">
             <?php
-            while ( $review_sidebar->have_posts() ) : $review_sidebar->the_post(); ?>
-                
-                <div class="pay-recent-review-item">
-                    <div class="left">
-                        <span><i class="icofont-waiter"></i></span>
-                    </div>
-                    <div class="right">
-                        <div class="titles"><?php the_field( 'name' ); ?> @<span>AdsMain</span></div>
-                        <div class="rat-time">
-                            <?php 
-                            $rating = get_field( 'overall_rating' );
-                            if( !$rating == '') { ?>
-                                <p class="rating rat<?php echo $rating; ?>">
-                                    <span><i class="icofont-star"></i></span>
-                                    <span><i class="icofont-star"></i></span>
-                                    <span><i class="icofont-star"></i></span>
-                                    <span><i class="icofont-star"></i></span>
-                                    <span><i class="icofont-star"></i></span>
-                                </p>
-                            <?php } ?>
-                            <span><?php echo get_the_date( 'j M, Y' ); ?></span>
+            while ( $review_sidebar->have_posts() ) : $review_sidebar->the_post(); 
+                $review = new Review();
+                $network_title = $review->get_network( get_the_ID())->post_title;
+                $network_url = $review->get_network( get_the_ID())->post_name;
+            ?>
+                <a href="/networks/<?php echo $network_url; ?>/#single-review">
+                    <div class="pay-recent-review-item">
+                        <div class="left">
+                            <span><i class="icofont-waiter"></i></span>
                         </div>
-                        <?php 
-                        $your_review = get_field( 'your_review' );
-                        if( !$your_review == '') { ?>
-                            <div class="content">
-                                <?php echo $your_review; ?>
+                        <div class="right">
+                            <div class="titles"><?php the_field( 'name' ); ?> @<span><?php echo $network_title; ?></span></div>
+                            <div class="rat-time">
+                                <?php 
+                                $rating = get_field( 'overall_rating' );
+                                if( !$rating == '') { ?>
+                                    <p class="rating rat<?php echo $rating; ?>">
+                                        <span><i class="icofont-star"></i></span>
+                                        <span><i class="icofont-star"></i></span>
+                                        <span><i class="icofont-star"></i></span>
+                                        <span><i class="icofont-star"></i></span>
+                                        <span><i class="icofont-star"></i></span>
+                                    </p>
+                                <?php } ?>
+                                <span><?php echo get_the_date( 'j M, Y' ); ?></span>
                             </div>
-                        <?php } ?>
+                            <?php 
+                            $your_review = get_field( 'your_review' );
+                            if( !$your_review == '') { ?>
+                                <div class="content">
+                                    <?php echo $your_review; ?>
+                                </div>
+                            <?php } ?>
+                        </div>
                     </div>
-                </div>
+                </a>
 
             <?php endwhile; ?>
         </div>
@@ -245,11 +257,12 @@ add_shortcode( 'pay_review_shortcodes', 'pay_review_shortcodes_func' );
 function pay_premium_networks_shortcodes_func( $atts ) {
 	$atts = shortcode_atts( array(
         'category' => 'affiliate-networks',
+        'per_page' => 5,
     ), $atts, 'pay_premium_networks_shortcodes' );
 
 	$args = array(
 		'post_type'      => 'networks',
-		'posts_per_page' => 15,
+		'posts_per_page' => $atts['per_page'],
 		'order'          => 'DESC',
 		'post_status'    => 'publish',
         'tax_query' => array(
@@ -265,199 +278,237 @@ function pay_premium_networks_shortcodes_func( $atts ) {
 	?>
 
     <?php $premium_networks = new WP_Query( $args );
-    // echo '<pre>';
-    // print_r($premium_networks);
-    // echo '</pre>';
+
     if ( $premium_networks->have_posts() ) : ?>
-    <div class="pay-premium-networks-wrap">
-        <h2 class="home-networks-title">Premium Networks</h2>
-        <div class="pay-premium-networks-posts">
-            <?php
-            while ( $premium_networks->have_posts() ) : $premium_networks->the_post(); 
-                $post_type = get_post_type(get_the_ID());   
-                $taxonomies = get_object_taxonomies($post_type);   
-                $taxonomy_names = wp_get_object_terms( get_the_ID(), $taxonomies ); 
-            ?>
-                
-                <div class="pay-premium-network-item">
-                    <div class="left">
-                        <a href="<?php the_permalink(); ?>">
-                            <div class="logo">
-                                <?php 
-                                $networks_thumbnail = get_field( 'networks_thumbnail' );
-                                if( !$networks_thumbnail == '') { ?>
-                                    <img src="<?php echo $networks_thumbnail ?>" alt="<?php the_title(); ?>">
-                                <?php } ?>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="middle">
-                        <div class="title-cat-rat">
-                            <p class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
-                            <?php if ( $atts['category'] == 'affiliate-networks' ) : ?>
-                                <div class="categories">
+        <div class="pay-premium-networks-wrap <?php echo $atts['category']; ?>">
+            <?php if ( $atts['category'] == 'affiliate-networks' ) : ?>
+                <h2 class="home-networks-title">Premium Networks</h2>
+            <?php elseif( $atts['category'] == 'advertising-networks' ) : ?>
+                <h2 class="home-networks-title">Advertising Networks</h2>
+            <?php elseif( $atts['category'] == 'affiliate-programs' ) :  ?>
+                <h2 class="home-networks-title">Affiliate Programs</h2>
+            <?php endif; ?>
+            <div class="pay-premium-networks-posts">
+                <?php
+                while ( $premium_networks->have_posts() ) : $premium_networks->the_post(); 
+                    $post_type = get_post_type(get_the_ID());   
+                    $taxonomies = get_object_taxonomies($post_type);   
+                    $taxonomy_names = wp_get_object_terms( get_the_ID(), $taxonomies ); 
+                    $network = new Network();
+                    $average = $network->get_rating( get_the_ID() );
+                ?>
+                    
+                    <div class="pay-premium-network-item">
+                        <?php if ( $atts['category'] !== 'affiliate-networks' ) : ?>
+                            <div class="another-title"><p class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p></div>
+                        <?php endif; ?>
+                        <div class="left">
+                            <a href="<?php the_permalink(); ?>">
+                                <div class="logo">
                                     <?php 
-                                        foreach ($taxonomy_names as $tax ) {
-                                            if ($tax->parent != 0) { // avoid parent categories
-                                                // print_r($tax->name);
-                                                $tax_slug = $tax->slug;
-                                                if( $tax_slug == 'adult' ) { ?>
-                                                    <p>
-                                                        <i class="icofont-adult">a</i>
-                                                        <span><?php echo $tax->name; ?></span>
-                                                    </p>
-                                                <?php }
-                                                if( $tax_slug == 'biz-opp' ) { ?>
-                                                    <p>
-                                                        <i class="icofont-bill-alt"></i>
-                                                        <span><?php echo $tax->name; ?></span>
-                                                    </p>
-                                                <?php }
-                                                if( $tax_slug == 'crypto' ) { ?>
-                                                    <p>
-                                                        <i class="icofont-bitcoin"></i>
-                                                        <span><?php echo $tax->name; ?></span>
-                                                    </p>
-                                                <?php }
-                                                if( $tax_slug == 'dating' ) { ?>
-                                                    <p>
-                                                        <i class="icofont-ui-love"></i>
-                                                        <span><?php echo $tax->name; ?></span>
-                                                    </p>
-                                                <?php }
-                                                if( $tax_slug == 'ecommerce' ) { ?>
-                                                    <p>
-                                                        <i class="icofont-shopping-cart"></i>
-                                                        <span><?php echo $tax->name; ?></span>
-                                                    </p>
-                                                <?php }
-                                                if( $tax_slug == 'education' ) { ?>
-                                                    <p>
-                                                        <i class="icofont-hat-alt"></i>
-                                                        <span><?php echo $tax->name; ?></span>
-                                                    </p>
-                                                <?php }
-                                                if( $tax_slug == 'finance' ) { ?>
-                                                    <p>
-                                                        <i class="icofont-dollar"></i>
-                                                        <span><?php echo $tax->name; ?></span>
-                                                    </p>
-                                                <?php }
-                                                if( $tax_slug == 'forex-trading' ) { ?>
-                                                    <p>
-                                                        <i class="icofont-chart-histogram-alt"></i>
-                                                        <span><?php echo $tax->name; ?></span>
-                                                    </p>
-                                                <?php }
-                                                if( $tax_slug == 'gambling' ) { ?>
-                                                    <p>
-                                                        <i class="icofont-dice"></i>
-                                                        <span><?php echo $tax->name; ?></span>
-                                                    </p>
-                                                <?php }
-                                                if( $tax_slug == 'game' ) { ?>
-                                                    <p>
-                                                        <i class="icofont-ui-game"></i>
-                                                        <span><?php echo $tax->name; ?></span>
-                                                    </p>
-                                                <?php }
-                                                if( $tax_slug == 'health-nutra' ) { ?>
-                                                    <p>
-                                                        <i class="icofont-doctor"></i>
-                                                        <span><?php echo $tax->name; ?></span>
-                                                    </p>
-                                                <?php }
-                                                if( $tax_slug == 'incentive' ) { ?>
-                                                    <p>
-                                                        <i class="icofont-recycle"></i>
-                                                        <span><?php echo $tax->name; ?></span>
-                                                    </p>
-                                                <?php }
-                                                if( $tax_slug == 'mobile' ) { ?>
-                                                    <p>
-                                                        <i class="icofont-ui-touch-phone"></i>
-                                                        <span><?php echo $tax->name; ?></span>
-                                                    </p>
-                                                <?php }
-                                                if( $tax_slug == 'pay-per-call' ) { ?>
-                                                    <p>
-                                                        <i class="icofont-ui-call"></i>
-                                                        <span><?php echo $tax->name; ?></span>
-                                                    </p>
-                                                <?php }
-                                                if( $tax_slug == 'survey' ) { ?>
-                                                    <p>
-                                                        <i class="icofont-chart-histogram-alt"></i>
-                                                        <span><?php echo $tax->name; ?></span>
-                                                    </p>
-                                                <?php }
-                                                if( $tax_slug == 'sweepstakes' ) { ?>
-                                                    <p>
-                                                        <i class="icofont-sweepstakes">s</i>
-                                                        <span><?php echo $tax->name; ?></span>
-                                                    </p>
-                                                <?php }
-                                                if( $tax_slug == 'travel' ) { ?>
-                                                    <p>
-                                                        <i class="icofont-airplane-alt"></i>
-                                                        <span><?php echo $tax->name; ?></span>
-                                                    </p>
-                                                <?php }
-                                            }
-                                        }
-                                    ?>
+                                    $networks_thumbnail = get_field( 'networks_thumbnail' );
+                                    if( !$networks_thumbnail == '') { ?>
+                                        <img src="<?php echo $networks_thumbnail ?>" alt="<?php the_title(); ?>">
+                                    <?php } ?>
                                 </div>
-                            <?php endif; ?>
-                            <p class="rating-count">4.22</p>
+                            </a>
                         </div>
-                        <div class="description">
+                        <div class="middle">
+                            <div class="title-cat-rat">
+                                <p class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
+                                <?php if ( $atts['category'] == 'affiliate-networks' ) : ?>
+                                    <div class="categories">
+                                        <?php 
+                                            foreach ($taxonomy_names as $tax ) {
+                                                if ($tax->parent != 0) { // avoid parent categories
+                                                    $tax_slug = $tax->slug;
+                                                    if( $tax_slug == 'adult' ) { ?>
+                                                        <p>
+                                                            <span class="icon"><i class="icofont-adult">18</i></span>
+                                                            <span><?php echo $tax->name; ?></span>
+                                                        </p>
+                                                    <?php }
+                                                    if( $tax_slug == 'biz-opp' ) { ?>
+                                                        <p>
+                                                            <span class="icon"><i class="icofont-bill-alt"></i></span>
+                                                            <span><?php echo $tax->name; ?></span>
+                                                        </p>
+                                                    <?php }
+                                                    if( $tax_slug == 'crypto' ) { ?>
+                                                        <p>
+                                                            <span class="icon"><i class="icofont-bitcoin"></i></span>
+                                                            <span><?php echo $tax->name; ?></span>
+                                                        </p>
+                                                    <?php }
+                                                    if( $tax_slug == 'dating' ) { ?>
+                                                        <p>
+                                                            <span class="icon"><i class="icofont-ui-love"></i></span>
+                                                            <span><?php echo $tax->name; ?></span>
+                                                        </p>
+                                                    <?php }
+                                                    if( $tax_slug == 'ecommerce' ) { ?>
+                                                        <p>
+                                                            <span class="icon"><i class="icofont-shopping-cart"></i></span>
+                                                            <span><?php echo $tax->name; ?></span>
+                                                        </p>
+                                                    <?php }
+                                                    if( $tax_slug == 'education' ) { ?>
+                                                        <p>
+                                                            <span class="icon"><i class="icofont-hat-alt"></i></span>
+                                                            <span><?php echo $tax->name; ?></span>
+                                                        </p>
+                                                    <?php }
+                                                    if( $tax_slug == 'finance' ) { ?>
+                                                        <p>
+                                                            <span class="icon"><i class="icofont-dollar"></i></span>
+                                                            <span><?php echo $tax->name; ?></span>
+                                                        </p>
+                                                    <?php }
+                                                    if( $tax_slug == 'forex-trading' ) { ?>
+                                                        <p>
+                                                            <span class="icon"><i class="icofont-chart-histogram-alt"></i></span>
+                                                            <span><?php echo $tax->name; ?></span>
+                                                        </p>
+                                                    <?php }
+                                                    if( $tax_slug == 'gambling' ) { ?>
+                                                        <p>
+                                                            <span class="icon"><i class="icofont-dice"></i></span>
+                                                            <span><?php echo $tax->name; ?></span>
+                                                        </p>
+                                                    <?php }
+                                                    if( $tax_slug == 'game' ) { ?>
+                                                        <p>
+                                                            <span class="icon"><i class="icofont-ui-game"></i></span>
+                                                            <span><?php echo $tax->name; ?></span>
+                                                        </p>
+                                                    <?php }
+                                                    if( $tax_slug == 'health-nutra' ) { ?>
+                                                        <p>
+                                                            <span class="icon"><i class="icofont-doctor"></i></span>
+                                                            <span><?php echo $tax->name; ?></span>
+                                                        </p>
+                                                    <?php }
+                                                    if( $tax_slug == 'incentive' ) { ?>
+                                                        <p>
+                                                            <span class="icon"><i class="icofont-recycle"></i></span>
+                                                            <span><?php echo $tax->name; ?></span>
+                                                        </p>
+                                                    <?php }
+                                                    if( $tax_slug == 'mobile' ) { ?>
+                                                        <p>
+                                                            <span class="icon"><i class="icofont-ui-touch-phone"></i></span>
+                                                            <span><?php echo $tax->name; ?></span>
+                                                        </p>
+                                                    <?php }
+                                                    if( $tax_slug == 'pay-per-call' ) { ?>
+                                                        <p>
+                                                            <span class="icon"><i class="icofont-ui-call"></i></span>
+                                                            <span><?php echo $tax->name; ?></span>
+                                                        </p>
+                                                    <?php }
+                                                    if( $tax_slug == 'survey' ) { ?>
+                                                        <p>
+                                                            <span class="icon"><i class="icofont-chart-histogram-alt"></i></span>
+                                                            <span><?php echo $tax->name; ?></span>
+                                                        </p>
+                                                    <?php }
+                                                    if( $tax_slug == 'sweepstakes' ) { ?>
+                                                        <p>
+                                                            <span class="icon"><i class="icofont-sweepstakes">s</i></span>
+                                                            <span><?php echo $tax->name; ?></span>
+                                                        </p>
+                                                    <?php }
+                                                    if( $tax_slug == 'travel' ) { ?>
+                                                        <p>
+                                                            <span class="icon"><i class="icofont-airplane-alt"></i></span>
+                                                            <span><?php echo $tax->name; ?></span>
+                                                        </p>
+                                                    <?php }
+                                                }
+                                            }
+                                        ?>
+                                    </div>
+                                <?php endif; ?>
+                                <p class="rating-count"><?php echo $average; ?></p>
+                            </div>
+                            <div class="description">
+                                <?php 
+                                    $networksType = get_field( 'network_program_type' );
+                                    if( '1' == $networksType ) { ?>
+                                        <p><?php the_field('afn_network_description'); ?></p>
+                                    <?php } elseif( '2' == $networksType ) { ?>
+                                        <p><?php the_field('afp_program_description'); ?></p>
+                                    <?php } elseif( '3' == $networksType ) { ?>
+                                        <p><?php the_field('adn_network_description'); ?></p>
+                                    <?php }
+                                ?>
+                            </div>
+                            <div class="bottom-meta-content">
+                                <p class="meta reviews-count"><?php echo $network->get_total_rating_count( get_the_ID() ); ?> Reviews</p>
+                                <?php 
+                                    $networksType = get_field( 'network_program_type' );
+                                    if( '1' == $networksType ) { ?>
+                                        <p class="meta offers-count">
+                                            <?php the_field('afn_offers_in_your_network'); ?>
+                                        Offers</p>
+                                    <?php }
+                                ?>    
+                                <?php 
+                                    $networksType = get_field( 'network_program_type' );
+                                    if( '1' == $networksType ) { ?>
+                                        <p class="meta tracking-software"><?php the_field('afn_tracking_software'); ?></p>
+                                    <?php } elseif( '2' == $networksType ) { ?>
+                                        <p class="meta tracking-software"><?php the_field('afp_base_commission'); ?></p>
+                                    <?php } elseif( '3' == $networksType ) { ?>
+                                        <p class="meta tracking-software"><?php the_field('adn_fa_minimum_deposit'); ?></p>
+                                    <?php }
+                                ?>
+                                <p class="meta payment-freq">
+                                    <?php 
+                                        $networksType = get_field( 'network_program_type' );
+                                        if( '1' == $networksType ) { ?>
+                                            <?php the_field('afn_payment_frequency'); ?>
+                                        <?php } elseif( '2' == $networksType ) { ?>
+                                            <?php the_field('afp_payment_frequency'); ?>
+                                        <?php } elseif( '3' == $networksType ) { ?>
+                                            <?php the_field('adn_fp_payment_frequency'); ?>
+                                        <?php }
+                                    ?>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <p class="rating <?php echo 'rat' . round( $average ); ?>">
+                                <span><i class="icofont-star"></i></span>
+                                <span><i class="icofont-star"></i></span>
+                                <span><i class="icofont-star"></i></span>
+                                <span><i class="icofont-star"></i></span>
+                                <span><i class="icofont-star"></i></span>
+                            </p>
                             <?php 
                                 $networksType = get_field( 'network_program_type' );
                                 if( '1' == $networksType ) { ?>
-                                    <p><?php the_field('afn_network_description'); ?></p>
+                                    <p><a href="<?php the_field('afn_network_url'); ?>">Join</a></p>
                                 <?php } elseif( '2' == $networksType ) { ?>
-                                    <p><?php the_field('afp_program_description'); ?></p>
+                                    <p><a href="<?php the_field('afp_program_url'); ?>">Join</a></p>
                                 <?php } elseif( '3' == $networksType ) { ?>
-                                    <p><?php the_field('adn_network_description'); ?></p>
+                                    <p><a href="<?php the_field('adn_network_url'); ?>">Join</a></p>
                                 <?php }
                             ?>
                         </div>
-                        <div class="bottom-meta-content">
-                            <p class="meta reviews-count">2880 Reviews</p>
-                            <p class="meta offers-count">
-                            <?php 
-                                $networksType = get_field( 'network_program_type' );
-                                if( '1' == $networksType ) { ?>
-                                    <?php the_field('afn_offers_in_your_network'); ?>
-                                <?php }
-                            ?>    
-                            Offers</p>
-                            <p class="meta tracking-software">
-                                <span>In-house</span>
-                                <span>Cake</span>
-                            </p>
-                            <p class="meta payment-freq">
-                                <span>Weekly</span>
-                                <span>Net-30</span>
-                            </p>
-                        </div>
                     </div>
-                    <div class="right">
-                        <p class="rating">
-                            <span><i class="icofont-star"></i></span>
-                            <span><i class="icofont-star"></i></span>
-                            <span><i class="icofont-star"></i></span>
-                            <span><i class="icofont-star"></i></span>
-                            <span><i class="icofont-star"></i></span>
-                        </p>
-                        <p><a href="#join">Join</a></p>
-                    </div>
-                </div>
 
-            <?php endwhile; ?>
+                <?php endwhile; ?>
+            </div>
+            <?php if ( $atts['category'] == 'affiliate-networks' ) : ?>
+                <a class="pay-sidebar-reviews-page-btn" href="/affiliate-networks">See more affiliate networks</a>
+            <?php elseif( $atts['category'] == 'advertising-networks' ) : ?>
+                <a class="pay-sidebar-reviews-page-btn" href="/network_category/advertising-networks/">See more advertising networks</a>
+            <?php elseif( $atts['category'] == 'affiliate-programs' ) :  ?>
+                <a class="pay-sidebar-reviews-page-btn" href="/network_category/affiliate-programs/">See more affiliate programs</a>
+            <?php endif; ?>
+            
         </div>
-        <a class="pay-sidebar-reviews-page-btn" href="/affiliate-networks">More Reviews</a>
-    </div>
     <?php endif; ?>
 
 	<?php wp_reset_postdata();

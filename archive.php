@@ -8,41 +8,49 @@ get_header();
 ?>
 
 	<main id="main-content">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 pay-main-content-wrapper">
+					<div class="pay-left">
+						<?php get_template_part( 'template-parts/components/page-top', 'section' ); ?>
+						<div class="page-top-with-ad">
+							<h1 class="page-title"><?php the_archive_title(); ?></h1>
+							<?php
+							if( have_rows('pages_global_ad', 'option') ):?>
+								<?php while( have_rows('pages_global_ad', 'option') ) : the_row();
+									$ad_image = get_sub_field( 'ad_image', 'option' );
+									if ( $ad_image != '' ) : ?>
+										<div class="page-ad-wrap">
+											<a href="<?php the_sub_field('ad_link', 'option') ?>"><img src="<?php echo $ad_image; ?>" alt=""></a>
+										</div>
+									<?php endif; ?>
+								<?php endwhile; ?>
+							<?php endif; ?>
+						</div>
+						<div class="pay-networks-row">
+							<?php if ( have_posts() ) : ?>
+								<?php 
+								while ( have_posts() ) : the_post();
 
-		<?php if ( have_posts() ) : ?>
+									get_template_part( 'template-parts/components/networks', 'item' );
 
-			<header class="page-header">
-				<?php
-				the_archive_title( '<h1 class="page-title">', '</h1>' );
-				the_archive_description( '<div class="archive-description">', '</div>' );
-				?>
-			</header><!-- .page-header -->
+								endwhile;
 
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
+								the_posts_navigation();
 
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
+							else : ?>
 
-			endwhile;
+								<p class="no-post">No Networks Found!</p>
 
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
-		?>
+							<?php endif; ?>
+						</div>
+					</div>
+					<?php get_sidebar(); ?>
+				</div>
+			</div>
+		</div>
 
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();

@@ -107,6 +107,15 @@ class Review {
 
 		wp_die();
 	}
+	 public function get_network ( $review_ID ) {
+		if(!$review_ID) {
+			return false;
+		}
+		$review = get_post( $review_ID );
+		$network_ID = $review->post_parent;
+		$network = get_post( $network_ID );
+		return $network;
+	 }
 }
 
 new Review();

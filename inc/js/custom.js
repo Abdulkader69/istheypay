@@ -74,9 +74,9 @@
         });
 
 
-        $('.multiselect-select2').select2({
-            minimumResultsForSearch: -1
-        });
+        // $('.multiselect-select2').select2({
+        //     minimumResultsForSearch: -1
+        // });
 
         // ==============
         //              Image to SVG code support
@@ -249,6 +249,11 @@
         }).on("click", "#support li", function (e) {
             var value = $(this).data('value');
             $('#support-rating').val(value).next('.error-wrapper').find('.error-message').remove();
+        });
+
+        // Magnific Popup
+        $('.paymrnt-proof a').magnificPopup({
+            type: 'image'
         });
 
     }); //Document Ready

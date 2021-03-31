@@ -5,6 +5,8 @@ if( $featured_networks ): ?>
         <h2 class="title">Featured Networks</h2>
         <div class="pay-featured-networks-wrap">
             <?php foreach( $featured_networks as $featured_network ): 
+            $network = new Network();
+            $average = $network->get_rating( $featured_network->ID );
             setup_postdata($featured_network); ?>
                 <div class="pay-featured-network-item">
                     <a href="<?php the_permalink( $featured_network->ID ) ?>">
@@ -14,7 +16,7 @@ if( $featured_networks ): ?>
                                 <div class="logo"><img src="<?php echo $logo; ?>" alt="<?php echo $featured_network->post_title ?>"></div>
                             <?php endif; ?>
                             <div class="title"><a href="<?php the_permalink( $featured_network->ID ) ?>"><h3><?php echo $featured_network->post_title ?></h3></a></div>
-                            <div class="overall-rating"><p>4.89</p></div>
+                            <div class="overall-rating"><p><?php echo $average; ?></p></div>
                             <?php $networksType = get_field( 'network_program_type', $featured_network->ID );
                             if( '1' == $networksType ) { ?>
                                 <?php $joinBtn = get_field('afn_network_url', $featured_network->ID ); 

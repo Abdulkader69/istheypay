@@ -1,3 +1,8 @@
+<?php 
+$review = new Review();
+$network_title = $review->get_network( get_the_ID())->post_title;
+$network_url = $review->get_network( get_the_ID())->post_name;
+?>
 <div class="pay-sn-review-item">
     <div class="avatar"><span><i class="icofont-waiter"></i></span></div>
     <div class="pay-sn-review-context">
@@ -15,7 +20,7 @@
                             <span><i class="icofont-star"></i></span>
                         </p>
 					<?php } ?>
-                    <h4><?php the_field( 'name' ); ?></h4>
+                    <h4><?php the_field( 'name' ); ?> @ <a href="/networks/<?php echo $network_url; ?>/#single-review"><?php echo $network_title; ?></a></h4>
                 </div>
                 <div class="pay-sn-review-time">
                     <p><?php echo get_the_date( 'j M, Y' ); ?></p>
@@ -51,7 +56,7 @@
 
 			<?php if ( get_field( 'payment_screenshot' ) ) : ?>
                 <div class="paymrnt-proof">
-                    <img src="<?php the_field( 'payment_screenshot' ); ?>" alt="Review Image">
+                    <a href="<?php the_field( 'payment_screenshot' ); ?>"><img src="<?php the_field( 'payment_screenshot' ); ?>" alt="Review Image"></a>
                 </div>
 			<?php endif; ?>
 

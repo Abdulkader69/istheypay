@@ -682,6 +682,8 @@ p {
 /* Preloader */
 #preloader {
     position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     z-index: 9999999;
@@ -724,7 +726,7 @@ p {
     -ms-animation: cssload-rotate-one 1.15s linear infinite;
     -webkit-animation: cssload-rotate-one 1.15s linear infinite;
     -moz-animation: cssload-rotate-one 1.15s linear infinite;
-    border-bottom: 3px solid black;
+    border-bottom: 3px solid rgba(247, 51, 69);
 }
 .preloader-orbit-loading .cssload-inner.cssload-two {
     right: 0%;
@@ -734,7 +736,7 @@ p {
     -ms-animation: cssload-rotate-two 1.15s linear infinite;
     -webkit-animation: cssload-rotate-two 1.15s linear infinite;
     -moz-animation: cssload-rotate-two 1.15s linear infinite;
-    border-right: 3px solid black;
+    border-right: 3px solid rgba(247, 51, 69);
 }
 .preloader-orbit-loading .cssload-inner.cssload-three {
     right: 0%;
@@ -744,7 +746,7 @@ p {
     -ms-animation: cssload-rotate-three 1.15s linear infinite;
     -webkit-animation: cssload-rotate-three 1.15s linear infinite;
     -moz-animation: cssload-rotate-three 1.15s linear infinite;
-    border-top: 3px solid black;
+    border-top: 3px solid rgba(247, 51, 69);
 }
 @keyframes cssload-rotate-one {
 	0% {
@@ -981,6 +983,9 @@ header#main-header {
     overflow: hidden;
     background-color: rgba(247, 51, 69);
     border-radius: 50%;
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
 }
 .footer-social-wrap a svg {
     width: 18px;
@@ -995,6 +1000,36 @@ header#main-header {
 /* ===============================================
 		Footer Style Sheet
 =============================================== */
+/* page title with ads */
+.page-top-with-ad {
+    position: relative;
+    margin-bottom: 5px;
+}
+.page-top-with-ad h1.page-title {
+    font-size: 24px;
+    color: #000;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 1;
+    position: relative;
+    margin-bottom: 12px;
+    padding-left: 10px;
+}
+.page-top-with-ad h1.page-title::before {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 5px;
+    background-color: rgba(247, 51, 69);
+    left: 0;
+    top: 0;
+}
+.page-top-with-ad .page-ad-wrap {
+    text-align: center;
+    padding: 20px 10px;
+    background-color: rgba(222,222,222,0.5);
+}
+/* page title with ads */
 /* ===============================================
 		Modal Style Sheet
 =============================================== */
@@ -1222,47 +1257,6 @@ form#add-network-program .add-network-program-item > textarea {
     height: 140px;
     padding: 5px 10px;
 }
-/* select2 css */
-form#add-network-program .add-network-program-item textarea.select2-search__field {
-    margin: 0;
-    border: 0;
-    width: 100% !important;
-    padding: 0;
-    height: 100%;
-    margin-left: 5px;
-    padding-top: 8px;
-}
-form#add-network-program .add-network-program-item span.select2-selection {
-    padding: 0;
-    min-height: 40px;
-}
-form#add-network-program .add-network-program-item span.select2-search {
-    position: absolute;
-}
-form#add-network-program .add-network-program-item li.select2-selection__choice {
-    background-color: #fff;
-    height: 25px;
-}
-form#add-network-program .add-network-program-item li.select2-selection__choice button {
-    color: rgba(247, 51, 69);
-    height: 25px;
-}
-form#add-network-program .add-network-program-item li.select2-selection__choice button span {
-    position: relative;
-    top: -2px;
-}
-form#add-network-program .add-network-program-item li.select2-selection__choice span {
-    position: relative;
-    top: 2px;
-    font-size: 14px;
-}
-form#add-network-program .add-network-program-item .select2-selection--single .select2-selection__rendered {
-    line-height: 38px;
-}
-form#add-network-program .add-network-program-item .select2-selection--single span.select2-selection__arrow {
-    height: 38px;
-}
-/* select2 css */
 /* ===============================================
 		Modal Style Sheet
 =============================================== */
@@ -1295,6 +1289,20 @@ form#add-network-program .add-network-program-item .select2-selection--single sp
     padding: 15px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
+}
+.pay-sidebar-smalls-ads-wrap.pay-sidebar-item {
+    padding: 0 !important;
+}
+.pay-sidebar-smalls-ads-wrap.pay-sidebar-item ul li {
+    flex-basis: calc(50% - 3px);
+    width: calc(50% - 3px);
+    padding: 3px;
+    overflow: hidden;
+    border-radius: 13px;
+    display: inline-block;
+}
+.pay-sidebar-smalls-ads-wrap.pay-sidebar-item ul li img {
+    width: 100%;
 }
 .pay-sidebar-wrap .pay-sidebar-item:not(:last-child) {
     margin-bottom: 20px;
@@ -1376,9 +1384,6 @@ form.search-form .search-input input.search-field {
 form.search-form .search-input input.search-field::placeholder {
     color: #000;
 }
-form#add-network-program .add-network-program-item .select2-container {
-    width: 100% !important;
-}
 /* ===============================================
 		Search Form Style Sheet
 =============================================== */
@@ -1451,10 +1456,6 @@ form#add-network-program .add-network-program-item .select2-container {
     display: inline-block;
     margin-right: 3px;
 }
-.pay-network-month-content .nm-review-slide-wrap .nm-review-slide-item .top-info p.rating span svg {
-    width: 12px;
-    height: 12px;
-}
 .pay-network-month-content .nm-review-slide-wrap .nm-review-slide-item a {
     text-decoration: none;
 }
@@ -1463,6 +1464,10 @@ form#add-network-program .add-network-program-item .select2-container {
     font-size: 14px;
     align-items: center;
     margin-right: 5px;
+}
+.pay-network-month-content .nm-review-slide-wrap .nm-review-slide-item .review-coment {
+    height: 65px;
+    overflow: hidden;
 }
 .pay-network-month-content .nm-review-slide-wrap .nm-review-slide-item .review-coment p {
     font-size: 14px;
@@ -1573,12 +1578,19 @@ form#add-network-program .add-network-program-item .select2-container {
 .pay-recent-reviews-wrap {
     position: relative;
 }
+.pay-recent-reviews-wrap a {
+    text-decoration: none;
+}
 .pay-recent-reviews-wrap .pay-recent-review-item {
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     margin-bottom: 10px;
     padding-bottom: 10px;
     display: flex;
     flex-wrap: wrap;
+    transition: all 0.3s ease-in-out;
+}
+.pay-recent-reviews-wrap .pay-recent-review-item:hover {
+    background-color: rgba(0,0,0,0.02);
 }
 .pay-recent-reviews-wrap .pay-recent-review-item:first-child {
     padding-top: 10px;
@@ -1606,9 +1618,11 @@ form#add-network-program .add-network-program-item .select2-container {
 }
 .pay-recent-reviews-wrap .pay-recent-review-item .right .titles {
     font-size: 14px;
+    color: #000;
 }
 .pay-recent-reviews-wrap .pay-recent-review-item .right .titles span {
-    color: #2779bd;
+    color: rgba(247, 51, 69);
+    padding-left: 5px;
 }
 .pay-recent-reviews-wrap .pay-recent-review-item .right .rat-time {
     display: flex;
@@ -1696,7 +1710,7 @@ form#add-network-program .add-network-program-item .select2-container {
     position: relative;
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     box-shadow: 0 3px 6px rgb(0 0 0 / 16%);
 }
 .pay-home-top-section .pay-top-five-networks {
@@ -1886,6 +1900,52 @@ form#add-network-program .add-network-program-item .select2-container {
 		Page Top Style Sheet
 =============================================== */
 /* Premium Networks */
+h2.home-networks-title {
+    font-size: 20px;
+    color: #000;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 1;
+    position: relative;
+    margin-bottom: 20px;
+    padding-left: 10px;
+}
+h2.home-networks-title::before {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 5px;
+    background-color: rgba(247, 51, 69);
+    left: 0;
+    top: 0;
+}
+.pay-premium-networks-section {
+    box-shadow: 0 3px 6px rgb(0 0 0 / 16%);
+    padding: 20px 10px;
+    margin-bottom: 30px;
+}
+.pay-premium-networks-wrap > a {
+    text-align: center;
+    display: block;
+    width: 100%;
+    max-width: max-content;
+    margin: auto;
+    font-size: 14px;
+    border: 2px solid rgba(247, 51, 69);
+    color: rgba(247, 51, 69);
+    padding: 7px 30px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+}
+.pay-premium-networks-wrap > a:hover {
+    color: #fff;
+    background-color: rgba(247, 51, 69);
+}
+.pay-networks-row {
+    box-shadow: 0 3px 6px rgb(0 0 0 / 20%);
+    padding: 20px 10px;
+}
 .pay-premium-network-item {
     display: flex;
     flex-wrap: wrap;
@@ -1894,6 +1954,19 @@ form#add-network-program .add-network-program-item .select2-container {
     margin-bottom: 20px;
     border-bottom: 1px dashed rgba(0, 0, 0, 0.5);
 }
+.pay-premium-network-item .another-title {
+    width: 100%;
+    margin-bottom: 10px;
+}
+.pay-premium-networks-wrap.advertising-networks .title-cat-rat,
+.pay-premium-networks-wrap.affiliate-programs .title-cat-rat {
+    display: none !important;
+}
+.pay-premium-networks-wrap.advertising-networks .right,
+.pay-premium-networks-wrap.affiliate-programs .right {
+    margin-top: -30px;
+}
+
 .pay-premium-network-item .left {
     width: 95px;
 }
@@ -1915,22 +1988,37 @@ form#add-network-program .add-network-program-item .select2-container {
     display: flex;
     flex-wrap: wrap;
 }
-.pay-premium-network-item .middle .title-cat-rat p.title {
+.pay-premium-network-item p.title {
     font-size: 16px;
     margin-right: 15px;
 }
-.pay-premium-network-item .middle .title-cat-rat p.title a {
+.pay-premium-network-item p.title a {
     text-decoration: none;
-    color: #2779bd;
+    color: rgba(247, 51, 69);
     font-weight: 500;
 }
 .pay-premium-network-item .middle .title-cat-rat .categories {
     display: flex;
     margin-right: 15px;
+    align-items: center;
 }
 .pay-premium-network-item .middle .title-cat-rat .categories p {
     position: relative;
-    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+    line-height: 20px;
+}
+.pay-premium-network-item .middle .title-cat-rat .categories p span.icon {
+    position: relative;
+    opacity: 1;
+    visibility: visible;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    color: rgba(0,0,0,0.5);
+    font-size: 16px;
+    padding: 0;
 }
 .pay-premium-network-item .middle .title-cat-rat .categories p span {
     position: absolute;
@@ -1938,10 +2026,49 @@ form#add-network-program .add-network-program-item .select2-container {
     color: #fff;
     font-size: 12px;
     left: -50%;
-    top: -14px;
+    top: -30px;
+    transform: translateX(-30%);
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease-in-out;
+    padding: 2px 10px;
+    border-radius: 6px;
+}
+.pay-premium-network-item .middle .title-cat-rat .categories p span:last-child::before {
+    position: absolute;
+    content: "";
+    height: 10px;
+    width: 10px;
+    background-color: #000;
+    bottom: -5px;
+    left: 47%;
+    transform: rotate(45deg);
+    z-index: -9;
+}
+i.icofont-adult {
+    font-size: 10px;
+    border: 2px solid #000;
+    height: 18px;
+    width: 18px;
+    display: inline-block;
+    text-align: center;
+    line-height: 14px;
+    border-radius: 50%;
+    position: relative;
+    font-weight: 600;
+    top: -2px;
+}
+i.icofont-adult::before {
+    position: absolute;
+    content: "+";
+    height: 6px;
+    width: 6px;
+    color: #000;
+    background-color: #fff;
+    top: -3px;
+    right: 0;
+    font-size: 8px;
+    line-height: 5px;
 }
 .pay-premium-network-item .middle .title-cat-rat .categories p:hover span {
     opacity: 1;
@@ -1957,7 +2084,9 @@ form#add-network-program .add-network-program-item .select2-container {
     border-radius: 3px;
 }
 .pay-premium-network-item .middle .description {
-    padding: 5px 0;
+    margin: 5px 0;
+    height: 45px;
+    overflow: hidden;
 }
 .pay-premium-network-item .middle .description p {
     font-size: 14px;
@@ -2008,72 +2137,14 @@ form#add-network-program .add-network-program-item .select2-container {
 /* ===============================================
 		Home Style Sheet
 =============================================== */
-/* ===============================================
-		Networks Style Sheet
-=============================================== */
-.ispay-network-item {
-    padding-bottom: 20px;
-    margin-bottom: 20px;
-    border-bottom: 1px dashed rgba(0, 0, 0, 0.5);
-    position: relative;
-}
-.ispay-network-item .net-topbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.ispay-network-item .net-topbar .left {
-    display: flex;
-    align-items: center;
-}
-.ispay-network-item .net-topbar .left .categories {
-    margin-left: 20px;
-    display: flex;
-    align-items: center;
-}
-.ispay-network-item .net-topbar .right {
-    display: flex;
-    align-items: center;
-}
-.ispay-network-item .net-bottom {
-    display: flex;
-    align-items: flex-start;
-    padding-top: 15px;
-}
-.ispay-network-item .net-bottom .left {
-    width: 160px;
-}
-.ispay-network-item .net-bottom .right {
-    width: 70px;
-    text-align: right;
-}
-.ispay-network-item .net-bottom .middle {
-    width: calc(100% - 230px);
-    padding-left: 20px;
-    padding-right: 10px;
-}
-.ispay-network-item .net-topbar .right p.sponsored {
-    margin-right: 20px;
-}
-.ispay-network-item .net-bottom .middle .description {
-    position: relative;
-    margin-bottom: 10px;
-}
-.ispay-network-item .net-bottom .middle .description p {
-    font-size: 14px;
-    color: rgba(0, 0, 0, 0.5);
-}
-.ispay-network-item .net-bottom .middle .middle-meta-wrap {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-/* ===============================================
-		Networks Style Sheet
-=============================================== */
+
 /* ===============================================
 		Blogs Style Sheet
 =============================================== */
+section#pay-blogs-filter-wrap {
+    box-shadow: 0 3px 6px rgb(0 0 0 / 20%);
+    padding: 20px 10px;
+}
 .is-pay-blog-item {
     position: relative;
     display: flex;
@@ -2159,6 +2230,14 @@ form#add-network-program .add-network-program-item .select2-container {
     display: flex;
     align-items: center;
 }
+.is-pay-blog-item .right .blog-meta p a i {
+    font-size: 16px;
+    padding-left: 10px;
+}
+.is-pay-blog-item .right .blog-meta p i.icofont-wall-clock {
+    color: rgba(247, 51, 69);
+    font-size: 16px;
+}
 .is-pay-blog-item .right .blog-meta p a {
     border: 1px solid rgba(247, 51, 69);
     color: rgba(247, 51, 69);
@@ -2169,8 +2248,9 @@ form#add-network-program .add-network-program-item .select2-container {
     align-items: center;
     transition: all 0.3s ease-in-out;
 }
-.is-pay-blog-item .right .blog-meta p a svg {
-    margin-left: 5px;
+.is-pay-blog-item .right .blog-meta p a i {
+    font-size: 16px;
+    padding-left: 10px;
 }
 .is-pay-blog-item:hover .right .blog-meta p a {
     background-color: rgba(247, 51, 69);
@@ -2279,73 +2359,6 @@ form#add-network-program .add-network-program-item .select2-container {
     padding: 10px 10px 0;
     margin-bottom: 20px;
 }
-/* @media only screen and (min-width: 768px) {
-    button.hamburger {
-        display: none;
-    }
-    .pay-main-header nav#main-navigation ul#primary-menu {
-        display: flex;
-        flex-wrap: wrap;
-    }
-    .pay-main-header nav#main-navigation ul#primary-menu > li {
-        border-left: 1px solid rgba(255, 255, 255, 0.3);
-        position: relative;
-        cursor: pointer;
-    }
-    .pay-main-header nav#main-navigation ul#primary-menu > li:last-child {
-        border-right: none;
-    }
-    .pay-main-header nav#main-navigation ul#primary-menu > li:first-child {
-        border-left: none;
-    }
-    .pay-main-header nav#main-navigation ul#primary-menu > li:hover::before {
-        opacity: 1;
-        width: 100%;
-    }
-    .pay-main-header nav#main-navigation ul#primary-menu li a {
-        padding: 11px 25px;
-        display: inline-block;
-        color: #fff;
-        text-transform: uppercase;
-        letter-spacing: 0.4px;
-        transition: all 0.3s ease-in-out;
-        cursor: pointer;
-    }
-    .pay-main-header nav#main-navigation ul#primary-menu > li:hover > a,
-    .pay-main-header nav#main-navigation ul#primary-menu > li > ul.sub-menu > li:hover > a,
-    .pay-main-header nav#main-navigation ul#primary-menu > li > ul.sub-menu > li > ul.sub-menu > li:hover > a {
-        background-color: rgba(247, 51, 69);
-    }
-    .pay-main-header nav#main-navigation ul#primary-menu > li > ul.sub-menu {
-        position: absolute;
-        top: 70px;
-        left: 0;
-        background-color: #000;
-        width: 250px;
-        padding: 0;
-        z-index: 99;
-        transition: all 0.3s ease-in-out;
-        opacity: 0;
-        visibility: hidden;
-    }
-    .pay-main-header nav#main-navigation ul#primary-menu > li.menu-item-has-children:hover > ul.sub-menu {
-        opacity: 1;
-        visibility: visible;
-        top: 40px;
-    }
-    .pay-main-header nav#main-navigation ul#primary-menu > li > ul.sub-menu > li > a {
-        display: block;
-    }
-    .pay-main-header nav#main-navigation ul#primary-menu > li > ul.sub-menu > li > ul.sub-menu {
-        margin-left: 10px;
-    }
-    .pay-main-header nav#main-navigation ul#primary-menu > li > ul.sub-menu > li > ul.sub-menu > li > a {
-        display: block;
-    }
-    .pay-main-menu .col-md-12 {
-        padding: 0;
-    }
-} */
 .pay-sn-top-section .pay-sn-categories {
     position: relative;
     padding-bottom: 10px;
@@ -2657,6 +2670,9 @@ form#add-network-program .add-network-program-item .select2-container {
     display: flex;
     border-bottom: 1px solid rgba(247, 51, 69);
 }
+.pay-sn-review-item:last-child {
+    border: none;
+}
 .pay-sn-review-item .avatar {
     width: 35px;
     height: 35px;
@@ -2697,6 +2713,11 @@ form#add-network-program .add-network-program-item .select2-container {
     font-weight: 400;
     color: rgba(0, 0, 0, 0.7);
     margin-left: 10px;
+}
+.pay-sn-review-item .pay-sn-review-context .pay-sn-review-metas .rat-title h4 a {
+    color: rgba(247, 51, 69);
+    text-decoration: none;
+    font-size: 16px;
 }
 .pay-sn-review-item .pay-sn-review-context .pay-sn-review-metas .pay-about-sn {
     position: relative;
@@ -3034,6 +3055,7 @@ ul#stars li.star.selected i {
     box-shadow: 0 3px 6px rgb(0 0 0 / 20%);
     margin-bottom: 20px;
     padding: 30px 10px;
+    border: none;
 }
 .pay-sn-review-item .avatar span {
     width: 100%;
@@ -3107,6 +3129,7 @@ ul#stars li.star.selected i {
         cursor: pointer;
     }
     .pay-main-header nav#main-navigation ul#primary-menu > li:hover > a,
+    .pay-main-header nav#main-navigation ul#primary-menu > li.current-menu-item > a,
     .pay-main-header nav#main-navigation ul#primary-menu > li > ul.sub-menu > li:hover > a,
     .pay-main-header nav#main-navigation ul#primary-menu > li > ul.sub-menu > li > ul.sub-menu > li:hover > a {
         background-color: rgba(247, 51, 69);
@@ -3494,6 +3517,28 @@ ul#stars li.star.selected i {
     /* Add Network Form */
 }
 @media only screen and (max-width: 575px) {
+	.pay-premium-network-item .middle {
+		width: 100%;
+		padding: 0;
+		order: 3;
+		margin-top: 15px;
+	}
+	.pay-premium-network-item .left {
+		width: 150px;
+	}
+	.pay-premium-network-item .right {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		margin-top: 15px;
+	}
+	.pay-premium-network-item .right a {
+		margin-top: 0;
+		margin-left: 20px;
+	}
+	.pay-premium-networks-wrap.advertising-networks .right, .pay-premium-networks-wrap.affiliate-programs .right {
+		margin-top: 15px;
+	}
     /* Modal Popup */
     .modal .modal-dialog {
         padding: 30px 20px;

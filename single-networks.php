@@ -452,9 +452,9 @@ $network = new Network();
                                     <div class="pay-snd-rat-distribution">
                                         <h3 class="rat-dist-title">Rating Distribution</h3>
                                         <div class="rat-dist-chart">
-											<?php $rating_for_chart = round( $average ) * 20; ?>
+											<?php $rating_for_chart = $average * 20; ?>
                                             <div class="chart" data-percent="<?php echo $rating_for_chart; ?>"
-                                                 data-scale-color="red"><span><?php echo round( $average ); ?></span>
+                                                 data-scale-color="red"><span><?php echo $average; ?></span>
                                             </div>
                                         </div>
                                         <div class="rat-indivi">
@@ -525,7 +525,7 @@ $network = new Network();
 							$ratings = $network->get_all_reviews( $networkID );
 							if ( $ratings ) :
 								?>
-                                <div class="pay-sn-networks-reviews-wrapper">
+                                <div class="pay-sn-networks-reviews-wrapper" id="single-review">
                                     <div class="pay-sn-reviews-row">
 										<?php
 										while ( $ratings->have_posts() ) : $ratings->the_post();
@@ -537,7 +537,9 @@ $network = new Network();
 							<?php endif; ?>
                         </div>
                     </div>
-					<?php get_sidebar(); ?>
+					<?php get_sidebar(); 
+                        get_template_part( 'template-parts/components/reviews-form', 'popup' );
+                    ?>
                 </div>
             </div>
         </div>
@@ -545,5 +547,4 @@ $network = new Network();
     </main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();
