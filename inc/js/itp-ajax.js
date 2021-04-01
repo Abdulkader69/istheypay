@@ -117,7 +117,7 @@
                 data: formData,
                 beforeSend: function () {
                     $("p.error-message").remove();
-                    $('#submit-review-form').append('<div class="loader-spinner"><div>Loading</div></div>');
+                    $('#submit-review-form').append('<div class="loader-spinner"><div></div></div>');
                 },
                 success: function (res) {
                     $('.loader-spinner').remove();

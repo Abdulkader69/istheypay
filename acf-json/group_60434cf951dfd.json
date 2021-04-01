@@ -441,7 +441,7 @@
             "name": "afp_program_category",
             "type": "text",
             "instructions": "",
-            "required": 0,
+            "required": 1,
             "conditional_logic": [
                 [
                     {
@@ -1743,10 +1743,10 @@
             "mime_types": ""
         },
         {
-            "key": "field_605e15ce03468",
-            "label": "Networks Thumbnail",
-            "name": "networks_thumbnail",
-            "type": "image",
+            "key": "field_60662ebc58b81",
+            "label": "Average Rating",
+            "name": "average_rating",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -1755,35 +1755,11 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "url",
-            "preview_size": "thumbnail",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": ""
-        },
-        {
-            "key": "field_605cf5de72dcc",
-            "label": "SPONSORED",
-            "name": "sponsored",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 0,
-            "ui": 1,
-            "ui_on_text": "",
-            "ui_off_text": ""
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         }
     ],
     "location": [
@@ -1803,5 +1779,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1616792424
+    "modified": 1617309620
 }

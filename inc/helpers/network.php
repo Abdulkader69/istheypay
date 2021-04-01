@@ -86,6 +86,14 @@ class Network {
 			}
 		}
 
+		$to_email      = get_field( 'network_notification_receiver_email', 'option' );
+		$email_message = 'A new network is just created. Its not published yet. Please visit the dashboard and publish it.';
+		$headers       = [];
+		$headers[]     = "Content-Type: text/html";
+		$headers[]     = "charset=UTF-8";
+		$headers[]     = "From: IsTheyPay";
+		wp_mail( $to_email, 'A Network is just created.', $email_message, $headers );
+
 		echo wp_json_encode( array(
 			'status'  => true,
 			'post_id' => $network

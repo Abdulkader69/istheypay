@@ -100,6 +100,11 @@ class Review {
 			update_field( 'payment_screenshot', $attachment_id, $review );
 		}
 
+		// Update Average rating once a review is posted.
+		$network        = new Network();
+		$average_rating = $network->get_rating( $form_data['network_id'] );
+		update_field( 'average_rating', $average_rating, $form_data['network_id'] );
+
 		echo wp_json_encode( array(
 			'status'  => true,
 			'post_id' => $review
@@ -107,15 +112,19 @@ class Review {
 
 		wp_die();
 	}
-	 public function get_network ( $review_ID ) {
-		if(!$review_ID) {
+
+
+	public function get_network( $review_ID ) {
+		if ( ! $review_ID ) {
 			return false;
 		}
-		$review = get_post( $review_ID );
+		$review     = get_post( $review_ID );
 		$network_ID = $review->post_parent;
-		$network = get_post( $network_ID );
+		$network    = get_post( $network_ID );
+
 		return $network;
-	 }
+	}
+
 }
 
 new Review();
