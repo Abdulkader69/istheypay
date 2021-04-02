@@ -15,11 +15,11 @@ get_header();
                         <div class="pay-premium-networks-section">
                             <?php echo do_shortcode( '[pay_premium_networks_shortcodes category="affiliate-networks" per_page="15"]' ); ?>
                         </div>
-                        <div class="pay-premium-networks-section">
-                            <?php echo do_shortcode( '[pay_premium_networks_shortcodes category="advertising-networks" per_page="3"]' ); ?>
+						<div class="pay-premium-networks-section">
+                            <?php echo do_shortcode( '[pay_premium_networks_shortcodes category="affiliate-programs" per_page="3"]' ); ?>
                         </div>
                         <div class="pay-premium-networks-section">
-                            <?php echo do_shortcode( '[pay_premium_networks_shortcodes category="affiliate-programs" per_page="3"]' ); ?>
+                            <?php echo do_shortcode( '[pay_premium_networks_shortcodes category="advertising-networks" per_page="3"]' ); ?>
                         </div>
 					</div>
 					<?php get_sidebar(); ?>
