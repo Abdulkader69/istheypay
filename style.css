@@ -914,6 +914,9 @@ header#main-header {
     background-color: #000;
     margin-top: 25px;
 }
+.header-banner-ads-wrap {
+    text-align: right;
+}
 /* ===============================================
 		Header Style Sheet
 =============================================== */
@@ -1259,6 +1262,33 @@ form#add-network-program .add-network-program-btn button:hover {
 form#add-network-program .add-network-program-item > textarea {
     height: 140px;
     padding: 5px 10px;
+}
+.success-popup-wrap {
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0,0,0,0.6);
+    opacity: 0;
+    visibility: hidden;
+}
+.success-popup .success-popup-wrap {
+    opacity: 1;
+    visibility: visible;
+} 
+.success-popup-wrap .success-popup-inner {
+    background-color: #fff;
+    padding: 20px 50px;
+    border-radius: 5px;
+}
+.success-content p {
+    color: rgba(247, 51, 69);
+    font-size: 16px;
 }
 /* ===============================================
 		Modal Style Sheet
@@ -2931,6 +2961,11 @@ img#image-preview {
 form#submit-review-form .review-submit-btn {
     margin-top: 30px;
     padding-bottom: 30px;
+    display: flex;
+    align-items: center;
+}
+form#submit-review-form .review-submit-btn #loading {
+    padding-left: 20px;
 }
 form#submit-review-form {
     position: relative;
@@ -3519,6 +3554,9 @@ ul#stars li.star.selected i {
     /* Add Network Form */
     .add-new-networks-form-wrapper {
         padding: 20px 20px 54px;
+    }
+    .success-popup-wrap .success-popup-inner {
+        padding: 15px;
     }
     /* Add Network Form */
 }

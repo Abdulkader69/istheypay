@@ -90,7 +90,27 @@ class Network {
 		}
 
 		$to_email      = get_field( 'network_notification_receiver_email', 'option' );
-		$email_message = 'A new network is just created. Its not published yet. Please visit the dashboard and publish it.';
+		$email_message = '
+			<table width="100%" border="0" cellpadding="5" cellspacing="0" style="border: 2px solid rgba(247, 51, 69); max-width: 600px; margin: auto;">
+				<thead>
+					<tr>
+						<th colspan="6" style="padding: 15px 20px;text-align: center">
+							<a style="text-decoration: none;" target="_blank" href="https://istheypay.com/"><img style="width: 300px;" src="https://istheypay.abdulkader.me/wp-content/themes/istheypay/assets/images/istheypay.png" alt=""></a>
+						</th>
+					</tr>
+				</thead>
+				<tbody style="border-top: 5px solid rgba(247, 51, 69);">
+					<tr>
+						<td colspan="6" style="padding: 20px 20px; border-top: 5px solid rgba(247, 51, 69); font-family:sans-serif; font-size: 16px;line-height: 1.5">A new network is just created. Its not published yet. Please visit the dashboard and publish it. <a style="color: #000;" target="_blank"  href="https://istheypay.abdulkader.me/wp-admin/edit.php?post_status=draft&post_type=networks">Click Here</a></td>
+					</tr>
+				</tbody>
+				<tfoot style="background-color: rgba(247, 51, 69);">
+					<tr>
+						<td colspan="6" style="color: #fff; font-family:sans-serif; padding: 15px 20px; font-size: 14px; line-height: 1.4; text-align: center;">Copyright © 2021 | <a style="color: #fff;" target="_blank" href="https://istheypay.com/">istheypay.com</a></td>
+					</tr>
+				</tfoot>
+			</table>
+		';
 		$headers       = [];
 		$headers[]     = "Content-Type: text/html";
 		$headers[]     = "charset=UTF-8";

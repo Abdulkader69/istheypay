@@ -95,7 +95,10 @@
                             500
                         );
                     } else if (res.status === true) {
-                        location.reload();
+                        $('#page-container').addClass('success-popup');
+                        setTimeout(function(){ 
+                            location.reload();
+                        }, 5000);
                     }
                 },
                 error: function (err) {
@@ -117,7 +120,7 @@
                 data: formData,
                 beforeSend: function () {
                     $("p.error-message").remove();
-                    $('#submit-review-form').append('<div class="loader-spinner"><div></div></div>');
+                    $('#submit-review-form #loading').append('<div class="loader-spinner"></div>');
                 },
                 success: function (res) {
                     $('.loader-spinner').remove();
