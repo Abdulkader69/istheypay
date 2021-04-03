@@ -124,6 +124,7 @@
 
                     <div class="review-submit-btn">
                         <button type="submit">Submit Review</button>
+                        <div id="loading"></div>
                     </div>
 
                 </form>

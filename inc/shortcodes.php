@@ -264,6 +264,7 @@ function pay_premium_networks_shortcodes_func( $atts ) {
 		'post_type'      => 'networks',
 		'posts_per_page' => $atts['per_page'],
 		'order'          => 'DESC',
+        'orderby'        => 'rand',
 		'post_status'    => 'publish',
         'tax_query' => array(
             array(

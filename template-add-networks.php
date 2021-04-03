@@ -17,6 +17,13 @@ get_header();
                         </div>
                     </div>
 					<?php get_sidebar(); ?>
+                    <div class="success-popup-wrap">
+                        <div class="success-popup-inner">
+                            <div class="success-content">
+                                <p>Your request has been submitted successfully.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
