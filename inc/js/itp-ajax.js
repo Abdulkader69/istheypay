@@ -140,6 +140,35 @@
                     alert('Something went wrong! Please, try again.');
                 }
             });
-        });
+        }).on('change', '.filter-select', function (e) {
+            $('#ppn-filter-form').submit();
+        }).on('submit', '#ppn-filter-form', function (e) {
+            e.preventDefault();
+
+            const formData = new FormData(this);
+            formData.append('action', 'itp_filter_network');
+
+            $.ajax({
+                method: 'POST',
+                url: itpAjax.ajaxUrl,
+                processData: false,
+                contentType: false,
+                data: formData,
+                beforeSend: function () {
+                    $('.affiliate-networks .pay-premium-networks-posts').append('<div class="loader-spinner"><div></div></div>');
+                },
+                success: function (res) {
+                    $('.affiliate-networks .pay-premium-networks-posts').html(res);
+                    $('.pay-networks-row').html(res);
+                    $('.loader-spinner').remove();
+                },
+                error: function (err) {
+                    $('.loader-spinner').remove();
+                    alert('Something went wrong! Please, try again.');
+                }
+            });
+
+
+        })
     });
 })(jQuery);
