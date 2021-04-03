@@ -1957,6 +1957,9 @@ h2.home-networks-title::before {
     padding: 20px 10px;
     margin-bottom: 30px;
 }
+.pay-premium-networks-section .pay-premium-network-filters {
+    display: none;
+}
 .pay-premium-networks-section:last-child {
     margin-bottom: 0;
 }
@@ -1977,6 +1980,53 @@ h2.home-networks-title::before {
 .pay-premium-networks-wrap > a:hover {
     color: #fff;
     background-color: rgba(247, 51, 69);
+}
+form#ppn-filter-form {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px 10px;
+    margin-bottom: 11px;
+    box-shadow: 0 3px 6px rgb(0 0 0 / 20%);
+}
+form#ppn-filter-form .filter-label {
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+}
+form#ppn-filter-form .filter-label p {
+    font-size: 18px;
+    font-weight: 700;
+}
+form#ppn-filter-form .filter-label i {
+    font-size: 22px;
+    margin-right: 5px;
+    color: rgba(247, 51, 69);
+    margin-top: -1px;
+}
+form#ppn-filter-form .filter-dropdown {
+    width: calc(33.33% - 36px);
+    text-align: right;
+    position: relative;
+}
+form#ppn-filter-form .filter-dropdown select {
+    width: calc(100% - 30px);
+    margin: 0 0 0 15px;
+    height: 40px;
+    padding: 0 8px;
+    appearance: none;
+    border: 1px solid rgba(247, 51, 69);
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 500;
+}
+form#ppn-filter-form .filter-dropdown i {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(247, 51, 69);
+    pointer-events: none;
 }
 .pay-networks-row {
     box-shadow: 0 3px 6px rgb(0 0 0 / 20%);

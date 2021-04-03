@@ -30,6 +30,7 @@ get_header();
 
                         <div class="pay-premium-network-filters">
                             <form id="ppn-filter-form">
+                                <div class="filter-label"><i class="icofont-star"></i> <p>Filters</p></div>
                                 <div class="tracking-software filter-dropdown">
 									<?php
 									$tracking_software = get_terms( array(
@@ -43,6 +44,7 @@ get_header();
                                             <option value="<?php echo $term->term_id; ?>"><?php echo $term->name; ?></option>
 										<?php endforeach; ?>
                                     </select>
+                                    <i class="icofont-star"></i>
                                 </div>
                                 <div class="payment-frequency filter-dropdown">
 									<?php
@@ -57,6 +59,7 @@ get_header();
                                             <option value="<?php echo $term->term_id; ?>"><?php echo $term->name; ?></option>
 										<?php endforeach; ?>
                                     </select>
+                                    <i class="icofont-star"></i>
                                 </div>
                                 <div class="payment-method filter-dropdown">
 									<?php
@@ -71,6 +74,7 @@ get_header();
                                             <option value="<?php echo $term->term_id; ?>"><?php echo $term->name; ?></option>
 										<?php endforeach; ?>
                                     </select>
+                                    <i class="icofont-star"></i>
                                 </div>
                             </form>
                         </div>
