@@ -459,7 +459,7 @@ class Network {
 
 			<?php endwhile; ?>
 		<?php else: ?>
-            <h2>No Network Found!</h2>
+            <h3 class="no-networks-found">No Networks Found</h3>
 		<?php endif; ?>
 
 		<?php

@@ -2028,6 +2028,28 @@ form#ppn-filter-form .filter-dropdown i {
     color: rgba(247, 51, 69);
     pointer-events: none;
 }
+section#pay-networks-filter-wrap {
+    position: relative;
+}
+section#pay-networks-filter-wrap .spin {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(225,225,225,0.8);
+}
+section#pay-networks-filter-wrap .spin .preloader-orbit-loading {
+    top: 100px;
+    width: 50px;
+    height: 50px;
+}
+h3.no-networks-found {
+    padding: 100px 0;
+    text-align: center;
+}
 .pay-networks-row {
     box-shadow: 0 3px 6px rgb(0 0 0 / 20%);
     padding: 20px 10px;
@@ -2664,7 +2686,8 @@ section#pay-blogs-filter-wrap {
     padding-bottom: 8px;
 }
 .pay-sn-details-items-wrap .pay-snd-item .pay-snd-content .pay-snd-manager p.name {
-    width: 150px;
+    width: auto;
+    margin-right: 10px;
 }
 .pay-sn-details-items-wrap .pay-snd-item:last-child {
     border-bottom: none;
@@ -3411,6 +3434,20 @@ ul#stars li.star.selected i {
         padding-right: 30px;
     }
     /* Add Network Networks */
+    form#ppn-filter-form .filter-label {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    form#ppn-filter-form .filter-dropdown {
+        width: calc(33.33% - 10px);
+    }
+    form#ppn-filter-form .filter-dropdown select {
+        width: 100%;
+        margin: 0;
+    }
+    form#ppn-filter-form {
+        justify-content: space-between;
+    }
 }
 @media only screen and (max-width: 767px) {
     /* Header */
@@ -3757,6 +3794,13 @@ ul#stars li.star.selected i {
         padding-right: 0;
     }
     /* Add Network form */
+    form#ppn-filter-form .filter-dropdown {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    form#ppn-filter-form .filter-dropdown:last-child {
+        margin-bottom: 0;
+    }
 }
 @media only screen and (max-width: 400px) {
     form#add-network-program .add-network-program-item.aff-contact-info .add-network-program-item-sub input#aff-contact-name {
