@@ -158,15 +158,15 @@
                 contentType: false,
                 data: formData,
                 beforeSend: function () {
-                    $('.affiliate-networks .pay-premium-networks-posts').append('<div class="loader-spinner"><div></div></div>');
+                    $('#pay-networks-filter-wrap').append('<div class="spin"><div class="preloader-orbit-loading"><div class="cssload-inner cssload-one"></div><div class="cssload-inner cssload-two"></div><div class="cssload-inner cssload-three"></div></div></div>');
                 },
                 success: function (res) {
                     $('.affiliate-networks .pay-premium-networks-posts').html(res);
                     $('.pay-networks-row').html(res);
-                    $('.loader-spinner').remove();
+                    $('.spin').remove();
                 },
                 error: function (err) {
-                    $('.loader-spinner').remove();
+                    $('.spin').remove();
                     alert('Something went wrong! Please, try again.');
                 }
             });
