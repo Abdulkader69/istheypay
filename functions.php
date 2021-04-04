@@ -100,7 +100,7 @@ function is_they_pay_scripts() {
 	wp_enqueue_script( 'magnific-js', '//cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.0.0/jquery.magnific-popup.min.js', array( 'jquery' ), '4.1.0', true );
 	wp_enqueue_style( 'magnific-css', '//cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.0.0/magnific-popup.min.css', null, '4.1.0', 'all' );
 
-    wp_enqueue_style( 'icon-fonts', get_template_directory_uri() . '/inc/css/icofont.min.css', null, '4.1.0', 'all' );
+	wp_enqueue_style( 'icon-fonts', get_template_directory_uri() . '/inc/css/icofont.min.css', null, '4.1.0', 'all' );
 
 	wp_enqueue_script( 'chart-js', '//cdnjs.cloudflare.com/ajax/libs/easy-pie-chart/2.1.6/jquery.easypiechart.min.js', array( 'jquery' ), '2.1.6', true );
 	wp_enqueue_script( 'owl-js', '//cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js', array( 'jquery' ), '2.3.4', true );
@@ -200,6 +200,54 @@ function searchfilter( $query ) {
 }
 
 add_filter( 'pre_get_posts', 'searchfilter' );
+
+// Log any data into a file
+function custom_logs( $message ) {
+	if ( is_array( $message ) ) {
+		$message = json_encode( $message );
+	}
+	$file = fopen( __DIR__ . '/debug.log', "a" );
+	echo fwrite( $file, "\n" . date( 'Y-m-d h:i:s' ) . " :: " . $message );
+	fclose( $file );
+}
+
+// Send a notification to the user once the network is published.
+function network_approval_notification( $new_status, $old_status, $post ) {
+	if ( $old_status == 'draft' && $new_status == 'publish' && $new_status != $old_status ) {
+		$email_address = get_field( 'email', $post->ID );
+
+		$email_message = '
+			<table width="100%" border="0" cellpadding="5" cellspacing="0" style="border: 2px solid rgba(247, 51, 69); max-width: 600px; margin: auto;">
+				<thead>
+					<tr>
+						<th colspan="6" style="padding: 15px 20px;text-align: center">
+							<a style="text-decoration: none;" target="_blank" href="https://istheypay.com/"><img style="width: 300px;" src="https://istheypay.abdulkader.me/wp-content/themes/istheypay/assets/images/istheypay.png" alt=""></a>
+						</th>
+					</tr>
+				</thead>
+				<tbody style="border-top: 5px solid rgba(247, 51, 69);">
+					<tr>
+						<td colspan="6" style="padding: 20px 20px; border-top: 5px solid rgba(247, 51, 69); font-family:sans-serif; font-size: 16px;line-height: 1.5">Congrats,<br/> Your Network Post has been approved. The admin will contact you if needed. <br/>Thank you.</td>
+					</tr>
+				</tbody>
+				<tfoot style="background-color: rgba(247, 51, 69);">
+					<tr>
+						<td colspan="6" style="color: #fff; font-family:sans-serif; padding: 15px 20px; font-size: 14px; line-height: 1.4; text-align: center;">Copyright © 2021 | <a style="color: #fff;" target="_blank" href="https://istheypay.com/">istheypay.com</a></td>
+					</tr>
+				</tfoot>
+			</table>
+		';
+
+		$headers   = [];
+		$headers[] = "Content-Type: text/html";
+		$headers[] = "charset=UTF-8";
+		$headers[] = "From: IsTheyPay";
+
+		wp_mail( $email_address, 'Network has been approved on IsTheyPay', $email_message, $headers );
+	}
+}
+
+add_action( 'transition_post_status', 'network_approval_notification', 10, 3 );
 
 require get_template_directory() . '/inc/helpers/network.php';
 require get_template_directory() . '/inc/helpers/review.php';
