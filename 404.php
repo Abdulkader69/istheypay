@@ -1,58 +1,50 @@
 <?php
 /**
  * The template for displaying 404 pages (not found)
- *
  * @link https://codex.wordpress.org/Creating_an_Error_404_Page
- *
  * @package Is_They_Pay
  */
 
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+	<main id="main-content">
 
-		<section class="error-404 not-found">
-			<header class="page-header">
-				<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'is-they-pay' ); ?></h1>
-			</header><!-- .page-header -->
-
-			<div class="page-content">
-				<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'is-they-pay' ); ?></p>
-
-					<?php
-					get_search_form();
-
-					the_widget( 'WP_Widget_Recent_Posts' );
-					?>
-
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'is-they-pay' ); ?></h2>
-						<ul>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 pay-main-content-wrapper">
+					<div class="pay-left">
+						<?php get_template_part( 'template-parts/components/page-top', 'section' ); ?>
+						<div class="page-top-with-ad">
 							<?php
-							wp_list_categories(
-								array(
-									'orderby'    => 'count',
-									'order'      => 'DESC',
-									'show_count' => 1,
-									'title_li'   => '',
-									'number'     => 10,
-								)
-							);
-							?>
-						</ul>
-					</div><!-- .widget -->
-
-					<?php
-					/* translators: %1$s: smiley */
-					$is_they_pay_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'is-they-pay' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$is_they_pay_archive_content" );
-
-					the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
-
-			</div><!-- .page-content -->
-		</section><!-- .error-404 -->
+							if( have_rows('pages_global_ad', 'option') ):?>
+								<?php while( have_rows('pages_global_ad', 'option') ) : the_row();
+									$ad_image = get_sub_field( 'ad_image', 'option' );
+									if ( $ad_image != '' ) : ?>
+										<div class="page-ad-wrap">
+											<a href="<?php the_sub_field('ad_link', 'option') ?>"><img src="<?php echo $ad_image; ?>" alt=""></a>
+										</div>
+									<?php endif; ?>
+								<?php endwhile; ?>
+							<?php endif; ?>
+						</div>
+						<div class="page-content">
+							<div class="page_404">
+								<div class="four_zero_four_bg">
+									<h1 class="text-center ">404</h1>
+								</div>
+								<div class="contant_box_404">
+									<h3 class="h2"> Look like you're lost</h3>
+									<p>the page you are looking for not avaible!</p>
+									<a href="/" class="link_404">Go to Home</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<?php get_sidebar(); ?>
+				</div>
+			</div>
+		</div>
 
 	</main><!-- #main -->
 

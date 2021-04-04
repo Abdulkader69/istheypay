@@ -117,7 +117,7 @@ $average = $network->get_rating( get_the_ID() );
                                 <?php }
                                 if( $tax_slug == 'sweepstakes' ) { ?>
                                     <p>
-                                        <span class="icon"><i class="icofont-sweepstakes">s</i></span>
+                                        <span class="icon"><i class="icofont-bill-alt"></i></span>
                                         <span><?php echo $tax->name; ?></span>
                                     </p>
                                 <?php }

@@ -15,7 +15,12 @@ get_header();
 
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-12 pay-main-content-wrapper">
+				<?php 
+				$text = get_the_title();
+				$text = preg_replace('~[^\pL\d]+~u', '-', $text);
+				$text = strtolower($text);
+				?>
+				<div class="col-lg-12 pay-main-content-wrapper <?php echo $text; ?>">
 					<div class="pay-left">
 						<?php get_template_part( 'template-parts/components/page-top', 'section' ); ?>
 						<div class="page-top-with-ad">
@@ -31,6 +36,9 @@ get_header();
 									<?php endif; ?>
 								<?php endwhile; ?>
 							<?php endif; ?>
+						</div>
+						<div class="page-content">
+							<?php the_content(); ?>
 						</div>
 					</div>
 					<?php get_sidebar(); ?>

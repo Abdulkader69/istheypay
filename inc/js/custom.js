@@ -256,6 +256,11 @@
             type: 'image'
         });
 
+        // Show full content
+        $('.pay-about-sn-description .pay-about-sn-description-inner span').on('click', function () {
+            $(this).parent().toggleClass('show-more');
+        });
+
     }); //Document Ready
 
     $(window).on('load', function() {

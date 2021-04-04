@@ -19,17 +19,132 @@ $network = new Network();
 
                             <div class="pay-sn-top-section">
                                 <div class="pay-sn-categories">
-									<?php
-									$networkID  = get_the_ID();
-									$categories = get_the_terms( $networkID, 'network_category' );
-									if ( $categories ) {
-										foreach ( $categories as $cat ) {
-											if ( $cat->parent == 0 ) {
-												echo $cat->name;
-											}
-										}
-									}
-									?>
+                                    <?php $networksType = get_field( 'network_program_type' );
+                                    if ( '1' == $networksType ) { ?>
+                                        <p>Affiliate Networks</p>
+                                        <?php 
+                                        $taxonomies     = get_object_taxonomies( $post_type );
+                                        $taxonomy_names = wp_get_object_terms( get_the_ID(), $taxonomies );
+                                        ?>
+                                        <div class="categories">
+                                            <?php
+                                            foreach ( $taxonomy_names as $tax ) {
+                                                if ( $tax->parent != 0 ) { // avoid parent categories
+                                                    $tax_slug = $tax->slug;
+                                                    if ( $tax_slug == 'adult' ) { ?>
+                                                        <p>
+                                                            <span class="icon"><i class="icofont-adult">18</i></span>
+                                                            <span><?php echo $tax->name; ?></span>
+                                                        </p>
+                                                    <?php }
+                                                    if ( $tax_slug == 'biz-opp' ) { ?>
+                                                        <p>
+                                                            <span class="icon"><i class="icofont-bill-alt"></i></span>
+                                                            <span><?php echo $tax->name; ?></span>
+                                                        </p>
+                                                    <?php }
+                                                    if ( $tax_slug == 'crypto' ) { ?>
+                                                        <p>
+                                                            <span class="icon"><i class="icofont-bitcoin"></i></span>
+                                                            <span><?php echo $tax->name; ?></span>
+                                                        </p>
+                                                    <?php }
+                                                    if ( $tax_slug == 'dating' ) { ?>
+                                                        <p>
+                                                            <span class="icon"><i class="icofont-ui-love"></i></span>
+                                                            <span><?php echo $tax->name; ?></span>
+                                                        </p>
+                                                    <?php }
+                                                    if ( $tax_slug == 'ecommerce' ) { ?>
+                                                        <p>
+                                                            <span class="icon"><i class="icofont-shopping-cart"></i></span>
+                                                            <span><?php echo $tax->name; ?></span>
+                                                        </p>
+                                                    <?php }
+                                                    if ( $tax_slug == 'education' ) { ?>
+                                                        <p>
+                                                            <span class="icon"><i class="icofont-hat-alt"></i></span>
+                                                            <span><?php echo $tax->name; ?></span>
+                                                        </p>
+                                                    <?php }
+                                                    if ( $tax_slug == 'finance' ) { ?>
+                                                        <p>
+                                                            <span class="icon"><i class="icofont-dollar"></i></span>
+                                                            <span><?php echo $tax->name; ?></span>
+                                                        </p>
+                                                    <?php }
+                                                    if ( $tax_slug == 'forex-trading' ) { ?>
+                                                        <p>
+                                                                <span class="icon"><i
+                                                                            class="icofont-chart-histogram-alt"></i></span>
+                                                            <span><?php echo $tax->name; ?></span>
+                                                        </p>
+                                                    <?php }
+                                                    if ( $tax_slug == 'gambling' ) { ?>
+                                                        <p>
+                                                            <span class="icon"><i class="icofont-dice"></i></span>
+                                                            <span><?php echo $tax->name; ?></span>
+                                                        </p>
+                                                    <?php }
+                                                    if ( $tax_slug == 'game' ) { ?>
+                                                        <p>
+                                                            <span class="icon"><i class="icofont-ui-game"></i></span>
+                                                            <span><?php echo $tax->name; ?></span>
+                                                        </p>
+                                                    <?php }
+                                                    if ( $tax_slug == 'health-nutra' ) { ?>
+                                                        <p>
+                                                            <span class="icon"><i class="icofont-doctor"></i></span>
+                                                            <span><?php echo $tax->name; ?></span>
+                                                        </p>
+                                                    <?php }
+                                                    if ( $tax_slug == 'incentive' ) { ?>
+                                                        <p>
+                                                            <span class="icon"><i class="icofont-recycle"></i></span>
+                                                            <span><?php echo $tax->name; ?></span>
+                                                        </p>
+                                                    <?php }
+                                                    if ( $tax_slug == 'mobile' ) { ?>
+                                                        <p>
+                                                            <span class="icon"><i class="icofont-ui-touch-phone"></i></span>
+                                                            <span><?php echo $tax->name; ?></span>
+                                                        </p>
+                                                    <?php }
+                                                    if ( $tax_slug == 'pay-per-call' ) { ?>
+                                                        <p>
+                                                            <span class="icon"><i class="icofont-ui-call"></i></span>
+                                                            <span><?php echo $tax->name; ?></span>
+                                                        </p>
+                                                    <?php }
+                                                    if ( $tax_slug == 'survey' ) { ?>
+                                                        <p>
+                                                                <span class="icon"><i
+                                                                            class="icofont-chart-histogram-alt"></i></span>
+                                                            <span><?php echo $tax->name; ?></span>
+                                                        </p>
+                                                    <?php }
+                                                    if ( $tax_slug == 'sweepstakes' ) { ?>
+                                                        <p>
+                                                            <span class="icon"><i class="icofont-bill-alt"></i></span>
+                                                            <span><?php echo $tax->name; ?></span>
+                                                        </p>
+                                                    <?php }
+                                                    if ( $tax_slug == 'travel' ) { ?>
+                                                        <p>
+                                                            <span class="icon"><i class="icofont-airplane-alt"></i></span>
+                                                            <span><?php echo $tax->name; ?></span>
+                                                        </p>
+                                                    <?php }
+                                                }
+                                            }
+                                            ?>
+                                        </div>
+                                    <?php } elseif ( '2' == $networksType ) { ?>
+                                        <p>Affiliate Programs</p>
+                                    <?php } elseif ( '3' == $networksType ) { ?>
+                                        <p>Advertising Networks</p>
+                                    <?php } ?>
+
                                 </div>
                                 <div class="pay-sn-header-meta">
                                     <div class="left">
@@ -82,7 +197,7 @@ $network = new Network();
 
                                                 <?php $skype = get_field( 'skype' );
 												if ( ! $skype == '' ) : ?>
-                                                    <p><a href="live:<?php echo $skype; ?>">
+                                                    <p><a href="skype:<?php echo $skype; ?>">
                                                         <i class="icofont-skype"></i>
                                                     </a></p>
 												<?php endif; ?>
@@ -182,6 +297,8 @@ $network = new Network();
                                             <p><?php the_field( 'adn_network_description' ); ?></p>
 										<?php }
 										?>
+                                        <span class="more">[ More ]</span>
+                                        <span class="hide">[ Hide ]</span>
                                     </div>
                                 </div>
                             </div>
@@ -265,7 +382,7 @@ $network = new Network();
                                                                                 <?php endif; ?>
                                                                                 <?php $mail = get_sub_field( 'skype' );
                                                                                 if ( ! $mail == '' ) : ?>
-                                                                                    <span><a href="live:<?php echo $mail; ?>">
+                                                                                    <span><a href="skype:<?php echo $mail; ?>">
                                                                                         <i class="icofont-skype"></i>
                                                                                     </a></span>
                                                                                 <?php endif; ?>
@@ -279,12 +396,6 @@ $network = new Network();
                                             </div>
 										<?php } elseif ( '2' == $networksType ) { ?>
                                             <div class="pay-sn-details-items-inner aff-program">
-                                                <div class="pay-snd-item">
-                                                    <div class="pay-snd-title"><p>Number of Offers</p></div>
-                                                    <div class="pay-snd-content">
-                                                        <p><?php //the_field('afn_affiliate_tracking_software'); ?></p>
-                                                    </div>
-                                                </div>
                                                 <div class="pay-snd-item">
                                                     <div class="pay-snd-title"><p>Commission Type</p></div>
                                                     <div class="pay-snd-content">
@@ -315,45 +426,34 @@ $network = new Network();
                                                     <div class="pay-snd-content">
                                                         <p><?php the_field( 'afp_affiliate_tracking' ); ?></p></div>
                                                 </div>
-                                                <div class="pay-snd-item">
-                                                    <div class="pay-snd-title"><p>Tracking Link</p></div>
-                                                    <div class="pay-snd-content">
-                                                        <p><?php //the_field('afn_affiliate_tracking_software'); ?></p>
-                                                    </div>
-                                                </div>
-                                                <div class="pay-snd-item">
-                                                    <div class="pay-snd-title"><p>Affiliate Managers</p></div>
-                                                    <div class="pay-snd-content">
-                                                        <div class="pay-snd-manager">
-                                                            <p class="name">Bobby Hazel</p>
-                                                            <p class="social">
-                                                                <a href="#"><img width="15px" height="15px"
-                                                                                 src="<?php bloginfo( 'stylesheet_directory' ); ?>/assets/images/star.svg"
-                                                                                 alt=""></a>
-                                                                <a href="#"><img width="15px" height="15px"
-                                                                                 src="<?php bloginfo( 'stylesheet_directory' ); ?>/assets/images/star.svg"
-                                                                                 alt=""></a>
-                                                                <a href="#"><img width="15px" height="15px"
-                                                                                 src="<?php bloginfo( 'stylesheet_directory' ); ?>/assets/images/star.svg"
-                                                                                 alt=""></a>
-                                                            </p>
+                                                <?php if( have_rows('afp_as_team') ): ?>
+                                                        <div class="pay-snd-item">
+                                                            <div class="pay-snd-title"><p>Affiliate Support</p></div>
+                                                            <div class="pay-snd-content">
+                                                                <?php while( have_rows('afp_as_team') ) : the_row(); ?>
+                                                                    
+                                                                        <div class="pay-snd-manager">
+                                                                            <p class="name"><?php the_sub_field( 'name' ); ?></p>
+                                                                            <p class="social">
+                                                                                <?php $mail = get_sub_field( 'email' );
+                                                                                if ( ! $mail == '' ) : ?>
+                                                                                    <span><a href="mailto:<?php echo $mail; ?>">
+                                                                                        <i class="icofont-ui-message"></i>
+                                                                                    </a></span>
+                                                                                <?php endif; ?>
+                                                                                <?php $mail = get_sub_field( 'skype' );
+                                                                                if ( ! $mail == '' ) : ?>
+                                                                                    <span><a href="skype:<?php echo $mail; ?>">
+                                                                                        <i class="icofont-skype"></i>
+                                                                                    </a></span>
+                                                                                <?php endif; ?>
+                                                                            </p>
+                                                                        </div>
+                                                                        
+                                                                <?php endwhile; ?>
+                                                            </div>
                                                         </div>
-                                                        <div class="pay-snd-manager">
-                                                            <p class="name">Bobby Hazel</p>
-                                                            <p class="social">
-                                                                <a href="#"><img width="15px" height="15px"
-                                                                                 src="<?php bloginfo( 'stylesheet_directory' ); ?>/assets/images/star.svg"
-                                                                                 alt=""></a>
-                                                                <a href="#"><img width="15px" height="15px"
-                                                                                 src="<?php bloginfo( 'stylesheet_directory' ); ?>/assets/images/star.svg"
-                                                                                 alt=""></a>
-                                                                <a href="#"><img width="15px" height="15px"
-                                                                                 src="<?php bloginfo( 'stylesheet_directory' ); ?>/assets/images/star.svg"
-                                                                                 alt=""></a>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                <?php endif; ?>
                                             </div>
 										<?php } elseif ( '3' == $networksType ) { ?>
                                             <div class="pay-sn-details-items-inner aff-advertise">
@@ -390,6 +490,34 @@ $network = new Network();
                                                     <div class="pay-snd-content">
                                                         <p><?php the_field( 'afn_top_verticals' ); ?></p></div>
                                                 </div>
+                                                <?php if( have_rows('adn_fp_contacts') ): ?>
+                                                        <div class="pay-snd-item">
+                                                            <div class="pay-snd-title"><p>Publishers Contact</p></div>
+                                                            <div class="pay-snd-content">
+                                                                <?php while( have_rows('adn_fp_contacts') ) : the_row(); ?>
+                                                                    
+                                                                        <div class="pay-snd-manager">
+                                                                            <p class="name"><?php the_sub_field( 'name' ); ?></p>
+                                                                            <p class="social">
+                                                                                <?php $mail = get_sub_field( 'email' );
+                                                                                if ( ! $mail == '' ) : ?>
+                                                                                    <span><a href="mailto:<?php echo $mail; ?>">
+                                                                                        <i class="icofont-ui-message"></i>
+                                                                                    </a></span>
+                                                                                <?php endif; ?>
+                                                                                <?php $mail = get_sub_field( 'skype' );
+                                                                                if ( ! $mail == '' ) : ?>
+                                                                                    <span><a href="skype:<?php echo $mail; ?>">
+                                                                                        <i class="icofont-skype"></i>
+                                                                                    </a></span>
+                                                                                <?php endif; ?>
+                                                                            </p>
+                                                                        </div>
+                                                                        
+                                                                <?php endwhile; ?>
+                                                            </div>
+                                                        </div>
+                                                <?php endif; ?>
 
                                                 <div class="inner-title"><p>For Advertiser</p></div>
 
@@ -433,39 +561,34 @@ $network = new Network();
                                                     <div class="pay-snd-content">
                                                         <p><?php the_field( 'adn_fa_top_vertical' ); ?></p></div>
                                                 </div>
-                                                <div class="pay-snd-item">
-                                                    <div class="pay-snd-title"><p>Affiliate Managers</p></div>
-                                                    <div class="pay-snd-content">
-                                                        <div class="pay-snd-manager">
-                                                            <p class="name">Bobby Hazel</p>
-                                                            <p class="social">
-                                                                <a href="#"><img width="15px" height="15px"
-                                                                                 src="<?php bloginfo( 'stylesheet_directory' ); ?>/assets/images/star.svg"
-                                                                                 alt=""></a>
-                                                                <a href="#"><img width="15px" height="15px"
-                                                                                 src="<?php bloginfo( 'stylesheet_directory' ); ?>/assets/images/star.svg"
-                                                                                 alt=""></a>
-                                                                <a href="#"><img width="15px" height="15px"
-                                                                                 src="<?php bloginfo( 'stylesheet_directory' ); ?>/assets/images/star.svg"
-                                                                                 alt=""></a>
-                                                            </p>
+                                                <?php if( have_rows('adn_fa_contacts') ): ?>
+                                                        <div class="pay-snd-item">
+                                                            <div class="pay-snd-title"><p>Advertisers Contact</p></div>
+                                                            <div class="pay-snd-content">
+                                                                <?php while( have_rows('adn_fa_contacts') ) : the_row(); ?>
+                                                                    
+                                                                        <div class="pay-snd-manager">
+                                                                            <p class="name"><?php the_sub_field( 'name' ); ?></p>
+                                                                            <p class="social">
+                                                                                <?php $mail = get_sub_field( 'email' );
+                                                                                if ( ! $mail == '' ) : ?>
+                                                                                    <span><a href="mailto:<?php echo $mail; ?>">
+                                                                                        <i class="icofont-ui-message"></i>
+                                                                                    </a></span>
+                                                                                <?php endif; ?>
+                                                                                <?php $mail = get_sub_field( 'skype' );
+                                                                                if ( ! $mail == '' ) : ?>
+                                                                                    <span><a href="skype:<?php echo $mail; ?>">
+                                                                                        <i class="icofont-skype"></i>
+                                                                                    </a></span>
+                                                                                <?php endif; ?>
+                                                                            </p>
+                                                                        </div>
+                                                                        
+                                                                <?php endwhile; ?>
+                                                            </div>
                                                         </div>
-                                                        <div class="pay-snd-manager">
-                                                            <p class="name">Bobby Hazel</p>
-                                                            <p class="social">
-                                                                <a href="#"><img width="15px" height="15px"
-                                                                                 src="<?php bloginfo( 'stylesheet_directory' ); ?>/assets/images/star.svg"
-                                                                                 alt=""></a>
-                                                                <a href="#"><img width="15px" height="15px"
-                                                                                 src="<?php bloginfo( 'stylesheet_directory' ); ?>/assets/images/star.svg"
-                                                                                 alt=""></a>
-                                                                <a href="#"><img width="15px" height="15px"
-                                                                                 src="<?php bloginfo( 'stylesheet_directory' ); ?>/assets/images/star.svg"
-                                                                                 alt=""></a>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                <?php endif; ?>
                                             </div>
 										<?php }
 										?>
