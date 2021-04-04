@@ -52,8 +52,8 @@ $network = new Network();
 												<?php $mail = get_field( 'email' );
 												if ( ! $mail == '' ) : ?>
                                                     <p><a href="mailto:<?php echo $mail; ?>">
-                                                            <i class="icofont-ui-message"></i>
-                                                        </a></p>
+                                                        <i class="icofont-ui-message"></i>
+                                                    </a></p>
 												<?php endif; ?>
 
 												<?php $networksType = get_field( 'network_program_type' );
@@ -61,44 +61,72 @@ $network = new Network();
 													<?php $website = get_field( 'afn_network_url' );
 													if ( ! $website == '' ) : ?>
                                                         <p><a href="<?php echo $website; ?>">
-                                                                <i class="icofont-web"></i>
-                                                            </a></p>
+                                                            <i class="icofont-web"></i>
+                                                        </a></p>
 													<?php endif; ?>
 												<?php } elseif ( '2' == $networksType ) { ?>
 													<?php $website = get_field( 'afp_program_url' );
 													if ( ! $website == '' ) : ?>
                                                         <p><a href="<?php echo $website; ?>">
-                                                                <i class="icofont-web"></i>
-                                                            </a></p>
+                                                            <i class="icofont-web"></i>
+                                                        </a></p>
 													<?php endif; ?>
 												<?php } elseif ( '3' == $networksType ) { ?>
 													<?php $website = get_field( 'adn_network_url' );
 													if ( ! $website == '' ) : ?>
                                                         <p><a href="<?php echo $website; ?>">
-                                                                <i class="icofont-web"></i>
-                                                            </a></p>
+                                                            <i class="icofont-web"></i>
+                                                        </a></p>
 													<?php endif; ?>
 												<?php } ?>
 
+                                                <?php $skype = get_field( 'skype' );
+												if ( ! $skype == '' ) : ?>
+                                                    <p><a href="live:<?php echo $skype; ?>">
+                                                        <i class="icofont-skype"></i>
+                                                    </a></p>
+												<?php endif; ?>
+
+                                                <?php $telegram = get_field( 'telegram' );
+												if ( ! $telegram == '' ) : ?>
+                                                    <p><a target="_blank" href="<?php echo $telegram; ?>">
+                                                        <i class="icofont-telegram"></i>
+                                                    </a></p>
+												<?php endif; ?>
+
+                                                <?php $phone = get_field( 'phone' );
+												if ( ! $phone == '' ) : ?>
+                                                    <p><a href="tel:<?php echo $phone; ?>">
+                                                        <i class="icofont-ui-touch-phone"></i>
+                                                    </a></p>
+												<?php endif; ?>
+
 												<?php $facebook = get_field( 'facebook' );
 												if ( ! $facebook == '' ) : ?>
-                                                    <p><a href="<?php echo $facebook; ?>">
-                                                            <i class="icofont-facebook"></i>
-                                                        </a></p>
+                                                    <p><a target="_blank" href="<?php echo $facebook; ?>">
+                                                        <i class="icofont-facebook"></i>
+                                                    </a></p>
 												<?php endif; ?>
 
 												<?php $twitter = get_field( 'twitter' );
 												if ( ! $twitter == '' ) : ?>
-                                                    <p><a href="<?php echo $twitter; ?>">
-                                                            <i class="icofont-twitter"></i>
-                                                        </a></p>
+                                                    <p><a target="_blank" href="<?php echo $twitter; ?>">
+                                                        <i class="icofont-twitter"></i>
+                                                    </a></p>
 												<?php endif; ?>
 
 												<?php $linkedin = get_field( 'linkedin' );
 												if ( ! $linkedin == '' ) : ?>
-                                                    <p><a href="<?php echo $linkedin; ?>">
-                                                            <i class="icofont-linkedin"></i>
-                                                        </a></p>
+                                                    <p><a target="_blank" href="<?php echo $linkedin; ?>">
+                                                        <i class="icofont-linkedin"></i>
+                                                    </a></p>
+												<?php endif; ?>
+
+												<?php $vk = get_field( 'vk' );
+												if ( ! $vk == '' ) : ?>
+                                                    <p><a target="_blank" href="<?php echo $vk; ?>">
+                                                        <i class="icofont-vk"></i>
+                                                    </a></p>
 												<?php endif; ?>
                                             </div>
                                         </div>
@@ -212,47 +240,42 @@ $network = new Network();
                                                 <div class="pay-snd-item">
                                                     <div class="pay-snd-title"><p>Tracking Software</p></div>
                                                     <div class="pay-snd-content">
-                                                        <p><?php the_field( 'afn_affiliate_tracking_software' ); ?></p>
+                                                        <p><?php the_field( 'afn_tracking_software' ); ?></p>
                                                     </div>
                                                 </div>
-                                                <div class="pay-snd-item">
+                                                <!-- <div class="pay-snd-item">
                                                     <div class="pay-snd-title"><p>Tracking Link</p></div>
                                                     <div class="pay-snd-content">
                                                         <p><?php //the_field('afn_commission_type'); ?></p></div>
-                                                </div>
-                                                <div class="pay-snd-item">
-                                                    <div class="pay-snd-title"><p>Affiliate Managers</p></div>
-                                                    <div class="pay-snd-content">
-                                                        <div class="pay-snd-manager">
-                                                            <p class="name">Bobby Hazel</p>
-                                                            <p class="social">
-                                                                <a href="#"><img width="15px" height="15px"
-                                                                                 src="<?php bloginfo( 'stylesheet_directory' ); ?>/assets/images/star.svg"
-                                                                                 alt=""></a>
-                                                                <a href="#"><img width="15px" height="15px"
-                                                                                 src="<?php bloginfo( 'stylesheet_directory' ); ?>/assets/images/star.svg"
-                                                                                 alt=""></a>
-                                                                <a href="#"><img width="15px" height="15px"
-                                                                                 src="<?php bloginfo( 'stylesheet_directory' ); ?>/assets/images/star.svg"
-                                                                                 alt=""></a>
-                                                            </p>
+                                                </div> -->
+                                                <?php if( have_rows('afn_aa_contacts') ): ?>
+                                                        <div class="pay-snd-item">
+                                                            <div class="pay-snd-title"><p>Affiliate Managers</p></div>
+                                                            <div class="pay-snd-content">
+                                                                <?php while( have_rows('afn_aa_contacts') ) : the_row(); ?>
+                                                                    
+                                                                        <div class="pay-snd-manager">
+                                                                            <p class="name"><?php the_sub_field( 'name' ); ?></p>
+                                                                            <p class="social">
+                                                                                <?php $mail = get_sub_field( 'email' );
+                                                                                if ( ! $mail == '' ) : ?>
+                                                                                    <span><a href="mailto:<?php echo $mail; ?>">
+                                                                                        <i class="icofont-ui-message"></i>
+                                                                                    </a></span>
+                                                                                <?php endif; ?>
+                                                                                <?php $mail = get_sub_field( 'skype' );
+                                                                                if ( ! $mail == '' ) : ?>
+                                                                                    <span><a href="live:<?php echo $mail; ?>">
+                                                                                        <i class="icofont-skype"></i>
+                                                                                    </a></span>
+                                                                                <?php endif; ?>
+                                                                            </p>
+                                                                        </div>
+                                                                        
+                                                                <?php endwhile; ?>
+                                                            </div>
                                                         </div>
-                                                        <div class="pay-snd-manager">
-                                                            <p class="name">Bobby Hazel</p>
-                                                            <p class="social">
-                                                                <a href="#"><img width="15px" height="15px"
-                                                                                 src="<?php bloginfo( 'stylesheet_directory' ); ?>/assets/images/star.svg"
-                                                                                 alt=""></a>
-                                                                <a href="#"><img width="15px" height="15px"
-                                                                                 src="<?php bloginfo( 'stylesheet_directory' ); ?>/assets/images/star.svg"
-                                                                                 alt=""></a>
-                                                                <a href="#"><img width="15px" height="15px"
-                                                                                 src="<?php bloginfo( 'stylesheet_directory' ); ?>/assets/images/star.svg"
-                                                                                 alt=""></a>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                <?php endif; ?>
                                             </div>
 										<?php } elseif ( '2' == $networksType ) { ?>
                                             <div class="pay-sn-details-items-inner aff-program">
@@ -523,7 +546,7 @@ $network = new Network();
 
 							<?php
 							$ratings = $network->get_all_reviews( $networkID );
-							if ( $ratings ) :
+							if ( $ratings->post_count != 0 ) :
 								?>
                                 <div class="pay-sn-networks-reviews-wrapper" id="single-review">
                                     <div class="pay-sn-reviews-row">

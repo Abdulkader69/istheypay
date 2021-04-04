@@ -41,7 +41,7 @@ get_header();
                                     <select name="tracking_software" id="tracking_software" class="filter-select">
                                         <option value="">Tracking Software</option>
 										<?php foreach ( $tracking_software as $term ) : ?>
-                                            <option value="<?php echo $term->term_id; ?>"><?php echo $term->name; ?></option>
+                                            <option value="<?php echo $term->term_id; ?>"><?php echo $term->name; ?>&emsp;(<?php echo $term->count; ?>)</option>
 										<?php endforeach; ?>
                                     </select>
                                     <i class="icofont-star"></i>
@@ -56,7 +56,7 @@ get_header();
                                     <select name="payment_frequency" id="payment_frequency" class="filter-select">
                                         <option value="">Payment Frequency</option>
 										<?php foreach ( $payment_frequency as $term ) : ?>
-                                            <option value="<?php echo $term->term_id; ?>"><?php echo $term->name; ?></option>
+                                            <option value="<?php echo $term->term_id; ?>"><?php echo $term->name; ?>&emsp;(<?php echo $term->count; ?>)</option>
 										<?php endforeach; ?>
                                     </select>
                                     <i class="icofont-star"></i>
@@ -71,7 +71,7 @@ get_header();
                                     <select name="payment_method" id="payment_method" class="filter-select">
                                         <option value="">Payment Method</option>
 										<?php foreach ( $payment_method as $term ) : ?>
-                                            <option value="<?php echo $term->term_id; ?>"><?php echo $term->name; ?></option>
+                                            <option value="<?php echo $term->term_id; ?>"><?php echo $term->name; ?>&emsp;(<?php echo $term->count; ?>)</option>
 										<?php endforeach; ?>
                                     </select>
                                     <i class="icofont-star"></i>
