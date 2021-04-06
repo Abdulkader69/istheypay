@@ -2,25 +2,31 @@
     <div class="pay-top-five-networks">
         <?php
         $network = new Network();
-        $random5Networkss = get_field('5_random_networks', 'option');
-        if( $random5Networkss ): ?>
+        $random5NetworkssID = get_field('5_random_networks', 'option', false, false);
+        $random5Networkss = new WP_Query(array(
+            'post_type'      	=> 'networks',
+            'posts_per_page'	=> 5,
+            'post__in'			=> $random5NetworkssID,
+            'post_status'		=> 'publish',
+            'orderby'        	=> 'rand',
+        ));
+        if( $random5Networkss->have_posts() ): ?>
             <div class="pay-top-five-networks-inner">
                 <ul class="pay-top-five-left">
-                    <?php foreach( $random5Networkss as $random5Networks ):
-                    setup_postdata($random5Networks); ?>
-                        <li class="pay-top-five-title" data-tab="tab-<?php echo $random5Networks->ID; ?>">
-                            <span class="logo"><img src="<?php echo get_field( 'networks_favicon', $random5Networks->ID ); ?>" alt=""></span>
-                            <span><?php echo $random5Networks->post_title; ?></span>
+                    <?php while ( $random5Networkss->have_posts() ) : $random5Networkss->the_post(); ?>
+                        <li class="pay-top-five-title" data-tab="tab-<?php echo get_the_ID(); ?>">
+                            <span class="logo"><img src="<?php echo get_field( 'networks_favicon', get_the_ID() ); ?>" alt=""></span>
+                            <span><?php echo get_field( 'afn_name', get_the_ID() ); ?></span>
                         </li>
-                    <?php endforeach; ?>
+                    <?php endwhile; ?>
                 </ul>
                 <ul class="pay-top-five-right">
-                    <?php foreach( $random5Networkss as $random5Networks ): 
-                    $average = $network->get_rating( $random5Networks->ID );
-                    $permalink = get_permalink( $random5Networks->ID );
-                    setup_postdata($random5Networks); ?>
-                        <li id="tab-<?php echo $random5Networks->ID; ?>" class="pay-top-five-hover-state">
-                            <div class="main-logo"><img src="<?php echo get_field( 'networks_logo', $random5Networks->ID ); ?>" alt=""></div>
+                    <?php 
+                    while ( $random5Networkss->have_posts() ) : $random5Networkss->the_post();
+                    $average = $network->get_rating( get_the_ID() );
+                    $permalink = get_permalink( get_the_ID() ); ?>
+                        <li id="tab-<?php echo get_the_ID(); ?>" class="pay-top-five-hover-state">
+                            <div class="main-logo"><img src="<?php echo get_field( 'networks_logo', get_the_ID() ); ?>" alt=""></div>
                             <div class="rating-chart">
                                 <?php 
                                     $overall_ratting = $average;
@@ -29,14 +35,14 @@
                                 <div class="chart" data-percent="<?php echo $rating_for_chart; ?>" data-scale-color="red"><span><?php echo $overall_ratting; ?></span></div>
                             </div>
                             <div class="reviews-calc-rat">
-                                <span><?php echo $network->get_total_rating_count( $random5Networks->ID ); ?> Reviews / </span>
+                                <span><?php echo $network->get_total_rating_count( get_the_ID() ); ?> Reviews / </span>
                                 <span><?php echo $overall_ratting; ?></span>
                             </div>
                             <div class="btn">
                                 <a href="<?php echo $permalink; ?>">Details</a>
                             </div>
                         </li>
-                    <?php endforeach; ?>
+                    <?php endwhile; ?>
                 </ul>
             </div>
         <?php wp_reset_postdata();

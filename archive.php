@@ -28,59 +28,23 @@ get_header();
 							<?php endif; ?>
 						</div>
 						<div class="pay-networks-row">
-							<?php 
-							$tax = get_queried_object();
-							$tax_slug = $tax->slug;
-							
-							$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-
-							$args = array(
-								'post_type'      => 'networks',
-								'posts_per_page' => 5,
-								'order'          => 'DESC',
-								'post_status'    => 'publish',
-								'paged'          => $paged,
-								'tax_query' => array(
-									array(
-										'taxonomy' => 'network_category',
-										'field'    => 'slug',
-										'terms'    => $tax_slug,
-									),
-								),
-							);
 						
-							//ob_start();
-							?>
-						
-							<?php $archive_tax = new WP_Query( $args );
+							<?php if( have_posts() ) :
 
-							if ( $archive_tax->have_posts() ) :
-								while ( $archive_tax->have_posts() ) : $archive_tax->the_post(); 
+								while ( have_posts() ) : the_post(); 
 									get_template_part( 'template-parts/components/networks', 'item' );
 								endwhile; ?>
+
 								<div class="pagination-wrap">
-									<?php
-									$big = 999999999; // need an unlikely integer
-									echo paginate_links( array(
-										'base'      => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-										'format'    => '/paged/%#%',
-										'current'   => max( 1, $paged ),
-										'total'     => $archive_tax->max_num_pages,
-										'prev_text' => '<',
-										'next_text' => '>',
-										'type'      => 'list',
-										'mid_size'  => 2,
-										'end_size'  => 1
-									) );
-									?>
+									<?php custom_pagination(); ?>
 								</div>
+
 							<?php else: ?>
+
 								<p class="no-post">No Networks Found!</p>
-							<?php 
-							endif; 
-							// wp_reset_postdata();
-							// return ob_get_clean();
-							?>
+
+							<?php endif; ?>
+							
 						</div>
 					</div>
 					<?php get_sidebar(); ?>

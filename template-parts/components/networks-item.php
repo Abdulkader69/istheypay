@@ -6,6 +6,9 @@ $network = new Network();
 $average = $network->get_rating( get_the_ID() );
 ?>
 <div class="pay-premium-network-item">
+    <?php if ( get_field( 'sponsored' ) ): ?>
+        <div class="sponsored"><p>SPONSORED</p></div>
+    <?php endif; ?>
     <div class="left">
         <a href="<?php the_permalink(); ?>">
             <div class="logo">

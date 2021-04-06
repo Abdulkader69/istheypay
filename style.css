@@ -659,6 +659,9 @@ p {
 .pagination-wrap {
     position: relative;
 }
+section#pay-networks-filter-wrap .pagination-wrap ul.page-numbers {
+    margin-top: 20px;
+}
 .pagination-wrap ul.page-numbers {
     list-style: none;
     text-align: center;
@@ -1869,6 +1872,7 @@ form.search-form .search-input input.search-field::placeholder {
     opacity: 0;
     visibility: hidden;
     transition: all 0.5s ease-in-out;
+    width: 100%;
 }
 .pay-top-five-networks-inner .pay-top-five-right .pay-top-five-hover-state.current {
     opacity: 1;
@@ -2075,14 +2079,26 @@ h3.no-networks-found {
 .pay-premium-networks-wrap.affiliate-programs .right {
     margin-top: -30px;
 }
-
+.pay-premium-network-item .sponsored {
+    width: 100%;
+    text-align: right;
+}
+.pay-premium-network-item .sponsored p {
+    font-size: 12px;
+    border: 1px solid rgba(247, 51, 69);
+    display: inline-block;
+    line-height: 1;
+    padding: 5px 10px;
+    color: rgba(247, 51, 69);
+    border-radius: 4px;
+}
 .pay-premium-network-item .left {
     width: 95px;
 }
 .pay-premium-network-item .left .logo {
     box-shadow: 0 15px 30px 0 rgb(0 0 0 / 11%), 0 5px 15px 0 rgb(0 0 0 / 8%);
     width: 100%;
-    min-height: 50px;
+    min-height: 30px;
 }
 .pay-premium-network-item .right {
     width: 90px;
@@ -3972,7 +3988,7 @@ p.no-post {
     /* Single Networks */
     /* Review form */
     #reviews-form-popup .modal-dialog.modal-pay {
-        margin-top: 0;
+        margin-top: 30px;
     }
     #reviews-form-popup.active .modal-pay .modal-content {
         padding: 20px 20px 0 20px;

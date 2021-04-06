@@ -5,7 +5,8 @@ $args    = array(
 	'post_status'    => 'publish',
 	'meta_key'       => 'average_rating',
 	'orderby'        => 'meta_value_num',
-	'order'          => 'DESC'
+	'order'          => 'DESC',
+	'category' 		 => 'affiliate-networks', 
 );
 $query   = new WP_Query( $args );
 $network = new Network();

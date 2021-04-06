@@ -8,6 +8,7 @@
 get_header();
 
 $network = new Network();
+$networkID = get_the_ID();
 ?>
 
     <main id="main-content">
@@ -16,7 +17,10 @@ $network = new Network();
                 <div class="col-lg-12 pay-main-content-wrapper">
                     <div class="pay-left">
                         <div class="pay-single-networks-wrapper">
-
+                            <?php
+                                require locate_template( 'template-parts/components/reviews-form-popup.php' );
+                                // required locate_template( 'template-parts/components/reviews-form', 'popup' );
+                            ?>
                             <div class="pay-sn-top-section">
                                 <div class="pay-sn-categories">
                                     <?php $networksType = get_field( 'network_program_type' );
@@ -669,7 +673,7 @@ $network = new Network();
 
 							<?php
 							$ratings = $network->get_all_reviews( $networkID );
-							if ( $ratings->post_count != 0 ) :
+							if ( $ratings->have_posts() ) :
 								?>
                                 <div class="pay-sn-networks-reviews-wrapper" id="single-review">
                                     <div class="pay-sn-reviews-row">
@@ -683,9 +687,7 @@ $network = new Network();
 							<?php endif; ?>
                         </div>
                     </div>
-					<?php get_sidebar(); 
-                        get_template_part( 'template-parts/components/reviews-form', 'popup' );
-                    ?>
+                    <?php get_sidebar(); ?>
                 </div>
             </div>
         </div>
