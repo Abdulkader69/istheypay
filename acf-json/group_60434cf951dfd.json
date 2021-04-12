@@ -3,6 +3,25 @@
     "title": "Network Information",
     "fields": [
         {
+            "key": "field_606aede513982",
+            "label": "Sponsored",
+            "name": "sponsored",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_60434d3bc52b2",
             "label": "Name",
             "name": "name",
@@ -1309,7 +1328,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "40",
+                        "width": "30",
                         "class": "",
                         "id": ""
                     },
@@ -1328,7 +1347,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "60",
+                        "width": "35",
                         "class": "",
                         "id": ""
                     },
@@ -1347,7 +1366,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "",
+                        "width": "35",
                         "class": "",
                         "id": ""
                     },
@@ -1395,7 +1414,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "40",
+                        "width": "30",
                         "class": "",
                         "id": ""
                     },
@@ -1414,7 +1433,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "60",
+                        "width": "35",
                         "class": "",
                         "id": ""
                     },
@@ -1433,7 +1452,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "",
+                        "width": "35",
                         "class": "",
                         "id": ""
                     },
@@ -1722,7 +1741,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "40",
+                        "width": "30",
                         "class": "",
                         "id": ""
                     },
@@ -1741,7 +1760,26 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "60",
+                        "width": "35",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_6069c667dde85",
+                    "label": "skype",
+                    "name": "skype",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "35",
                         "class": "",
                         "id": ""
                     },
@@ -1800,7 +1838,7 @@
             "default_value": [],
             "layout": "vertical",
             "toggle": 0,
-            "return_format": "value",
+            "return_format": "label",
             "save_custom": 0
         },
         {
@@ -1993,5 +2031,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1617474695
+    "modified": 1617620494
 }

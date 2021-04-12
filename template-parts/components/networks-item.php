@@ -137,7 +137,16 @@ $average = $network->get_rating( get_the_ID() );
             <p class="rating-count"><?php echo $average; ?></p>
         </div>
         <div class="description">
-            <p><?php the_field('afn_network_description'); ?></p>
+            <?php 
+                $networksType = get_field( 'network_program_type' );
+                if( '1' == $networksType ) { ?>
+                    <p><?php the_field('afn_network_description'); ?></p>
+                <?php } elseif( '2' == $networksType ) { ?>
+                    <p><?php the_field('afp_program_description'); ?></p>
+                <?php } elseif( '3' == $networksType ) { ?>
+                    <p><?php the_field('adn_network_description'); ?></p>
+                <?php }
+            ?>
         </div>
         <div class="bottom-meta-content">
             <p class="meta reviews-count"><?php echo $network->get_total_rating_count( get_the_ID() ); ?> Reviews</p>
