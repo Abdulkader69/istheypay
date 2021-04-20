@@ -40,9 +40,16 @@ class Network {
 			die();
 		}
 
+		$post_title = $form_data['afn_name'];
+		if ( 2 == $form_data['network_program_type'] ) {
+			$post_title = $form_data['afp_name'];
+		} elseif ( 3 == $form_data['network_program_type'] ) {
+			$post_title = $form_data['adn_name'];
+		}
+
 		// Create a network
 		$network = wp_insert_post( array(
-			'post_title' => $form_fields['name'],
+			'post_title' => $post_title,
 			'post_type'  => 'networks',
 		) );
 
@@ -95,13 +102,13 @@ class Network {
 				<thead>
 					<tr>
 						<th colspan="6" style="padding: 15px 20px;text-align: center">
-							<a style="text-decoration: none;" target="_blank" href="https://istheypay.com/"><img style="width: 300px;" src="https://istheypay.abdulkader.me/wp-content/themes/istheypay/assets/images/istheypay.png" alt=""></a>
+							<a style="text-decoration: none;" target="_blank" href="https://istheypay.com/"><img style="width: 300px;" src="https://istheypay.com/wp-content/themes/istheypay/assets/images/istheypay.png" alt=""></a>
 						</th>
 					</tr>
 				</thead>
 				<tbody style="border-top: 5px solid rgba(247, 51, 69);">
 					<tr>
-						<td colspan="6" style="padding: 20px 20px; border-top: 5px solid rgba(247, 51, 69); font-family:sans-serif; font-size: 16px;line-height: 1.5">A new network is just created. Its not published yet. Please visit the dashboard and publish it. <a style="color: #000;" target="_blank"  href="https://istheypay.abdulkader.me/wp-admin/edit.php?post_status=draft&post_type=networks">Click Here</a></td>
+						<td colspan="6" style="padding: 20px 20px; border-top: 5px solid rgba(247, 51, 69); font-family:sans-serif; font-size: 16px;line-height: 1.5">A new network is just created. Its not published yet. Please visit the dashboard and publish it. <a style="color: #000;" target="_blank"  href="https://istheypay.com/wp-admin/edit.php?post_status=draft&post_type=networks">Click Here</a></td>
 					</tr>
 				</tbody>
 				<tfoot style="background-color: rgba(247, 51, 69);">
@@ -210,7 +217,7 @@ class Network {
 			'post_type'      => 'networks',
 			'posts_per_page' => 20,
 			'meta_key'       => 'sponsored',
-	    	'orderby'        => 'meta_value',
+			'orderby'        => 'meta_value',
 			'order'          => 'DESC',
 			'post_status'    => 'publish',
 			'paged'          => $paged,
@@ -246,9 +253,9 @@ class Network {
 
 		if ( $networks->have_posts() ) :
 			while ( $networks->have_posts() ) : $networks->the_post();
-				
+
 				get_template_part( 'template-parts/components/networks', 'item' );
-                
+
 
 			endwhile; ?>
 		<?php else: ?>
